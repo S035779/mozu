@@ -1,0 +1,5 @@
+tbody th,
+tbody td {
+  padding: 0.75 em;
+  border-bottom: 1px solid #CCC;
+}
