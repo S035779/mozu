@@ -1,7 +1,10 @@
 require('dotenv').config();
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+
 const url = require('url');
+const path = require('path');
 
 module.exports = class MainWindow {
   constructor() {
@@ -25,19 +28,15 @@ module.exports = class MainWindow {
   }
   createWindow() {
     this.window = new BrowserWindow({
-      x: 0, y: 0, width: 1152, height: 964
-      //, frame: false
-      //, titleBarStyle: 'hidden'
-      //, titleBarStyle: 'hiddenInset'
-      //, titleBarStyle: 'customButtonsOnHover', frame: false
-      , titleBarStyle: 'customButtonsOnHover'
+      width: 1152, height: 964
     });
+    this.window.openDevTools();
     this.window.loadURL(url.format({
-      pathname: path.join(`${__dirname}/../public`, 'index.html'),
+      pathname: path.join(`${__dirname}/../public`
+      , 'index.html'),
       protocol: 'file:',
       slashes: true
     }));
-    this.window.webContents.openDevTools();
     this.window.on('closed', () => {
       this.window = null;
     });

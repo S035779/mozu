@@ -421,7 +421,7 @@ if (process.env.NODE_ENV !== 'production') {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_spin__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_spin__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_spin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__utils_spin__);
 
 
@@ -1109,61 +1109,21 @@ module.exports = warning;
 
 /***/ }),
 /* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(61);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(63);
-/* unused harmony reexport HashRouter */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(35);
-/* unused harmony reexport Link */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(65);
-/* unused harmony reexport MemoryRouter */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(68);
-/* unused harmony reexport NavLink */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(71);
-/* unused harmony reexport Prompt */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(73);
-/* unused harmony reexport Redirect */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(36);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(22);
-/* unused harmony reexport Router */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(79);
-/* unused harmony reexport StaticRouter */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(81);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(83);
-/* unused harmony reexport matchPath */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(84);
-/* unused harmony reexport withRouter */
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports.Container = __webpack_require__(62);
+module.exports.Mixin = __webpack_require__(64);
+module.exports.ReduceStore = __webpack_require__(65);
+module.exports.Store = __webpack_require__(32);
 
 /***/ }),
 /* 14 */
@@ -1172,8 +1132,8 @@ module.exports = warning;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createLocation; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return locationsAreEqual; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_resolve_pathname__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_value_equal__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_resolve_pathname__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_value_equal__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PathUtils__ = __webpack_require__(10);
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
@@ -1253,24 +1213,6 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-module.exports.Container = __webpack_require__(88);
-module.exports.Mixin = __webpack_require__(90);
-module.exports.ReduceStore = __webpack_require__(91);
-module.exports.Store = __webpack_require__(40);
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1284,7 +1226,7 @@ module.exports.Store = __webpack_require__(40);
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(2);
   var warning = __webpack_require__(12);
-  var ReactPropTypesSecret = __webpack_require__(17);
+  var ReactPropTypesSecret = __webpack_require__(16);
   var loggedTypeFailures = {};
 }
 
@@ -1334,7 +1276,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1352,7 +1294,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1391,7 +1333,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1462,7 +1404,102 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flux__);
+
+
+const dispatcher = new __WEBPACK_IMPORTED_MODULE_0_flux__["Dispatcher"]();
+
+/* harmony default export */ __webpack_exports__["a"] = (dispatcher);
+const dispatch = dispatcher.dispatch.bind(dispatcher);
+/* harmony export (immutable) */ __webpack_exports__["b"] = dispatch;
+
+
+/***/ }),
 /* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dispatcher__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_webutils__ = __webpack_require__(5);
+
+
+
+
+const pspid = `NoteAction`;
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  increment(options, page) {
+    page = ++page > 0 ? page : 1;
+    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchItems(options, page).then(items => {
+      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch', items, options, page });
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch`);
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
+    });
+  },
+  decrement(options, page) {
+    page = --page > 0 ? page : 1;
+    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchItems(options, page).then(items => {
+      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch', items, options, page });
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch`);
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
+    });
+  },
+  incrementCloseWatch(page) {
+    page = ++page > 0 ? page : 1;
+    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchCloseWatch(page).then(items => {
+      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch/closewatch', items, page });
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch/closewatch`);
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
+    });
+  },
+  decrementCloseWatch(page) {
+    page = --page > 0 ? page : 1;
+    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchCloseWatch(page).then(items => {
+      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch/closewatch', items, page });
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch/closewatch`);
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
+    });
+  },
+  incrementOpenWatch(page) {
+    page = ++page > 0 ? page : 1;
+    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchOpenWatch(page).then(items => {
+      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch/openwatch', items, page });
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch/openwatch`);
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
+    });
+  },
+  decrementOpenWatch(page) {
+    page = --page > 0 ? page : 1;
+    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchOpenWatch(page).then(items => {
+      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch/openwatch', items, page });
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch/openwatch`);
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
+    });
+  },
+  createWatch(auctionID) {
+    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].createWatch(auctionID).then(url => {
+      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/create/watch', url });
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/create/watch`);
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
+    });
+  },
+  deleteWatch(auctionID) {
+    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].deleteWatch(auctionID).then(url => {
+      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/delete/watch', url });
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/delete/watch`);
+      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
+    });
+  }
+});
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1481,11 +1518,11 @@ var _extends = Object.assign || function (target) {
   }return target;
 };
 
-var _resolvePathname = __webpack_require__(32);
+var _resolvePathname = __webpack_require__(36);
 
 var _resolvePathname2 = _interopRequireDefault(_resolvePathname);
 
-var _valueEqual = __webpack_require__(33);
+var _valueEqual = __webpack_require__(37);
 
 var _valueEqual2 = _interopRequireDefault(_valueEqual);
 
@@ -1556,7 +1593,7 @@ var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a
 };
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1649,18 +1686,18 @@ var createTransitionManager = function createTransitionManager() {
 exports.default = createTransitionManager;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__ = __webpack_require__(24);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Router__["a" /* default */]);
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1797,11 +1834,11 @@ Router.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Router);
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -1874,7 +1911,7 @@ var matchPath = function matchPath(pathname) {
 /* harmony default export */ __webpack_exports__["a"] = (matchPath);
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1959,102 +1996,7 @@ var createTransitionManager = function createTransitionManager() {
 /* harmony default export */ __webpack_exports__["a"] = (createTransitionManager);
 
 /***/ }),
-/* 26 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flux__);
-
-
-const dispatcher = new __WEBPACK_IMPORTED_MODULE_0_flux__["Dispatcher"]();
-
-/* harmony default export */ __webpack_exports__["a"] = (dispatcher);
-const dispatch = dispatcher.dispatch.bind(dispatcher);
-/* harmony export (immutable) */ __webpack_exports__["b"] = dispatch;
-
-
-/***/ }),
 /* 27 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dispatcher__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_webutils__ = __webpack_require__(5);
-
-
-
-
-const pspid = `NoteAction`;
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  increment(options, page) {
-    page = ++page > 0 ? page : 1;
-    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchItems(options, page).then(items => {
-      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch', items, options, page });
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch`);
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
-    });
-  },
-  decrement(options, page) {
-    page = --page > 0 ? page : 1;
-    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchItems(options, page).then(items => {
-      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch', items, options, page });
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch`);
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
-    });
-  },
-  incrementCloseWatch(page) {
-    page = ++page > 0 ? page : 1;
-    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchCloseWatch(page).then(items => {
-      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch/closewatch', items, page });
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch/closewatch`);
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
-    });
-  },
-  decrementCloseWatch(page) {
-    page = --page > 0 ? page : 1;
-    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchCloseWatch(page).then(items => {
-      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch/closewatch', items, page });
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch/closewatch`);
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
-    });
-  },
-  incrementOpenWatch(page) {
-    page = ++page > 0 ? page : 1;
-    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchOpenWatch(page).then(items => {
-      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch/openwatch', items, page });
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch/openwatch`);
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
-    });
-  },
-  decrementOpenWatch(page) {
-    page = --page > 0 ? page : 1;
-    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].fetchOpenWatch(page).then(items => {
-      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/fetch/openwatch', items, page });
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/fetch/openwatch`);
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
-    });
-  },
-  createWatch(auctionID) {
-    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].createWatch(auctionID).then(url => {
-      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/create/watch', url });
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/create/watch`);
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
-    });
-  },
-  deleteWatch(auctionID) {
-    return __WEBPACK_IMPORTED_MODULE_1__services_NoteApiClient__["a" /* default */].deleteWatch(auctionID).then(url => {
-      Object(__WEBPACK_IMPORTED_MODULE_0__dispatcher__["b" /* dispatch */])({ type: 'item/delete/watch', url });
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Response: item/delete/watch`);
-      __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["c" /* spn */].stop();
-    });
-  }
-});
-
-/***/ }),
-/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2135,7 +2077,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2178,7 +2120,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2208,7 +2150,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2251,7 +2193,349 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule FluxStoreGroup
+ * 
+ */
+
+
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+var invariant = __webpack_require__(2);
+
+/**
+ * FluxStoreGroup allows you to execute a callback on every dispatch after
+ * waiting for each of the given stores.
+ */
+
+var FluxStoreGroup = function () {
+  function FluxStoreGroup(stores, callback) {
+    var _this = this;
+
+    _classCallCheck(this, FluxStoreGroup);
+
+    this._dispatcher = _getUniformDispatcher(stores);
+
+    // Precompute store tokens.
+    var storeTokens = stores.map(function (store) {
+      return store.getDispatchToken();
+    });
+
+    // Register with the dispatcher.
+    this._dispatchToken = this._dispatcher.register(function (payload) {
+      _this._dispatcher.waitFor(storeTokens);
+      callback();
+    });
+  }
+
+  FluxStoreGroup.prototype.release = function release() {
+    this._dispatcher.unregister(this._dispatchToken);
+  };
+
+  return FluxStoreGroup;
+}();
+
+function _getUniformDispatcher(stores) {
+  !(stores && stores.length) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Must provide at least one store to FluxStoreGroup') : invariant(false) : undefined;
+  var dispatcher = stores[0].getDispatcher();
+  if (process.env.NODE_ENV !== 'production') {
+    for (var _iterator = stores, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+      var _ref;
+
+      if (_isArray) {
+        if (_i >= _iterator.length) break;
+        _ref = _iterator[_i++];
+      } else {
+        _i = _iterator.next();
+        if (_i.done) break;
+        _ref = _i.value;
+      }
+
+      var store = _ref;
+
+      !(store.getDispatcher() === dispatcher) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'All stores in a FluxStoreGroup must use the same dispatcher') : invariant(false) : undefined;
+    }
+  }
+  return dispatcher;
+}
+
+module.exports = FluxStoreGroup;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
 /* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule FluxStore
+ * 
+ */
+
+
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+var _require = __webpack_require__(66);
+
+var EventEmitter = _require.EventEmitter;
+
+var invariant = __webpack_require__(2);
+
+/**
+ * This class represents the most basic functionality for a FluxStore. Do not
+ * extend this store directly; instead extend FluxReduceStore when creating a
+ * new store.
+ */
+
+var FluxStore = function () {
+  function FluxStore(dispatcher) {
+    var _this = this;
+
+    _classCallCheck(this, FluxStore);
+
+    this.__className = this.constructor.name;
+
+    this.__changed = false;
+    this.__changeEvent = 'change';
+    this.__dispatcher = dispatcher;
+    this.__emitter = new EventEmitter();
+    this._dispatchToken = dispatcher.register(function (payload) {
+      _this.__invokeOnDispatch(payload);
+    });
+  }
+
+  FluxStore.prototype.addListener = function addListener(callback) {
+    return this.__emitter.addListener(this.__changeEvent, callback);
+  };
+
+  FluxStore.prototype.getDispatcher = function getDispatcher() {
+    return this.__dispatcher;
+  };
+
+  /**
+   * This exposes a unique string to identify each store's registered callback.
+   * This is used with the dispatcher's waitFor method to declaratively depend
+   * on other stores updating themselves first.
+   */
+
+  FluxStore.prototype.getDispatchToken = function getDispatchToken() {
+    return this._dispatchToken;
+  };
+
+  /**
+   * Returns whether the store has changed during the most recent dispatch.
+   */
+
+  FluxStore.prototype.hasChanged = function hasChanged() {
+    !this.__dispatcher.isDispatching() ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.hasChanged(): Must be invoked while dispatching.', this.__className) : invariant(false) : undefined;
+    return this.__changed;
+  };
+
+  FluxStore.prototype.__emitChange = function __emitChange() {
+    !this.__dispatcher.isDispatching() ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.__emitChange(): Must be invoked while dispatching.', this.__className) : invariant(false) : undefined;
+    this.__changed = true;
+  };
+
+  /**
+   * This method encapsulates all logic for invoking __onDispatch. It should
+   * be used for things like catching changes and emitting them after the
+   * subclass has handled a payload.
+   */
+
+  FluxStore.prototype.__invokeOnDispatch = function __invokeOnDispatch(payload) {
+    this.__changed = false;
+    this.__onDispatch(payload);
+    if (this.__changed) {
+      this.__emitter.emit(this.__changeEvent);
+    }
+  };
+
+  /**
+   * The callback that will be registered with the dispatcher during
+   * instantiation. Subclasses must override this method. This callback is the
+   * only way the store receives new data.
+   */
+
+  FluxStore.prototype.__onDispatch = function __onDispatch(payload) {
+     true ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s has not overridden FluxStore.__onDispatch(), which is required', this.__className) : invariant(false) : undefined;
+  };
+
+  return FluxStore;
+}();
+
+module.exports = FluxStore;
+
+// private
+
+// protected, available to subclasses
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ * 
+ * @providesModule EmitterSubscription
+ * @typechecks
+ */
+
+
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== 'function' && superClass !== null) {
+    throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var EventSubscription = __webpack_require__(68);
+
+/**
+ * EmitterSubscription represents a subscription with listener and context data.
+ */
+
+var EmitterSubscription = function (_EventSubscription) {
+  _inherits(EmitterSubscription, _EventSubscription);
+
+  /**
+   * @param {EventSubscriptionVendor} subscriber - The subscriber that controls
+   *   this subscription
+   * @param {function} listener - Function to invoke when the specified event is
+   *   emitted
+   * @param {*} context - Optional context object to use when invoking the
+   *   listener
+   */
+
+  function EmitterSubscription(subscriber, listener, context) {
+    _classCallCheck(this, EmitterSubscription);
+
+    _EventSubscription.call(this, subscriber);
+    this.listener = listener;
+    this.context = context;
+  }
+
+  return EmitterSubscription;
+}(EventSubscription);
+
+module.exports = EmitterSubscription;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  convert: function (containerClass) {
+    const tmp = containerClass;
+    containerClass = function (...args) {
+      return new tmp(...args);
+    };
+    containerClass.prototype = tmp.prototype;
+    containerClass.getStores = tmp.getStores;
+    containerClass.calculateState = tmp.calculateState;
+    return containerClass;
+  }
+};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(80);
+/* unused harmony reexport BrowserRouter */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(82);
+/* unused harmony reexport HashRouter */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(39);
+/* unused harmony reexport Link */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(84);
+/* unused harmony reexport MemoryRouter */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(87);
+/* unused harmony reexport NavLink */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(90);
+/* unused harmony reexport Prompt */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(92);
+/* unused harmony reexport Redirect */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(40);
+/* unused harmony reexport Route */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(23);
+/* unused harmony reexport Router */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(98);
+/* unused harmony reexport StaticRouter */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(100);
+/* unused harmony reexport Switch */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(102);
+/* unused harmony reexport matchPath */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(103);
+/* unused harmony reexport withRouter */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2328,7 +2612,7 @@ function resolvePathname(to) {
 /* harmony default export */ __webpack_exports__["default"] = (resolvePathname);
 
 /***/ }),
-/* 33 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2377,7 +2661,7 @@ function valueEqual(a, b) {
 /* harmony default export */ __webpack_exports__["default"] = (valueEqual);
 
 /***/ }),
-/* 34 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2438,7 +2722,7 @@ var isExtraneousPopstateEvent = exports.isExtraneousPopstateEvent = function isE
 };
 
 /***/ }),
-/* 35 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2570,18 +2854,18 @@ Link.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Link);
 
 /***/ }),
-/* 36 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__ = __webpack_require__(41);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__["a" /* default */]);
 
 /***/ }),
-/* 37 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2593,7 +2877,7 @@ Link.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(25);
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];for (var key in source) {
@@ -2749,7 +3033,7 @@ Route.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Route);
 
 /***/ }),
-/* 38 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2812,290 +3096,6 @@ var supportsGoWithoutReloadUsingHash = function supportsGoWithoutReloadUsingHash
  */
 var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
   return event.state === undefined && navigator.userAgent.indexOf('CriOS') === -1;
-};
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule FluxStoreGroup
- * 
- */
-
-
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-var invariant = __webpack_require__(2);
-
-/**
- * FluxStoreGroup allows you to execute a callback on every dispatch after
- * waiting for each of the given stores.
- */
-
-var FluxStoreGroup = function () {
-  function FluxStoreGroup(stores, callback) {
-    var _this = this;
-
-    _classCallCheck(this, FluxStoreGroup);
-
-    this._dispatcher = _getUniformDispatcher(stores);
-
-    // Precompute store tokens.
-    var storeTokens = stores.map(function (store) {
-      return store.getDispatchToken();
-    });
-
-    // Register with the dispatcher.
-    this._dispatchToken = this._dispatcher.register(function (payload) {
-      _this._dispatcher.waitFor(storeTokens);
-      callback();
-    });
-  }
-
-  FluxStoreGroup.prototype.release = function release() {
-    this._dispatcher.unregister(this._dispatchToken);
-  };
-
-  return FluxStoreGroup;
-}();
-
-function _getUniformDispatcher(stores) {
-  !(stores && stores.length) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Must provide at least one store to FluxStoreGroup') : invariant(false) : undefined;
-  var dispatcher = stores[0].getDispatcher();
-  if (process.env.NODE_ENV !== 'production') {
-    for (var _iterator = stores, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-      var _ref;
-
-      if (_isArray) {
-        if (_i >= _iterator.length) break;
-        _ref = _iterator[_i++];
-      } else {
-        _i = _iterator.next();
-        if (_i.done) break;
-        _ref = _i.value;
-      }
-
-      var store = _ref;
-
-      !(store.getDispatcher() === dispatcher) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'All stores in a FluxStoreGroup must use the same dispatcher') : invariant(false) : undefined;
-    }
-  }
-  return dispatcher;
-}
-
-module.exports = FluxStoreGroup;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule FluxStore
- * 
- */
-
-
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-var _require = __webpack_require__(92);
-
-var EventEmitter = _require.EventEmitter;
-
-var invariant = __webpack_require__(2);
-
-/**
- * This class represents the most basic functionality for a FluxStore. Do not
- * extend this store directly; instead extend FluxReduceStore when creating a
- * new store.
- */
-
-var FluxStore = function () {
-  function FluxStore(dispatcher) {
-    var _this = this;
-
-    _classCallCheck(this, FluxStore);
-
-    this.__className = this.constructor.name;
-
-    this.__changed = false;
-    this.__changeEvent = 'change';
-    this.__dispatcher = dispatcher;
-    this.__emitter = new EventEmitter();
-    this._dispatchToken = dispatcher.register(function (payload) {
-      _this.__invokeOnDispatch(payload);
-    });
-  }
-
-  FluxStore.prototype.addListener = function addListener(callback) {
-    return this.__emitter.addListener(this.__changeEvent, callback);
-  };
-
-  FluxStore.prototype.getDispatcher = function getDispatcher() {
-    return this.__dispatcher;
-  };
-
-  /**
-   * This exposes a unique string to identify each store's registered callback.
-   * This is used with the dispatcher's waitFor method to declaratively depend
-   * on other stores updating themselves first.
-   */
-
-  FluxStore.prototype.getDispatchToken = function getDispatchToken() {
-    return this._dispatchToken;
-  };
-
-  /**
-   * Returns whether the store has changed during the most recent dispatch.
-   */
-
-  FluxStore.prototype.hasChanged = function hasChanged() {
-    !this.__dispatcher.isDispatching() ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.hasChanged(): Must be invoked while dispatching.', this.__className) : invariant(false) : undefined;
-    return this.__changed;
-  };
-
-  FluxStore.prototype.__emitChange = function __emitChange() {
-    !this.__dispatcher.isDispatching() ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s.__emitChange(): Must be invoked while dispatching.', this.__className) : invariant(false) : undefined;
-    this.__changed = true;
-  };
-
-  /**
-   * This method encapsulates all logic for invoking __onDispatch. It should
-   * be used for things like catching changes and emitting them after the
-   * subclass has handled a payload.
-   */
-
-  FluxStore.prototype.__invokeOnDispatch = function __invokeOnDispatch(payload) {
-    this.__changed = false;
-    this.__onDispatch(payload);
-    if (this.__changed) {
-      this.__emitter.emit(this.__changeEvent);
-    }
-  };
-
-  /**
-   * The callback that will be registered with the dispatcher during
-   * instantiation. Subclasses must override this method. This callback is the
-   * only way the store receives new data.
-   */
-
-  FluxStore.prototype.__onDispatch = function __onDispatch(payload) {
-     true ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s has not overridden FluxStore.__onDispatch(), which is required', this.__className) : invariant(false) : undefined;
-  };
-
-  return FluxStore;
-}();
-
-module.exports = FluxStore;
-
-// private
-
-// protected, available to subclasses
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- * 
- * @providesModule EmitterSubscription
- * @typechecks
- */
-
-
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== 'function' && superClass !== null) {
-    throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var EventSubscription = __webpack_require__(94);
-
-/**
- * EmitterSubscription represents a subscription with listener and context data.
- */
-
-var EmitterSubscription = function (_EventSubscription) {
-  _inherits(EmitterSubscription, _EventSubscription);
-
-  /**
-   * @param {EventSubscriptionVendor} subscriber - The subscriber that controls
-   *   this subscription
-   * @param {function} listener - Function to invoke when the specified event is
-   *   emitted
-   * @param {*} context - Optional context object to use when invoking the
-   *   listener
-   */
-
-  function EmitterSubscription(subscriber, listener, context) {
-    _classCallCheck(this, EmitterSubscription);
-
-    _EventSubscription.call(this, subscriber);
-    this.listener = listener;
-    this.context = context;
-  }
-
-  return EmitterSubscription;
-}(EventSubscription);
-
-module.exports = EmitterSubscription;
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  convert: function (containerClass) {
-    const tmp = containerClass;
-    containerClass = function (...args) {
-      return new tmp(...args);
-    };
-    containerClass.prototype = tmp.prototype;
-    containerClass.getStores = tmp.getStores;
-    containerClass.calculateState = tmp.calculateState;
-    return containerClass;
-  }
 };
 
 /***/ }),
@@ -3506,18 +3506,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_App_App__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_App_App__ = __webpack_require__(61);
 
 
 
 
-
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */],
-  null,
-  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__pages_App_App__["a" /* default */] })
-), document.getElementById('app'));
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__pages_App_App__["a" /* default */], null), document.getElementById('app'));
 
 /***/ }),
 /* 46 */
@@ -3657,7 +3651,7 @@ if (process.env.NODE_ENV !== "production") {
     var emptyObject = __webpack_require__(11);
     var invariant = __webpack_require__(2);
     var emptyFunction = __webpack_require__(7);
-    var checkPropTypes = __webpack_require__(16);
+    var checkPropTypes = __webpack_require__(15);
 
     /**
      * Copyright (c) 2013-present, Facebook, Inc.
@@ -5391,15 +5385,15 @@ if (process.env.NODE_ENV === 'production') {
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
 
-var aa = __webpack_require__(0);__webpack_require__(2);var l = __webpack_require__(18),
+var aa = __webpack_require__(0);__webpack_require__(2);var l = __webpack_require__(17),
     n = __webpack_require__(8),
-    ba = __webpack_require__(28),
+    ba = __webpack_require__(27),
     ca = __webpack_require__(7),
     da = __webpack_require__(11),
-    ea = __webpack_require__(19),
-    fa = __webpack_require__(29),
-    ha = __webpack_require__(30),
-    ia = __webpack_require__(31);
+    ea = __webpack_require__(18),
+    fa = __webpack_require__(28),
+    ha = __webpack_require__(29),
+    ia = __webpack_require__(30);
 function w(a) {
   for (var b = arguments.length - 1, c = "Minified React error #" + a + "; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d" + a, d = 0; d < b; d++) c += "\x26args[]\x3d" + encodeURIComponent(arguments[d + 1]);b = Error(c + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name = "Invariant Violation";b.framesToPop = 1;throw b;
 }aa ? void 0 : w("227");
@@ -7705,7 +7699,7 @@ module.exports = isNode;
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */if(process.env.NODE_ENV!=="production"){(function(){'use strict';var react=__webpack_require__(0);var invariant=__webpack_require__(2);var ExecutionEnvironment=__webpack_require__(18);var _assign=__webpack_require__(8);var EventListener=__webpack_require__(28);var require$$0=__webpack_require__(12);var hyphenateStyleName=__webpack_require__(53);var emptyFunction=__webpack_require__(7);var camelizeStyleName=__webpack_require__(55);var performanceNow=__webpack_require__(57);var propTypes=__webpack_require__(4);var emptyObject=__webpack_require__(11);var checkPropTypes=__webpack_require__(16);var shallowEqual=__webpack_require__(19);var containsNode=__webpack_require__(29);var focusNode=__webpack_require__(30);var getActiveElement=__webpack_require__(31);/**
+ */if(process.env.NODE_ENV!=="production"){(function(){'use strict';var react=__webpack_require__(0);var invariant=__webpack_require__(2);var ExecutionEnvironment=__webpack_require__(17);var _assign=__webpack_require__(8);var EventListener=__webpack_require__(27);var require$$0=__webpack_require__(12);var hyphenateStyleName=__webpack_require__(53);var emptyFunction=__webpack_require__(7);var camelizeStyleName=__webpack_require__(55);var performanceNow=__webpack_require__(57);var propTypes=__webpack_require__(4);var emptyObject=__webpack_require__(11);var checkPropTypes=__webpack_require__(15);var shallowEqual=__webpack_require__(18);var containsNode=__webpack_require__(28);var focusNode=__webpack_require__(29);var getActiveElement=__webpack_require__(30);/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
@@ -11307,7 +11301,7 @@ module.exports = performanceNow;
 
 
 
-var ExecutionEnvironment = __webpack_require__(18);
+var ExecutionEnvironment = __webpack_require__(17);
 
 var performance;
 
@@ -11336,8 +11330,8 @@ var invariant = __webpack_require__(2);
 var warning = __webpack_require__(12);
 var assign = __webpack_require__(8);
 
-var ReactPropTypesSecret = __webpack_require__(17);
-var checkPropTypes = __webpack_require__(16);
+var ReactPropTypesSecret = __webpack_require__(16);
+var checkPropTypes = __webpack_require__(15);
 
 module.exports = function (isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -11856,7 +11850,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
 var emptyFunction = __webpack_require__(7);
 var invariant = __webpack_require__(2);
-var ReactPropTypesSecret = __webpack_require__(17);
+var ReactPropTypesSecret = __webpack_require__(16);
 
 module.exports = function () {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -11904,15 +11898,2266 @@ module.exports = function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flux_utils__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flux_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_flux_utils__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__stores_appStore__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_GlobalHeader_GlobalHeader__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_Note_Note__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_webutils__ = __webpack_require__(5);
+
+
+
+
+
+
+
+
+class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  static getStores() {
+    return [__WEBPACK_IMPORTED_MODULE_3__stores_appStore__["a" /* default */]];
+  }
+
+  static calculateState() {
+    return __WEBPACK_IMPORTED_MODULE_3__stores_appStore__["a" /* default */].getState();
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_GlobalHeader_GlobalHeader__["a" /* default */], null),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__pages_Note_Note__["a" /* default */], null)
+    );
+  }
+}
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_1_flux_utils__["Container"].create(__WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter___default.a.convert(App)));
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule FluxContainer
+ * 
+ */
+
+
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== 'function' && superClass !== null) {
+    throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var FluxContainerSubscriptions = __webpack_require__(63);
+var React = __webpack_require__(0);
+
+var invariant = __webpack_require__(2);
+var shallowEqual = __webpack_require__(18);
+
+var Component = React.Component;
+
+var DEFAULT_OPTIONS = {
+  pure: true,
+  withProps: false,
+  withContext: false
+};
+
+/**
+ * A FluxContainer is used to subscribe a react component to multiple stores.
+ * The stores that are used must be returned from a static `getStores()` method.
+ *
+ * The component receives information from the stores via state. The state
+ * is generated using a static `calculateState()` method that each container
+ * must implement. A simple container may look like:
+ *
+ *   class FooContainer extends Component {
+ *     static getStores() {
+ *       return [FooStore];
+ *     }
+ *
+ *     static calculateState() {
+ *       return {
+ *         foo: FooStore.getState(),
+ *       };
+ *     }
+ *
+ *     render() {
+ *       return <FooView {...this.state} />;
+ *     }
+ *   }
+ *
+ *   module.exports = FluxContainer.create(FooContainer);
+ *
+ * Flux container also supports some other, more advanced use cases. If you need
+ * to base your state off of props as well:
+ *
+ *   class FooContainer extends Component {
+ *     ...
+ *
+ *     static calculateState(prevState, props) {
+ *       return {
+ *         foo: FooStore.getSpecificFoo(props.id),
+ *       };
+ *     }
+ *
+ *     ...
+ *   }
+ *
+ *   module.exports = FluxContainer.create(FooContainer, {withProps: true});
+ *
+ * Or if your stores are passed through your props:
+ *
+ *   class FooContainer extends Component {
+ *     ...
+ *
+ *     static getStores(props) {
+ *       const {BarStore, FooStore} = props.stores;
+ *       return [BarStore, FooStore];
+ *     }
+ *
+ *     static calculateState(prevState, props) {
+ *       const {BarStore, FooStore} = props.stores;
+ *       return {
+ *         bar: BarStore.getState(),
+ *         foo: FooStore.getState(),
+ *       };
+ *     }
+ *
+ *     ...
+ *   }
+ *
+ *   module.exports = FluxContainer.create(FooContainer, {withProps: true});
+ */
+function create(Base, options) {
+  enforceInterface(Base);
+
+  // Construct the options using default, override with user values as necessary.
+  var realOptions = _extends({}, DEFAULT_OPTIONS, options || {});
+
+  var getState = function (state, maybeProps, maybeContext) {
+    var props = realOptions.withProps ? maybeProps : undefined;
+    var context = realOptions.withContext ? maybeContext : undefined;
+    return Base.calculateState(state, props, context);
+  };
+
+  var getStores = function (maybeProps, maybeContext) {
+    var props = realOptions.withProps ? maybeProps : undefined;
+    var context = realOptions.withContext ? maybeContext : undefined;
+    return Base.getStores(props, context);
+  };
+
+  // Build the container class.
+
+  var ContainerClass = function (_Base) {
+    _inherits(ContainerClass, _Base);
+
+    function ContainerClass(props, context) {
+      var _this = this;
+
+      _classCallCheck(this, ContainerClass);
+
+      _Base.call(this, props, context);
+      this._fluxContainerSubscriptions = new FluxContainerSubscriptions();
+      this._fluxContainerSubscriptions.setStores(getStores(props));
+      this._fluxContainerSubscriptions.addListener(function () {
+        _this.setState(function (prevState, currentProps) {
+          return getState(prevState, currentProps, context);
+        });
+      });
+      var calculatedState = getState(undefined, props, context);
+      this.state = _extends({}, this.state || {}, calculatedState);
+    }
+
+    // Make sure we override shouldComponentUpdate only if the pure option is
+    // specified. We can't override this above because we don't want to override
+    // the default behavior on accident. Super works weird with react ES6 classes.
+
+    ContainerClass.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextContext) {
+      if (_Base.prototype.componentWillReceiveProps) {
+        _Base.prototype.componentWillReceiveProps.call(this, nextProps, nextContext);
+      }
+
+      if (realOptions.withProps || realOptions.withContext) {
+        // Update both stores and state.
+        this._fluxContainerSubscriptions.setStores(getStores(nextProps, nextContext));
+        this.setState(function (prevState) {
+          return getState(prevState, nextProps, nextContext);
+        });
+      }
+    };
+
+    ContainerClass.prototype.componentWillUnmount = function componentWillUnmount() {
+      if (_Base.prototype.componentWillUnmount) {
+        _Base.prototype.componentWillUnmount.call(this);
+      }
+
+      this._fluxContainerSubscriptions.reset();
+    };
+
+    return ContainerClass;
+  }(Base);
+
+  var container = realOptions.pure ? createPureComponent(ContainerClass) : ContainerClass;
+
+  // Update the name of the container before returning
+  var componentName = Base.displayName || Base.name;
+  container.displayName = 'FluxContainer(' + componentName + ')';
+  return container;
+}
+
+function createPureComponent(BaseComponent) {
+  var PureComponent = function (_BaseComponent) {
+    _inherits(PureComponent, _BaseComponent);
+
+    function PureComponent() {
+      _classCallCheck(this, PureComponent);
+
+      _BaseComponent.apply(this, arguments);
+    }
+
+    PureComponent.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps, nextState) {
+      return !shallowEqual(this.props, nextProps) || !shallowEqual(this.state, nextState);
+    };
+
+    return PureComponent;
+  }(BaseComponent);
+
+  return PureComponent;
+}
+
+function enforceInterface(o) {
+  !o.getStores ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Components that use FluxContainer must implement `static getStores()`') : invariant(false) : undefined;
+  !o.calculateState ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Components that use FluxContainer must implement `static calculateState()`') : invariant(false) : undefined;
+}
+
+/**
+ * This is a way to connect stores to a functional stateless view. Here's a
+ * simple example:
+ *
+ *   // FooView.js
+ *
+ *   function FooView(props) {
+ *     return <div>{props.value}</div>;
+ *   }
+ *
+ *   module.exports = FooView;
+ *
+ *
+ *   // FooContainer.js
+ *
+ *   function getStores() {
+ *     return [FooStore];
+ *   }
+ *
+ *   function calculateState() {
+ *     return {
+ *       value: FooStore.getState();
+ *     };
+ *   }
+ *
+ *   module.exports = FluxContainer.createFunctional(
+ *     FooView,
+ *     getStores,
+ *     calculateState,
+ *   );
+ *
+ */
+function createFunctional(viewFn, _getStores, _calculateState, options) {
+  var FunctionalContainer = function (_Component) {
+    _inherits(FunctionalContainer, _Component);
+
+    function FunctionalContainer() {
+      _classCallCheck(this, FunctionalContainer);
+
+      _Component.apply(this, arguments);
+    }
+
+    // Update the name of the component before creating the container.
+
+    FunctionalContainer.getStores = function getStores(props, context) {
+      return _getStores(props, context);
+    };
+
+    FunctionalContainer.calculateState = function calculateState(prevState, props, context) {
+      return _calculateState(prevState, props, context);
+    };
+
+    FunctionalContainer.prototype.render = function render() {
+      return viewFn(this.state);
+    };
+
+    return FunctionalContainer;
+  }(Component);
+
+  var viewFnName = viewFn.displayName || viewFn.name || 'FunctionalContainer';
+  FunctionalContainer.displayName = viewFnName;
+  return create(FunctionalContainer, options);
+}
+
+module.exports = { create: create, createFunctional: createFunctional };
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule FluxContainerSubscriptions
+ * 
+ */
+
+
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+var FluxStoreGroup = __webpack_require__(31);
+
+function shallowArrayEqual(a, b) {
+  if (a === b) {
+    return true;
+  }
+  if (a.length !== b.length) {
+    return false;
+  }
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+var FluxContainerSubscriptions = function () {
+  function FluxContainerSubscriptions() {
+    _classCallCheck(this, FluxContainerSubscriptions);
+
+    this._callbacks = [];
+  }
+
+  FluxContainerSubscriptions.prototype.setStores = function setStores(stores) {
+    var _this = this;
+
+    if (this._stores && shallowArrayEqual(this._stores, stores)) {
+      return;
+    }
+    this._stores = stores;
+    this._resetTokens();
+    this._resetStoreGroup();
+
+    var changed = false;
+    var changedStores = [];
+
+    if (process.env.NODE_ENV !== 'production') {
+      // Keep track of the stores that changed for debugging purposes only
+      this._tokens = stores.map(function (store) {
+        return store.addListener(function () {
+          changed = true;
+          changedStores.push(store);
+        });
+      });
+    } else {
+      (function () {
+        var setChanged = function () {
+          changed = true;
+        };
+        _this._tokens = stores.map(function (store) {
+          return store.addListener(setChanged);
+        });
+      })();
+    }
+
+    var callCallbacks = function () {
+      if (changed) {
+        _this._callbacks.forEach(function (fn) {
+          return fn();
+        });
+        changed = false;
+        if (process.env.NODE_ENV !== 'production') {
+          // Uncomment this to print the stores that changed.
+          // console.log(changedStores);
+          changedStores = [];
+        }
+      }
+    };
+    this._storeGroup = new FluxStoreGroup(stores, callCallbacks);
+  };
+
+  FluxContainerSubscriptions.prototype.addListener = function addListener(fn) {
+    this._callbacks.push(fn);
+  };
+
+  FluxContainerSubscriptions.prototype.reset = function reset() {
+    this._resetTokens();
+    this._resetStoreGroup();
+    this._resetCallbacks();
+    this._resetStores();
+  };
+
+  FluxContainerSubscriptions.prototype._resetTokens = function _resetTokens() {
+    if (this._tokens) {
+      this._tokens.forEach(function (token) {
+        return token.remove();
+      });
+      this._tokens = null;
+    }
+  };
+
+  FluxContainerSubscriptions.prototype._resetStoreGroup = function _resetStoreGroup() {
+    if (this._storeGroup) {
+      this._storeGroup.release();
+      this._storeGroup = null;
+    }
+  };
+
+  FluxContainerSubscriptions.prototype._resetStores = function _resetStores() {
+    this._stores = null;
+  };
+
+  FluxContainerSubscriptions.prototype._resetCallbacks = function _resetCallbacks() {
+    this._callbacks = [];
+  };
+
+  return FluxContainerSubscriptions;
+}();
+
+module.exports = FluxContainerSubscriptions;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule FluxMixinLegacy
+ * 
+ */
+
+
+
+var FluxStoreGroup = __webpack_require__(31);
+
+var invariant = __webpack_require__(2);
+
+/**
+ * `FluxContainer` should be preferred over this mixin, but it requires using
+ * react with classes. So this mixin is provided where it is not yet possible
+ * to convert a container to be a class.
+ *
+ * This mixin should be used for React components that have state based purely
+ * on stores. `this.props` will not be available inside of `calculateState()`.
+ *
+ * This mixin will only `setState` not replace it, so you should always return
+ * every key in your state unless you know what you are doing. Consider this:
+ *
+ *   var Foo = React.createClass({
+ *     mixins: [
+ *       FluxMixinLegacy([FooStore])
+ *     ],
+ *
+ *     statics: {
+ *       calculateState(prevState) {
+ *         if (!prevState) {
+ *           return {
+ *             foo: FooStore.getFoo(),
+ *           };
+ *         }
+ *
+ *         return {
+ *           bar: FooStore.getBar(),
+ *         };
+ *       }
+ *     },
+ *   });
+ *
+ * On the second calculateState when prevState is not null, the state will be
+ * updated to contain the previous foo AND the bar that was just returned. Only
+ * returning bar will not delete foo.
+ *
+ */
+function FluxMixinLegacy(stores) {
+  var options = arguments.length <= 1 || arguments[1] === undefined ? { withProps: false } : arguments[1];
+
+  stores = stores.filter(function (store) {
+    return !!store;
+  });
+
+  return {
+    getInitialState: function () {
+      enforceInterface(this);
+      return options.withProps ? this.constructor.calculateState(null, this.props) : this.constructor.calculateState(null, undefined);
+    },
+
+    componentWillMount: function () {
+      var _this = this;
+
+      // This tracks when any store has changed and we may need to update.
+      var changed = false;
+      var setChanged = function () {
+        changed = true;
+      };
+
+      // This adds subscriptions to stores. When a store changes all we do is
+      // set changed to true.
+      this._fluxMixinSubscriptions = stores.map(function (store) {
+        return store.addListener(setChanged);
+      });
+
+      // This callback is called after the dispatch of the relevant stores. If
+      // any have reported a change we update the state, then reset changed.
+      var callback = function () {
+        if (changed) {
+          _this.setState(function (prevState) {
+            return options.withProps ? _this.constructor.calculateState(prevState, _this.props) : _this.constructor.calculateState(prevState, undefined);
+          });
+        }
+        changed = false;
+      };
+      this._fluxMixinStoreGroup = new FluxStoreGroup(stores, callback);
+    },
+
+    componentWillUnmount: function () {
+      this._fluxMixinStoreGroup.release();
+      for (var _iterator = this._fluxMixinSubscriptions, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+        var _ref;
+
+        if (_isArray) {
+          if (_i >= _iterator.length) break;
+          _ref = _iterator[_i++];
+        } else {
+          _i = _iterator.next();
+          if (_i.done) break;
+          _ref = _i.value;
+        }
+
+        var subscription = _ref;
+
+        subscription.remove();
+      }
+      this._fluxMixinSubscriptions = [];
+    }
+  };
+}
+
+function enforceInterface(o) {
+  !o.constructor.calculateState ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Components that use FluxMixinLegacy must implement ' + '`calculateState()` on the statics object') : invariant(false) : undefined;
+}
+
+module.exports = FluxMixinLegacy;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule FluxReduceStore
+ * 
+ */
+
+
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== 'function' && superClass !== null) {
+    throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var FluxStore = __webpack_require__(32);
+
+var abstractMethod = __webpack_require__(70);
+var invariant = __webpack_require__(2);
+
+/**
+ * This is the basic building block of a Flux application. All of your stores
+ * should extend this class.
+ *
+ *   class CounterStore extends FluxReduceStore<number> {
+ *     getInitialState(): number {
+ *       return 1;
+ *     }
+ *
+ *     reduce(state: number, action: Object): number {
+ *       switch(action.type) {
+ *         case: 'add':
+ *           return state + action.value;
+ *         case: 'double':
+ *           return state * 2;
+ *         default:
+ *           return state;
+ *       }
+ *     }
+ *   }
+ */
+
+var FluxReduceStore = function (_FluxStore) {
+  _inherits(FluxReduceStore, _FluxStore);
+
+  function FluxReduceStore(dispatcher) {
+    _classCallCheck(this, FluxReduceStore);
+
+    _FluxStore.call(this, dispatcher);
+    this._state = this.getInitialState();
+  }
+
+  /**
+   * Getter that exposes the entire state of this store. If your state is not
+   * immutable you should override this and not expose _state directly.
+   */
+
+  FluxReduceStore.prototype.getState = function getState() {
+    return this._state;
+  };
+
+  /**
+   * Constructs the initial state for this store. This is called once during
+   * construction of the store.
+   */
+
+  FluxReduceStore.prototype.getInitialState = function getInitialState() {
+    return abstractMethod('FluxReduceStore', 'getInitialState');
+  };
+
+  /**
+   * Used to reduce a stream of actions coming from the dispatcher into a
+   * single state object.
+   */
+
+  FluxReduceStore.prototype.reduce = function reduce(state, action) {
+    return abstractMethod('FluxReduceStore', 'reduce');
+  };
+
+  /**
+   * Checks if two versions of state are the same. You do not need to override
+   * this if your state is immutable.
+   */
+
+  FluxReduceStore.prototype.areEqual = function areEqual(one, two) {
+    return one === two;
+  };
+
+  FluxReduceStore.prototype.__invokeOnDispatch = function __invokeOnDispatch(action) {
+    this.__changed = false;
+
+    // Reduce the stream of incoming actions to state, update when necessary.
+    var startingState = this._state;
+    var endingState = this.reduce(startingState, action);
+
+    // This means your ending state should never be undefined.
+    !(endingState !== undefined) ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s returned undefined from reduce(...), did you forget to return ' + 'state in the default case? (use null if this was intentional)', this.constructor.name) : invariant(false) : undefined;
+
+    if (!this.areEqual(startingState, endingState)) {
+      this._state = endingState;
+
+      // `__emitChange()` sets `this.__changed` to true and then the actual
+      // change will be fired from the emitter at the end of the dispatch, this
+      // is required in order to support methods like `hasChanged()`
+      this.__emitChange();
+    }
+
+    if (this.__changed) {
+      this.__emitter.emit(this.__changeEvent);
+    }
+  };
+
+  return FluxReduceStore;
+}(FluxStore);
+
+module.exports = FluxReduceStore;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+var fbemitter = {
+  EventEmitter: __webpack_require__(67),
+  EmitterSubscription: __webpack_require__(33)
+};
+
+module.exports = fbemitter;
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule BaseEventEmitter
+ * @typechecks
+ */
+
+
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+var EmitterSubscription = __webpack_require__(33);
+var EventSubscriptionVendor = __webpack_require__(69);
+
+var emptyFunction = __webpack_require__(7);
+var invariant = __webpack_require__(2);
+
+/**
+ * @class BaseEventEmitter
+ * @description
+ * An EventEmitter is responsible for managing a set of listeners and publishing
+ * events to them when it is told that such events happened. In addition to the
+ * data for the given event it also sends a event control object which allows
+ * the listeners/handlers to prevent the default behavior of the given event.
+ *
+ * The emitter is designed to be generic enough to support all the different
+ * contexts in which one might want to emit events. It is a simple multicast
+ * mechanism on top of which extra functionality can be composed. For example, a
+ * more advanced emitter may use an EventHolder and EventFactory.
+ */
+
+var BaseEventEmitter = function () {
+  /**
+   * @constructor
+   */
+
+  function BaseEventEmitter() {
+    _classCallCheck(this, BaseEventEmitter);
+
+    this._subscriber = new EventSubscriptionVendor();
+    this._currentSubscription = null;
+  }
+
+  /**
+   * Adds a listener to be invoked when events of the specified type are
+   * emitted. An optional calling context may be provided. The data arguments
+   * emitted will be passed to the listener function.
+   *
+   * TODO: Annotate the listener arg's type. This is tricky because listeners
+   *       can be invoked with varargs.
+   *
+   * @param {string} eventType - Name of the event to listen to
+   * @param {function} listener - Function to invoke when the specified event is
+   *   emitted
+   * @param {*} context - Optional context object to use when invoking the
+   *   listener
+   */
+
+  BaseEventEmitter.prototype.addListener = function addListener(eventType, listener, context) {
+    return this._subscriber.addSubscription(eventType, new EmitterSubscription(this._subscriber, listener, context));
+  };
+
+  /**
+   * Similar to addListener, except that the listener is removed after it is
+   * invoked once.
+   *
+   * @param {string} eventType - Name of the event to listen to
+   * @param {function} listener - Function to invoke only once when the
+   *   specified event is emitted
+   * @param {*} context - Optional context object to use when invoking the
+   *   listener
+   */
+
+  BaseEventEmitter.prototype.once = function once(eventType, listener, context) {
+    var emitter = this;
+    return this.addListener(eventType, function () {
+      emitter.removeCurrentListener();
+      listener.apply(context, arguments);
+    });
+  };
+
+  /**
+   * Removes all of the registered listeners, including those registered as
+   * listener maps.
+   *
+   * @param {?string} eventType - Optional name of the event whose registered
+   *   listeners to remove
+   */
+
+  BaseEventEmitter.prototype.removeAllListeners = function removeAllListeners(eventType) {
+    this._subscriber.removeAllSubscriptions(eventType);
+  };
+
+  /**
+   * Provides an API that can be called during an eventing cycle to remove the
+   * last listener that was invoked. This allows a developer to provide an event
+   * object that can remove the listener (or listener map) during the
+   * invocation.
+   *
+   * If it is called when not inside of an emitting cycle it will throw.
+   *
+   * @throws {Error} When called not during an eventing cycle
+   *
+   * @example
+   *   var subscription = emitter.addListenerMap({
+   *     someEvent: function(data, event) {
+   *       console.log(data);
+   *       emitter.removeCurrentListener();
+   *     }
+   *   });
+   *
+   *   emitter.emit('someEvent', 'abc'); // logs 'abc'
+   *   emitter.emit('someEvent', 'def'); // does not log anything
+   */
+
+  BaseEventEmitter.prototype.removeCurrentListener = function removeCurrentListener() {
+    !!!this._currentSubscription ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Not in an emitting cycle; there is no current subscription') : invariant(false) : undefined;
+    this._subscriber.removeSubscription(this._currentSubscription);
+  };
+
+  /**
+   * Returns an array of listeners that are currently registered for the given
+   * event.
+   *
+   * @param {string} eventType - Name of the event to query
+   * @return {array}
+   */
+
+  BaseEventEmitter.prototype.listeners = function listeners(eventType) /* TODO: Array<EventSubscription> */{
+    var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
+    return subscriptions ? subscriptions.filter(emptyFunction.thatReturnsTrue).map(function (subscription) {
+      return subscription.listener;
+    }) : [];
+  };
+
+  /**
+   * Emits an event of the given type with the given data. All handlers of that
+   * particular type will be notified.
+   *
+   * @param {string} eventType - Name of the event to emit
+   * @param {*} Arbitrary arguments to be passed to each registered listener
+   *
+   * @example
+   *   emitter.addListener('someEvent', function(message) {
+   *     console.log(message);
+   *   });
+   *
+   *   emitter.emit('someEvent', 'abc'); // logs 'abc'
+   */
+
+  BaseEventEmitter.prototype.emit = function emit(eventType) {
+    var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
+    if (subscriptions) {
+      var keys = Object.keys(subscriptions);
+      for (var ii = 0; ii < keys.length; ii++) {
+        var key = keys[ii];
+        var subscription = subscriptions[key];
+        // The subscription may have been removed during this event loop.
+        if (subscription) {
+          this._currentSubscription = subscription;
+          this.__emitToSubscription.apply(this, [subscription].concat(Array.prototype.slice.call(arguments)));
+        }
+      }
+      this._currentSubscription = null;
+    }
+  };
+
+  /**
+   * Provides a hook to override how the emitter emits an event to a specific
+   * subscription. This allows you to set up logging and error boundaries
+   * specific to your environment.
+   *
+   * @param {EmitterSubscription} subscription
+   * @param {string} eventType
+   * @param {*} Arbitrary arguments to be passed to each registered listener
+   */
+
+  BaseEventEmitter.prototype.__emitToSubscription = function __emitToSubscription(subscription, eventType) {
+    var args = Array.prototype.slice.call(arguments, 2);
+    subscription.listener.apply(subscription.context, args);
+  };
+
+  return BaseEventEmitter;
+}();
+
+module.exports = BaseEventEmitter;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule EventSubscription
+ * @typechecks
+ */
+
+
+
+/**
+ * EventSubscription represents a subscription to a particular event. It can
+ * remove its own subscription.
+ */
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+var EventSubscription = function () {
+
+  /**
+   * @param {EventSubscriptionVendor} subscriber the subscriber that controls
+   *   this subscription.
+   */
+
+  function EventSubscription(subscriber) {
+    _classCallCheck(this, EventSubscription);
+
+    this.subscriber = subscriber;
+  }
+
+  /**
+   * Removes this subscription from the subscriber that controls it.
+   */
+
+  EventSubscription.prototype.remove = function remove() {
+    if (this.subscriber) {
+      this.subscriber.removeSubscription(this);
+      this.subscriber = null;
+    }
+  };
+
+  return EventSubscription;
+}();
+
+module.exports = EventSubscription;
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ * 
+ * @providesModule EventSubscriptionVendor
+ * @typechecks
+ */
+
+
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+var invariant = __webpack_require__(2);
+
+/**
+ * EventSubscriptionVendor stores a set of EventSubscriptions that are
+ * subscribed to a particular event type.
+ */
+
+var EventSubscriptionVendor = function () {
+  function EventSubscriptionVendor() {
+    _classCallCheck(this, EventSubscriptionVendor);
+
+    this._subscriptionsForType = {};
+    this._currentSubscription = null;
+  }
+
+  /**
+   * Adds a subscription keyed by an event type.
+   *
+   * @param {string} eventType
+   * @param {EventSubscription} subscription
+   */
+
+  EventSubscriptionVendor.prototype.addSubscription = function addSubscription(eventType, subscription) {
+    !(subscription.subscriber === this) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'The subscriber of the subscription is incorrectly set.') : invariant(false) : undefined;
+    if (!this._subscriptionsForType[eventType]) {
+      this._subscriptionsForType[eventType] = [];
+    }
+    var key = this._subscriptionsForType[eventType].length;
+    this._subscriptionsForType[eventType].push(subscription);
+    subscription.eventType = eventType;
+    subscription.key = key;
+    return subscription;
+  };
+
+  /**
+   * Removes a bulk set of the subscriptions.
+   *
+   * @param {?string} eventType - Optional name of the event type whose
+   *   registered supscriptions to remove, if null remove all subscriptions.
+   */
+
+  EventSubscriptionVendor.prototype.removeAllSubscriptions = function removeAllSubscriptions(eventType) {
+    if (eventType === undefined) {
+      this._subscriptionsForType = {};
+    } else {
+      delete this._subscriptionsForType[eventType];
+    }
+  };
+
+  /**
+   * Removes a specific subscription. Instead of calling this function, call
+   * `subscription.remove()` directly.
+   *
+   * @param {object} subscription
+   */
+
+  EventSubscriptionVendor.prototype.removeSubscription = function removeSubscription(subscription) {
+    var eventType = subscription.eventType;
+    var key = subscription.key;
+
+    var subscriptionsForType = this._subscriptionsForType[eventType];
+    if (subscriptionsForType) {
+      delete subscriptionsForType[key];
+    }
+  };
+
+  /**
+   * Returns the array of subscriptions that are currently registered for the
+   * given event type.
+   *
+   * Note: This array can be potentially sparse as subscriptions are deleted
+   * from it when they are removed.
+   *
+   * TODO: This returns a nullable array. wat?
+   *
+   * @param {string} eventType
+   * @return {?array}
+   */
+
+  EventSubscriptionVendor.prototype.getSubscriptionsForType = function getSubscriptionsForType(eventType) {
+    return this._subscriptionsForType[eventType];
+  };
+
+  return EventSubscriptionVendor;
+}();
+
+module.exports = EventSubscriptionVendor;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule abstractMethod
+ * 
+ */
+
+
+
+var invariant = __webpack_require__(2);
+
+function abstractMethod(className, methodName) {
+   true ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Subclasses of %s must override %s() with their own implementation.', className, methodName) : invariant(false) : undefined;
+}
+
+module.exports = abstractMethod;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux_utils__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flux_utils__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dispatcher__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_webutils__ = __webpack_require__(5);
+
+
+
+
+const pspid = `appStore`;
+
+class AppStore extends __WEBPACK_IMPORTED_MODULE_0_flux_utils__["ReduceStore"] {
+  getInitialState() {
+    return {};
+  }
+
+  reduce(state, action) {
+    __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Request: ${action.type}`);
+    switch (action.type) {
+      default:
+        return state;
+    }
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (new AppStore(__WEBPACK_IMPORTED_MODULE_1__dispatcher__["a" /* default */]));
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+module.exports.Dispatcher = __webpack_require__(73);
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule Dispatcher
+ * 
+ * @preventMunge
+ */
+
+
+
+exports.__esModule = true;
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError('Cannot call a class as a function');
+  }
+}
+
+var invariant = __webpack_require__(2);
+
+var _prefix = 'ID_';
+
+/**
+ * Dispatcher is used to broadcast payloads to registered callbacks. This is
+ * different from generic pub-sub systems in two ways:
+ *
+ *   1) Callbacks are not subscribed to particular events. Every payload is
+ *      dispatched to every registered callback.
+ *   2) Callbacks can be deferred in whole or part until other callbacks have
+ *      been executed.
+ *
+ * For example, consider this hypothetical flight destination form, which
+ * selects a default city when a country is selected:
+ *
+ *   var flightDispatcher = new Dispatcher();
+ *
+ *   // Keeps track of which country is selected
+ *   var CountryStore = {country: null};
+ *
+ *   // Keeps track of which city is selected
+ *   var CityStore = {city: null};
+ *
+ *   // Keeps track of the base flight price of the selected city
+ *   var FlightPriceStore = {price: null}
+ *
+ * When a user changes the selected city, we dispatch the payload:
+ *
+ *   flightDispatcher.dispatch({
+ *     actionType: 'city-update',
+ *     selectedCity: 'paris'
+ *   });
+ *
+ * This payload is digested by `CityStore`:
+ *
+ *   flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'city-update') {
+ *       CityStore.city = payload.selectedCity;
+ *     }
+ *   });
+ *
+ * When the user selects a country, we dispatch the payload:
+ *
+ *   flightDispatcher.dispatch({
+ *     actionType: 'country-update',
+ *     selectedCountry: 'australia'
+ *   });
+ *
+ * This payload is digested by both stores:
+ *
+ *   CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'country-update') {
+ *       CountryStore.country = payload.selectedCountry;
+ *     }
+ *   });
+ *
+ * When the callback to update `CountryStore` is registered, we save a reference
+ * to the returned token. Using this token with `waitFor()`, we can guarantee
+ * that `CountryStore` is updated before the callback that updates `CityStore`
+ * needs to query its data.
+ *
+ *   CityStore.dispatchToken = flightDispatcher.register(function(payload) {
+ *     if (payload.actionType === 'country-update') {
+ *       // `CountryStore.country` may not be updated.
+ *       flightDispatcher.waitFor([CountryStore.dispatchToken]);
+ *       // `CountryStore.country` is now guaranteed to be updated.
+ *
+ *       // Select the default city for the new country
+ *       CityStore.city = getDefaultCityForCountry(CountryStore.country);
+ *     }
+ *   });
+ *
+ * The usage of `waitFor()` can be chained, for example:
+ *
+ *   FlightPriceStore.dispatchToken =
+ *     flightDispatcher.register(function(payload) {
+ *       switch (payload.actionType) {
+ *         case 'country-update':
+ *         case 'city-update':
+ *           flightDispatcher.waitFor([CityStore.dispatchToken]);
+ *           FlightPriceStore.price =
+ *             getFlightPriceStore(CountryStore.country, CityStore.city);
+ *           break;
+ *     }
+ *   });
+ *
+ * The `country-update` payload will be guaranteed to invoke the stores'
+ * registered callbacks in order: `CountryStore`, `CityStore`, then
+ * `FlightPriceStore`.
+ */
+
+var Dispatcher = function () {
+  function Dispatcher() {
+    _classCallCheck(this, Dispatcher);
+
+    this._callbacks = {};
+    this._isDispatching = false;
+    this._isHandled = {};
+    this._isPending = {};
+    this._lastID = 1;
+  }
+
+  /**
+   * Registers a callback to be invoked with every dispatched payload. Returns
+   * a token that can be used with `waitFor()`.
+   */
+
+  Dispatcher.prototype.register = function register(callback) {
+    var id = _prefix + this._lastID++;
+    this._callbacks[id] = callback;
+    return id;
+  };
+
+  /**
+   * Removes a callback based on its token.
+   */
+
+  Dispatcher.prototype.unregister = function unregister(id) {
+    !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.unregister(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
+    delete this._callbacks[id];
+  };
+
+  /**
+   * Waits for the callbacks specified to be invoked before continuing execution
+   * of the current callback. This method should only be used by a callback in
+   * response to a dispatched payload.
+   */
+
+  Dispatcher.prototype.waitFor = function waitFor(ids) {
+    !this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Must be invoked while dispatching.') : invariant(false) : undefined;
+    for (var ii = 0; ii < ids.length; ii++) {
+      var id = ids[ii];
+      if (this._isPending[id]) {
+        !this._isHandled[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Circular dependency detected while ' + 'waiting for `%s`.', id) : invariant(false) : undefined;
+        continue;
+      }
+      !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
+      this._invokeCallback(id);
+    }
+  };
+
+  /**
+   * Dispatches a payload to all registered callbacks.
+   */
+
+  Dispatcher.prototype.dispatch = function dispatch(payload) {
+    !!this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.') : invariant(false) : undefined;
+    this._startDispatching(payload);
+    try {
+      for (var id in this._callbacks) {
+        if (this._isPending[id]) {
+          continue;
+        }
+        this._invokeCallback(id);
+      }
+    } finally {
+      this._stopDispatching();
+    }
+  };
+
+  /**
+   * Is this Dispatcher currently dispatching.
+   */
+
+  Dispatcher.prototype.isDispatching = function isDispatching() {
+    return this._isDispatching;
+  };
+
+  /**
+   * Call the callback stored with the given id. Also do some internal
+   * bookkeeping.
+   *
+   * @internal
+   */
+
+  Dispatcher.prototype._invokeCallback = function _invokeCallback(id) {
+    this._isPending[id] = true;
+    this._callbacks[id](this._pendingPayload);
+    this._isHandled[id] = true;
+  };
+
+  /**
+   * Set up bookkeeping needed when dispatching.
+   *
+   * @internal
+   */
+
+  Dispatcher.prototype._startDispatching = function _startDispatching(payload) {
+    for (var id in this._callbacks) {
+      this._isPending[id] = false;
+      this._isHandled[id] = false;
+    }
+    this._pendingPayload = payload;
+    this._isDispatching = true;
+  };
+
+  /**
+   * Clear bookkeeping used for dispatching.
+   *
+   * @internal
+   */
+
+  Dispatcher.prototype._stopDispatching = function _stopDispatching() {
+    delete this._pendingPayload;
+    this._isDispatching = false;
+  };
+
+  return Dispatcher;
+}();
+
+module.exports = Dispatcher;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * Copyright (c) 2011-2014 Felix Gnass
+ * Licensed under the MIT license
+ * http://spin.js.org/
+ *
+ * Example:
+    var opts = {
+      lines: 12             // The number of lines to draw
+    , length: 7             // The length of each line
+    , width: 5              // The line thickness
+    , radius: 10            // The radius of the inner circle
+    , scale: 1.0            // Scales overall size of the spinner
+    , corners: 1            // Roundness (0..1)
+    , color: '#000'         // #rgb or #rrggbb
+    , opacity: 1/4          // Opacity of the lines
+    , rotate: 0             // Rotation offset
+    , direction: 1          // 1: clockwise, -1: counterclockwise
+    , speed: 1              // Rounds per second
+    , trail: 100            // Afterglow percentage
+    , fps: 20               // Frames per second when using setTimeout()
+    , zIndex: 2e9           // Use a high z-index by default
+    , className: 'spinner'  // CSS class to assign to the element
+    , top: '50%'            // center vertically
+    , left: '50%'           // center horizontally
+    , shadow: false         // Whether to render a shadow
+    , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
+    , position: 'absolute'  // Element positioning
+    }
+    var target = document.getElementById('foo')
+    var spinner = new Spinner(opts).spin(target)
+ */
+;(function (root, factory) {
+
+  /* CommonJS */
+  if (typeof module == 'object' && module.exports) module.exports = factory();
+
+  /* AMD module */
+  else if (true) !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+    /* Browser global */
+    else root.Spinner = factory();
+})(this, function () {
+  "use strict";
+
+  var prefixes = ['webkit', 'Moz', 'ms', 'O'] /* Vendor prefixes */
+  ,
+      animations = {} /* Animation rules keyed by their name */
+  ,
+      useCssAnimations /* Whether to use CSS animations or setTimeout */
+  ,
+      sheet; /* A stylesheet to hold the @keyframe or VML rules. */
+
+  /**
+   * Utility function to create elements. If no tag name is given,
+   * a DIV is created. Optionally properties can be passed.
+   */
+  function createEl(tag, prop) {
+    var el = document.createElement(tag || 'div'),
+        n;
+
+    for (n in prop) el[n] = prop[n];
+    return el;
+  }
+
+  /**
+   * Appends children and returns the parent.
+   */
+  function ins(parent /* child1, child2, ...*/) {
+    for (var i = 1, n = arguments.length; i < n; i++) {
+      parent.appendChild(arguments[i]);
+    }
+
+    return parent;
+  }
+
+  /**
+   * Creates an opacity keyframe animation rule and returns its name.
+   * Since most mobile Webkits have timing issues with animation-delay,
+   * we create separate rules for each line/segment.
+   */
+  function addAnimation(alpha, trail, i, lines) {
+    var name = ['opacity', trail, ~~(alpha * 100), i, lines].join('-'),
+        start = 0.01 + i / lines * 100,
+        z = Math.max(1 - (1 - alpha) / trail * (100 - start), alpha),
+        prefix = useCssAnimations.substring(0, useCssAnimations.indexOf('Animation')).toLowerCase(),
+        pre = prefix && '-' + prefix + '-' || '';
+
+    if (!animations[name]) {
+      sheet.insertRule('@' + pre + 'keyframes ' + name + '{' + '0%{opacity:' + z + '}' + start + '%{opacity:' + alpha + '}' + (start + 0.01) + '%{opacity:1}' + (start + trail) % 100 + '%{opacity:' + alpha + '}' + '100%{opacity:' + z + '}' + '}', sheet.cssRules.length);
+
+      animations[name] = 1;
+    }
+
+    return name;
+  }
+
+  /**
+   * Tries various vendor prefixes and returns the first supported property.
+   */
+  function vendor(el, prop) {
+    var s = el.style,
+        pp,
+        i;
+
+    prop = prop.charAt(0).toUpperCase() + prop.slice(1);
+    if (s[prop] !== undefined) return prop;
+    for (i = 0; i < prefixes.length; i++) {
+      pp = prefixes[i] + prop;
+      if (s[pp] !== undefined) return pp;
+    }
+  }
+
+  /**
+   * Sets multiple style properties at once.
+   */
+  function css(el, prop) {
+    for (var n in prop) {
+      el.style[vendor(el, n) || n] = prop[n];
+    }
+
+    return el;
+  }
+
+  /**
+   * Fills in default values.
+   */
+  function merge(obj) {
+    for (var i = 1; i < arguments.length; i++) {
+      var def = arguments[i];
+      for (var n in def) {
+        if (obj[n] === undefined) obj[n] = def[n];
+      }
+    }
+    return obj;
+  }
+
+  /**
+   * Returns the line color from the given string or array.
+   */
+  function getColor(color, idx) {
+    return typeof color == 'string' ? color : color[idx % color.length];
+  }
+
+  // Built-in defaults
+
+  var defaults = {
+    lines: 12 // The number of lines to draw
+    , length: 7 // The length of each line
+    , width: 5 // The line thickness
+    , radius: 10 // The radius of the inner circle
+    , scale: 1.0 // Scales overall size of the spinner
+    , corners: 1 // Roundness (0..1)
+    , color: '#000' // #rgb or #rrggbb
+    , opacity: 1 / 4 // Opacity of the lines
+    , rotate: 0 // Rotation offset
+    , direction: 1 // 1: clockwise, -1: counterclockwise
+    , speed: 1 // Rounds per second
+    , trail: 100 // Afterglow percentage
+    , fps: 20 // Frames per second when using setTimeout()
+    , zIndex: 2e9 // Use a high z-index by default
+    , className: 'spinner' // CSS class to assign to the element
+    , top: '50%' // center vertically
+    , left: '50%' // center horizontally
+    , shadow: false // Whether to render a shadow
+    , hwaccel: false // Whether to use hardware acceleration (might be buggy)
+    , position: 'absolute' // Element positioning
+
+
+    /** The constructor */
+  };function Spinner(o) {
+    this.opts = merge(o || {}, Spinner.defaults, defaults);
+  }
+
+  // Global defaults that override the built-ins:
+  Spinner.defaults = {};
+
+  merge(Spinner.prototype, {
+    /**
+     * Adds the spinner to the given target element. If this instance is already
+     * spinning, it is automatically removed from its previous target b calling
+     * stop() internally.
+     */
+    spin: function (target) {
+      this.stop();
+
+      var self = this,
+          o = self.opts,
+          el = self.el = createEl(null, { className: o.className });
+
+      css(el, {
+        position: o.position,
+        width: 0,
+        zIndex: o.zIndex,
+        left: o.left,
+        top: o.top
+      });
+
+      if (target) {
+        target.insertBefore(el, target.firstChild || null);
+      }
+
+      el.setAttribute('role', 'progressbar');
+      self.lines(el, self.opts);
+
+      if (!useCssAnimations) {
+        // No CSS animation support, use setTimeout() instead
+        var i = 0,
+            start = (o.lines - 1) * (1 - o.direction) / 2,
+            alpha,
+            fps = o.fps,
+            f = fps / o.speed,
+            ostep = (1 - o.opacity) / (f * o.trail / 100),
+            astep = f / o.lines;(function anim() {
+          i++;
+          for (var j = 0; j < o.lines; j++) {
+            alpha = Math.max(1 - (i + (o.lines - j) * astep) % f * ostep, o.opacity);
+
+            self.opacity(el, j * o.direction + start, alpha, o);
+          }
+          self.timeout = self.el && setTimeout(anim, ~~(1000 / fps));
+        })();
+      }
+      return self;
+    }
+
+    /**
+     * Stops and removes the Spinner.
+     */
+    , stop: function () {
+      var el = this.el;
+      if (el) {
+        clearTimeout(this.timeout);
+        if (el.parentNode) el.parentNode.removeChild(el);
+        this.el = undefined;
+      }
+      return this;
+    }
+
+    /**
+     * Internal method that draws the individual lines. Will be overwritten
+     * in VML fallback mode below.
+     */
+    , lines: function (el, o) {
+      var i = 0,
+          start = (o.lines - 1) * (1 - o.direction) / 2,
+          seg;
+
+      function fill(color, shadow) {
+        return css(createEl(), {
+          position: 'absolute',
+          width: o.scale * (o.length + o.width) + 'px',
+          height: o.scale * o.width + 'px',
+          background: color,
+          boxShadow: shadow,
+          transformOrigin: 'left',
+          transform: 'rotate(' + ~~(360 / o.lines * i + o.rotate) + 'deg) translate(' + o.scale * o.radius + 'px' + ',0)',
+          borderRadius: (o.corners * o.scale * o.width >> 1) + 'px'
+        });
+      }
+
+      for (; i < o.lines; i++) {
+        seg = css(createEl(), {
+          position: 'absolute',
+          top: 1 + ~(o.scale * o.width / 2) + 'px',
+          transform: o.hwaccel ? 'translate3d(0,0,0)' : '',
+          opacity: o.opacity,
+          animation: useCssAnimations && addAnimation(o.opacity, o.trail, start + i * o.direction, o.lines) + ' ' + 1 / o.speed + 's linear infinite'
+        });
+
+        if (o.shadow) ins(seg, css(fill('#000', '0 0 4px #000'), { top: '2px' }));
+        ins(el, ins(seg, fill(getColor(o.color, i), '0 0 1px rgba(0,0,0,.1)')));
+      }
+      return el;
+    }
+
+    /**
+     * Internal method that adjusts the opacity of a single line.
+     * Will be overwritten in VML fallback mode below.
+     */
+    , opacity: function (el, i, val) {
+      if (i < el.childNodes.length) el.childNodes[i].style.opacity = val;
+    }
+
+  });
+
+  function initVML() {
+
+    /* Utility function to create a VML tag */
+    function vml(tag, attr) {
+      return createEl('<' + tag + ' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">', attr);
+    }
+
+    // No CSS transforms but VML support, add a CSS rule for VML elements:
+    sheet.addRule('.spin-vml', 'behavior:url(#default#VML)');
+
+    Spinner.prototype.lines = function (el, o) {
+      var r = o.scale * (o.length + o.width),
+          s = o.scale * 2 * r;
+
+      function grp() {
+        return css(vml('group', {
+          coordsize: s + ' ' + s,
+          coordorigin: -r + ' ' + -r
+        }), { width: s, height: s });
+      }
+
+      var margin = -(o.width + o.length) * o.scale * 2 + 'px',
+          g = css(grp(), { position: 'absolute', top: margin, left: margin }),
+          i;
+
+      function seg(i, dx, filter) {
+        ins(g, ins(css(grp(), { rotation: 360 / o.lines * i + 'deg', left: ~~dx }), ins(css(vml('roundrect', { arcsize: o.corners }), { width: r,
+          height: o.scale * o.width,
+          left: o.scale * o.radius,
+          top: -o.scale * o.width >> 1,
+          filter: filter
+        }), vml('fill', { color: getColor(o.color, i), opacity: o.opacity }), vml('stroke', { opacity: 0 }) // transparent stroke to fix color bleeding upon opacity change
+        )));
+      }
+
+      if (o.shadow) for (i = 1; i <= o.lines; i++) {
+        seg(i, -2, 'progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)');
+      }
+
+      for (i = 1; i <= o.lines; i++) seg(i);
+      return ins(el, g);
+    };
+
+    Spinner.prototype.opacity = function (el, i, val, o) {
+      var c = el.firstChild;
+      o = o.shadow && o.lines || 0;
+      if (c && i + o < c.childNodes.length) {
+        c = c.childNodes[i + o];c = c && c.firstChild;c = c && c.firstChild;
+        if (c) c.opacity = val;
+      }
+    };
+  }
+
+  if (typeof document !== 'undefined') {
+    sheet = function () {
+      var el = createEl('style', { type: 'text/css' });
+      ins(document.getElementsByTagName('head')[0], el);
+      return el.sheet || el.styleSheet;
+    }();
+
+    var probe = css(createEl('group'), { behavior: 'url(#default#VML)' });
+
+    if (!vendor(probe, 'transform') && probe.adj) initVML();else useCssAnimations = vendor(probe, 'animation');
+  }
+
+  return Spinner;
+});
+
+/***/ }),
+/* 75 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class GlobalHeader extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = GlobalHeader;
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flux_utils__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flux_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_flux_utils__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__stores_noteStore__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_NoteAction__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_NoteHeader_NoteHeader__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_NoteBody_NoteBody__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_NoteFooter_NoteFooter__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Tabs_Tabs__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_webutils__ = __webpack_require__(5);
+
+
+
+
+
+
+
+
+
+
+
+const pspid = `NoteControlerView`;
+
+class Note extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  static getStores() {
+    return [__WEBPACK_IMPORTED_MODULE_3__stores_noteStore__["a" /* default */]];
+  }
+
+  static calculateState() {
+    return __WEBPACK_IMPORTED_MODULE_3__stores_noteStore__["a" /* default */].getState();
+  }
+
+  componentDidMount() {
+    __WEBPACK_IMPORTED_MODULE_4__actions_NoteAction__["a" /* default */].increment(this.state.options, this.state.page);
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'window' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_NoteHeader_NoteHeader__["a" /* default */], {
+        page: this.state.page,
+        options: this.state.options }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_Tabs_Tabs__["a" /* default */], null),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_NoteBody_NoteBody__["a" /* default */], {
+        items: this.state.items,
+        options: this.state.options }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_NoteFooter_NoteFooter__["a" /* default */], null)
+    );
+  }
+}
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_1_flux_utils__["Container"].create(__WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter___default.a.convert(Note)));
+
+/***/ }),
+/* 77 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux_utils__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flux_utils__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dispatcher__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_webutils__ = __webpack_require__(5);
+
+
+
+
+const pspid = `noteStore`;
+
+class NoteStore extends __WEBPACK_IMPORTED_MODULE_0_flux_utils__["ReduceStore"] {
+  getInitialState() {
+    return {
+      page: 0,
+      items: null,
+      options: {
+        searchString: '',
+        highestPrice: '',
+        lowestPrice: '',
+        bids: false,
+        condition: 'all',
+        status: false,
+        AuctionID: [],
+        categoryPath: [],
+        seller: [] },
+      url: ''
+    };
+  }
+
+  reduce(state, action) {
+    __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Request: ${action.type}`);
+    switch (action.type) {
+      case 'item/fetch':
+        return Object.assign({}, state, { items: action.items, options: action.options,
+          page: action.page });
+      case 'item/fetch/closewatch':
+        return Object.assign({}, state, { items: action.items, page: action.page });
+      case 'item/fetch/openwatch':
+        return Object.assign({}, state, { items: action.items, page: action.page });
+      case 'item/create/watch':
+        return Object.assign({}, state, { url: action.url });
+      case 'item/delete/watch':
+        return Object.assign({}, state, { url: action.url });
+      default:
+        return state;
+    }
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (new NoteStore(__WEBPACK_IMPORTED_MODULE_1__dispatcher__["a" /* default */]));
+
+/***/ }),
+/* 78 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_webutils__ = __webpack_require__(5);
+
+
+__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].config('console', 'basic', 'ALL', 'note-renderer');
+__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].config('app');
+
+const pspid = `NoteAPIClient`;
+
+const v1 = 'https://auctions.yahooapis.jp/AuctionWebService/V1/';
+const v2 = 'https://auctions.yahooapis.jp/AuctionWebService/V2/';
+const a2 = 'https://auth.login.yahoo.co.jp/yconnect/v2/';
+
+const appid = "dj00aiZpPTBoc0JrMFFVN2U5ViZzPWNvbnN1bWVyc2VjcmV0Jng9MTU-";
+const redirect_uri = process.env.redirect_uri;
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  request(action, response) {
+    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].info(`${pspid}> Request: ${action}`);
+    switch (action) {
+      case 'json/search':
+        return new Promise(resolve => {
+          JSONP.request(v2 + action, response, ids => {
+            resolve(ids);
+          });
+        });
+      case 'json/auctionItem':
+        return new Promise(resolve => {
+          JSONP.request(v2 + action, response, Item => {
+            console.log(Item);
+            resolve({ AuctionID: response.auctionID, Item });
+          });
+        });
+      case 'BidHistory':
+        return new Promise(resolve => {
+          JSONP.request(v1 + action, response, Bids => {
+            console.log(Bids);
+            resolve({ AuctionID: response.auctionID, Bids });
+          });
+        });
+      case '.well-known/openid-configuration':
+        return new Promise(resolve => {
+          JSONP.request(a2 + action, response, config => {
+            resolve(config);
+          });
+        });
+      case 'authorization':
+        return new Promise(resolve => {
+          JSONP.request(a2 + action, response, auth => {
+            resolve(auth);
+          });
+        });
+      case 'watchList':
+        return new Promise(resolve => {
+          JSONP.request(v1 + action, response, Url => {
+            resolve({ AuctionID: response.auctionID, Url });
+          });
+        });
+      case 'deleteWatchList':
+        return new Promise(resolve => {
+          JSONP.request(v1 + action, response, Url => {
+            resolve({ AuctionID: response.auctionID, Url });
+          });
+        });
+      case 'openWatchList':
+        return new Promise(resolve => {
+          JSONP.request(v2 + action, response, ids => {
+            resolve(ids);
+          });
+        });
+      case 'closeWatchList':
+        return new Promise(resolve => {
+          JSONP.request(v2 + action, response, ids => {
+            resolve(ids);
+          });
+        });
+      default:
+        return new Promise(resolve => {
+          __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].warn(`${pspid}> Unknown request !!`);
+          resolve(response);
+        });
+    }
+  },
+  fetchIds(options, page) {
+    return this.request('json/search', this.helperOptions({ appid, page, output: 'json' }, options));
+  },
+  helperOptions(o, p) {
+    const _o = o;
+    const _p = p ? p : {};
+    const _r = { new: 1, used: 2, other: 0 };
+    const options = {
+      appid: _o.appid,
+      query: '',
+      output: _o.output,
+      page: _o.page ? _o.page : 1,
+      type: 'all',
+      order: 'a',
+      store: 0,
+      gift_icon: 0,
+      adf: 1,
+      f: '0x2'
+    };
+
+    if (_p.searchString) {
+      options['query'] = _p.searchString;
+    }
+
+    if (_p.highestPrice) {
+      options['aucmaxprice'] = Number(_p.highestPrice);
+    }
+
+    if (_p.lowestPrice) {
+      options['aucminprice'] = Number(_p.lowestPrice);
+    }
+
+    if (_p.bids) {
+      options['sort'] = 'bids';
+    } else {
+      options['sort'] = 'score';
+      options['ranking'] = 'current';
+    }
+
+    if (_p.condition && _p.condition !== 'all') {
+      options['item_status'] = Number(_r[_p.condition]);
+    }
+
+    if (_p.seller && _p.seller.length) {
+      options['seller'] = _p.seller.join();
+    }
+
+    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].trace(`${pspid}>`, 'fetchIds options:', options);
+    return options;
+  },
+  fetchItem(auctionID) {
+    return this.request('json/auctionItem', { auctionID, appid, output: 'json' });
+  },
+  fetchBids(auctionID) {
+    return this.request('BidHistory', { auctionID, appid, output: 'json' });
+  },
+  newIds(obj) {
+    const items = obj.ResultSet.Result.Item;
+    return Array.isArray(items) ? R.map(item => item.AuctionID, items) : [items.AuctionID];
+  },
+  newItems(is, bs) {
+    return R.map(i => {
+      const b = R.filter(o => o.AuctionID === i.AuctionID, bs);
+      return R.merge(i, b[0]);
+    }, is);
+  },
+  traceLog(obj) {
+    return __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].trace(`${pspid}>`, 'Trace log:', obj);
+  },
+  errorLog(err) {
+    return __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].error(`${pspid}>`, 'Error occurred:', err);
+  },
+  isItem(o) {
+    return o.hasOwnProperty('Item');
+  },
+  isBids(o) {
+    return o.hasOwnProperty('Bids');
+  },
+  forItem(objs) {
+    let newItem = new Array();
+    for (let idx = 0; idx < objs.length; idx++) {
+      newItem.push(this.fetchItem(objs[idx]));
+    }
+    return newItem;
+  },
+  forBids(objs) {
+    let newBids = new Array();
+    for (let idx = 0; idx < objs.length; idx++) {
+      newBids.push(this.fetchBids(objs[idx]));
+    }
+    return newBids;
+  },
+  fetchItems(options, page) {
+    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
+    return this.fetchIds(options, page).then(this.newIds.bind(this)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(R.concat, this.forItem.bind(this), this.forBids.bind(this))).then(R.tap(this.traceLog.bind(this)))
+    //.then(obj => Promise.all(obj))
+    //.then(M.fork(this.newItems.bind(this)
+    //  , R.filter(this.isItem.bind(this))
+    //  , R.filter(this.isBids.bind(this))))
+    .catch(this.errorLog.bind(this));
+  },
+  fetchConfig() {
+    return this.request('.well-known/openid-configuration');
+  },
+  fetchAuth() {
+    return this.request('authorization', { response_type: 'token',
+      client_id: appid,
+      redirect_uri,
+      scope: 'openid' });
+  },
+  fetchCloseWatchIds(start, access_token) {
+    return this.request('closeWatchList', { start, output: 'json', access_token });
+  },
+  fetchCloseWatch(start) {
+    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
+    const newIds = R.curry(this.fetchCloseWatchIds)(start);
+    return this.fetchConfig().then(R.tap(this.traceLog.bind(this))).then(this.fetchAuth).then(newIds).then(this.newIds.bind(this)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(R.concat, R.map(this.fetchItem.bind(this)), R.map(this.fetchBids.bind(this)))).then(obj => Promise.all(obj)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(this.newItems.bind(this), R.filter(this.isItem.bind(this)), R.filter(this.isBids.bind(this)))).catch(this.errorLog.bind(this));
+  },
+  fetchOpenWatchIds(start, access_token) {
+    return this.request('openWatchList', { start, output: 'json', access_token });
+  },
+  fetchOpenWatch(start) {
+    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
+    const newIds = R.curry(this.fetchOpenWatchIds)(start);
+    return this.fetchConfig().then(R.tap(this.traceLog.bind(this))).then(this.fetchAuth).then(newIds).then(this.newIds.bind(this)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(R.concat, R.map(this.fetchItem.bind(this)), R.map(this.fetchBids.bind(this)))).then(obj => Promise.all(obj)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(this.newItems.bind(this), R.filter(this.isItem.bind(this)), R.filter(this.isBids.bind(this)))).then(R.tap(this.traceLog.bind(this))).catch(this.errorLog.bind(this));
+  },
+  createWatch(access_token, auctionID) {
+    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
+    return this.request('watchList', { auctionID, output: 'json', access_token });
+  },
+  deleteWatch(access_token, auctionID) {
+    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
+    return this.request('deleteWatchList', { auctionID, output: 'json', access_token });
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+
+/***/ }),
+/* 79 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions_NoteAction__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_webutils__ = __webpack_require__(5);
+
+
+
+
+
+const pspid = `NoteHeaderView`;
+
+class NoteHeader extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  handleChangeHome() {
+    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].info(`${pspid}>`, 'Request: handleChangeHome');
+    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].trace(`${pspid}>`, this.props.options);
+    __WEBPACK_IMPORTED_MODULE_2__actions_NoteAction__["a" /* default */].increment(this.props.options, 0);
+  }
+
+  handleIncrement() {
+    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].info(`${pspid}>`, 'Request: handleIncrement');
+    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].trace(`${pspid}>`, this.props.options);
+    __WEBPACK_IMPORTED_MODULE_2__actions_NoteAction__["a" /* default */].increment(this.props.options, this.props.page);
+  }
+
+  handleDecrement() {
+    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].info(`${pspid}> Request: handleDecrement`);
+    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].trace(`${pspid}>`, this.props.options);
+    __WEBPACK_IMPORTED_MODULE_2__actions_NoteAction__["a" /* default */].decrement(this.props.options, this.props.page);
+  }
+
+  render() {
+    const page = this.props.page;
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'header',
+      { className: 'toolbar toolbar-header' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        { className: 'title' },
+        'WatchNote!'
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'toolbar-actions' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          {
+            className: 'btn btn-default',
+            onClick: this.handleChangeHome.bind(this) },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon icon-home icon-text' }),
+          page,
+          ' page'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'btn-group' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'button',
+            {
+              className: 'btn btn-default',
+              onClick: this.handleDecrement.bind(this) },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon icon-left' })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'button',
+            {
+              className: 'btn btn-default',
+              onClick: this.handleIncrement.bind(this) },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon icon-right' })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          {
+            className: 'btn btn-default btn-dropdown pull-right' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon icon-megaphone' })
+        )
+      )
+    );
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = NoteHeader;
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(23);
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -11975,10 +14220,10 @@ BrowserRouter.propTypes = {
   children: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.node
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (BrowserRouter);
+/* unused harmony default export */ var _unused_webpack_default_export = (BrowserRouter);
 
 /***/ }),
-/* 62 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12010,15 +14255,15 @@ var _invariant = __webpack_require__(6);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _LocationUtils = __webpack_require__(20);
+var _LocationUtils = __webpack_require__(21);
 
 var _PathUtils = __webpack_require__(9);
 
-var _createTransitionManager = __webpack_require__(21);
+var _createTransitionManager = __webpack_require__(22);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
-var _DOMUtils = __webpack_require__(34);
+var _DOMUtils = __webpack_require__(38);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -12302,7 +14547,7 @@ var createBrowserHistory = function createBrowserHistory() {
 exports.default = createBrowserHistory;
 
 /***/ }),
-/* 63 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12312,9 +14557,9 @@ exports.default = createBrowserHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(23);
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -12379,7 +14624,7 @@ HashRouter.propTypes = {
 /* unused harmony default export */ var _unused_webpack_default_export = (HashRouter);
 
 /***/ }),
-/* 64 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12405,15 +14650,15 @@ var _invariant = __webpack_require__(6);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _LocationUtils = __webpack_require__(20);
+var _LocationUtils = __webpack_require__(21);
 
 var _PathUtils = __webpack_require__(9);
 
-var _createTransitionManager = __webpack_require__(21);
+var _createTransitionManager = __webpack_require__(22);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
-var _DOMUtils = __webpack_require__(34);
+var _DOMUtils = __webpack_require__(38);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -12718,18 +14963,18 @@ var createHashHistory = function createHashHistory() {
 exports.default = createHashHistory;
 
 /***/ }),
-/* 65 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__ = __webpack_require__(85);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__["a" /* default */]);
 
 /***/ }),
-/* 66 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12739,9 +14984,9 @@ exports.default = createHashHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(24);
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -12807,7 +15052,7 @@ MemoryRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (MemoryRouter);
 
 /***/ }),
-/* 67 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12837,9 +15082,9 @@ var _warning2 = _interopRequireDefault(_warning);
 
 var _PathUtils = __webpack_require__(9);
 
-var _LocationUtils = __webpack_require__(20);
+var _LocationUtils = __webpack_require__(21);
 
-var _createTransitionManager = __webpack_require__(21);
+var _createTransitionManager = __webpack_require__(22);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -12996,7 +15241,7 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 
 /***/ }),
-/* 68 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13004,8 +15249,8 @@ exports.default = createMemoryHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Route__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Route__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(39);
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];for (var key in source) {
@@ -13093,10 +15338,10 @@ NavLink.defaultProps = {
 /* unused harmony default export */ var _unused_webpack_default_export = (NavLink);
 
 /***/ }),
-/* 69 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(70);
+var isarray = __webpack_require__(89);
 
 /**
  * Expose `pathToRegexp`.
@@ -13523,7 +15768,7 @@ function pathToRegexp(path, keys, options) {
 }
 
 /***/ }),
-/* 70 */
+/* 89 */
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -13531,18 +15776,18 @@ module.exports = Array.isArray || function (arr) {
 };
 
 /***/ }),
-/* 71 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__ = __webpack_require__(91);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__["a" /* default */]);
 
 /***/ }),
-/* 72 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13644,18 +15889,18 @@ Prompt.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Prompt);
 
 /***/ }),
-/* 73 */
+/* 92 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__ = __webpack_require__(93);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__["a" /* default */]);
 
 /***/ }),
-/* 74 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13667,7 +15912,7 @@ Prompt.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(94);
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -13773,15 +16018,15 @@ Redirect.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Redirect);
 
 /***/ }),
-/* 75 */
+/* 94 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(95);
 /* unused harmony reexport createBrowserHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(96);
 /* unused harmony reexport createHashHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(97);
 /* unused harmony reexport createMemoryHistory */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(14);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
@@ -13800,7 +16045,7 @@ Redirect.contextTypes = {
 
 
 /***/ }),
-/* 76 */
+/* 95 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13810,8 +16055,8 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(42);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
   return typeof obj;
 } : function (obj) {
@@ -14113,7 +16358,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createBrowserHistory);
 
 /***/ }),
-/* 77 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14123,8 +16368,8 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(42);
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];for (var key in source) {
@@ -14441,7 +16686,7 @@ var createHashHistory = function createHashHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createHashHistory);
 
 /***/ }),
-/* 78 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14449,7 +16694,7 @@ var createHashHistory = function createHashHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(26);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
   return typeof obj;
 } : function (obj) {
@@ -14620,18 +16865,18 @@ var createMemoryHistory = function createMemoryHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createMemoryHistory);
 
 /***/ }),
-/* 79 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__ = __webpack_require__(99);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__["a" /* default */]);
 
 /***/ }),
-/* 80 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14645,7 +16890,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_history_PathUtils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(24);
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];for (var key in source) {
@@ -14836,18 +17081,18 @@ StaticRouter.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (StaticRouter);
 
 /***/ }),
-/* 81 */
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__ = __webpack_require__(101);
 // Written in this round about way for babel-transform-imports
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__["a" /* default */]);
+/* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__["a" /* default */]);
 
 /***/ }),
-/* 82 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14859,7 +17104,7 @@ StaticRouter.childContextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(25);
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -14952,29 +17197,29 @@ Switch.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Switch);
 
 /***/ }),
-/* 83 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__ = __webpack_require__(25);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__["a" /* default */]);
 
 /***/ }),
-/* 84 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__ = __webpack_require__(104);
 // Written in this round about way for babel-transform-imports
 
 
 /* unused harmony default export */ var _unused_webpack_default_export = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
 
 /***/ }),
-/* 85 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14982,9 +17227,9 @@ Switch.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(41);
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];for (var key in source) {
@@ -15031,7 +17276,7 @@ var withRouter = function withRouter(Component) {
 /* harmony default export */ __webpack_exports__["a"] = (withRouter);
 
 /***/ }),
-/* 86 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15104,2245 +17349,6 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 };
 
 /***/ }),
-/* 87 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_flux_utils__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_flux_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_flux_utils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FluxContainerConverter__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__FluxContainerConverter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__FluxContainerConverter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__stores_appStore__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_GlobalHeader_GlobalHeader__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_Note_Note__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_webutils__ = __webpack_require__(5);
-
-
-
-
-
-
-
-
-
-class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  static getStores() {
-    return [__WEBPACK_IMPORTED_MODULE_4__stores_appStore__["a" /* default */]];
-  }
-
-  static calculateState() {
-    return __WEBPACK_IMPORTED_MODULE_4__stores_appStore__["a" /* default */].getState();
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_GlobalHeader_GlobalHeader__["a" /* default */], null),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Switch */],
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { path: '/', component: __WEBPACK_IMPORTED_MODULE_6__pages_Note_Note__["a" /* default */] })
-      )
-    );
-  }
-}
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_2_flux_utils__["Container"].create(__WEBPACK_IMPORTED_MODULE_3__FluxContainerConverter___default.a.convert(App)));
-
-/***/ }),
-/* 88 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule FluxContainer
- * 
- */
-
-
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== 'function' && superClass !== null) {
-    throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var FluxContainerSubscriptions = __webpack_require__(89);
-var React = __webpack_require__(0);
-
-var invariant = __webpack_require__(2);
-var shallowEqual = __webpack_require__(19);
-
-var Component = React.Component;
-
-var DEFAULT_OPTIONS = {
-  pure: true,
-  withProps: false,
-  withContext: false
-};
-
-/**
- * A FluxContainer is used to subscribe a react component to multiple stores.
- * The stores that are used must be returned from a static `getStores()` method.
- *
- * The component receives information from the stores via state. The state
- * is generated using a static `calculateState()` method that each container
- * must implement. A simple container may look like:
- *
- *   class FooContainer extends Component {
- *     static getStores() {
- *       return [FooStore];
- *     }
- *
- *     static calculateState() {
- *       return {
- *         foo: FooStore.getState(),
- *       };
- *     }
- *
- *     render() {
- *       return <FooView {...this.state} />;
- *     }
- *   }
- *
- *   module.exports = FluxContainer.create(FooContainer);
- *
- * Flux container also supports some other, more advanced use cases. If you need
- * to base your state off of props as well:
- *
- *   class FooContainer extends Component {
- *     ...
- *
- *     static calculateState(prevState, props) {
- *       return {
- *         foo: FooStore.getSpecificFoo(props.id),
- *       };
- *     }
- *
- *     ...
- *   }
- *
- *   module.exports = FluxContainer.create(FooContainer, {withProps: true});
- *
- * Or if your stores are passed through your props:
- *
- *   class FooContainer extends Component {
- *     ...
- *
- *     static getStores(props) {
- *       const {BarStore, FooStore} = props.stores;
- *       return [BarStore, FooStore];
- *     }
- *
- *     static calculateState(prevState, props) {
- *       const {BarStore, FooStore} = props.stores;
- *       return {
- *         bar: BarStore.getState(),
- *         foo: FooStore.getState(),
- *       };
- *     }
- *
- *     ...
- *   }
- *
- *   module.exports = FluxContainer.create(FooContainer, {withProps: true});
- */
-function create(Base, options) {
-  enforceInterface(Base);
-
-  // Construct the options using default, override with user values as necessary.
-  var realOptions = _extends({}, DEFAULT_OPTIONS, options || {});
-
-  var getState = function (state, maybeProps, maybeContext) {
-    var props = realOptions.withProps ? maybeProps : undefined;
-    var context = realOptions.withContext ? maybeContext : undefined;
-    return Base.calculateState(state, props, context);
-  };
-
-  var getStores = function (maybeProps, maybeContext) {
-    var props = realOptions.withProps ? maybeProps : undefined;
-    var context = realOptions.withContext ? maybeContext : undefined;
-    return Base.getStores(props, context);
-  };
-
-  // Build the container class.
-
-  var ContainerClass = function (_Base) {
-    _inherits(ContainerClass, _Base);
-
-    function ContainerClass(props, context) {
-      var _this = this;
-
-      _classCallCheck(this, ContainerClass);
-
-      _Base.call(this, props, context);
-      this._fluxContainerSubscriptions = new FluxContainerSubscriptions();
-      this._fluxContainerSubscriptions.setStores(getStores(props));
-      this._fluxContainerSubscriptions.addListener(function () {
-        _this.setState(function (prevState, currentProps) {
-          return getState(prevState, currentProps, context);
-        });
-      });
-      var calculatedState = getState(undefined, props, context);
-      this.state = _extends({}, this.state || {}, calculatedState);
-    }
-
-    // Make sure we override shouldComponentUpdate only if the pure option is
-    // specified. We can't override this above because we don't want to override
-    // the default behavior on accident. Super works weird with react ES6 classes.
-
-    ContainerClass.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextContext) {
-      if (_Base.prototype.componentWillReceiveProps) {
-        _Base.prototype.componentWillReceiveProps.call(this, nextProps, nextContext);
-      }
-
-      if (realOptions.withProps || realOptions.withContext) {
-        // Update both stores and state.
-        this._fluxContainerSubscriptions.setStores(getStores(nextProps, nextContext));
-        this.setState(function (prevState) {
-          return getState(prevState, nextProps, nextContext);
-        });
-      }
-    };
-
-    ContainerClass.prototype.componentWillUnmount = function componentWillUnmount() {
-      if (_Base.prototype.componentWillUnmount) {
-        _Base.prototype.componentWillUnmount.call(this);
-      }
-
-      this._fluxContainerSubscriptions.reset();
-    };
-
-    return ContainerClass;
-  }(Base);
-
-  var container = realOptions.pure ? createPureComponent(ContainerClass) : ContainerClass;
-
-  // Update the name of the container before returning
-  var componentName = Base.displayName || Base.name;
-  container.displayName = 'FluxContainer(' + componentName + ')';
-  return container;
-}
-
-function createPureComponent(BaseComponent) {
-  var PureComponent = function (_BaseComponent) {
-    _inherits(PureComponent, _BaseComponent);
-
-    function PureComponent() {
-      _classCallCheck(this, PureComponent);
-
-      _BaseComponent.apply(this, arguments);
-    }
-
-    PureComponent.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps, nextState) {
-      return !shallowEqual(this.props, nextProps) || !shallowEqual(this.state, nextState);
-    };
-
-    return PureComponent;
-  }(BaseComponent);
-
-  return PureComponent;
-}
-
-function enforceInterface(o) {
-  !o.getStores ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Components that use FluxContainer must implement `static getStores()`') : invariant(false) : undefined;
-  !o.calculateState ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Components that use FluxContainer must implement `static calculateState()`') : invariant(false) : undefined;
-}
-
-/**
- * This is a way to connect stores to a functional stateless view. Here's a
- * simple example:
- *
- *   // FooView.js
- *
- *   function FooView(props) {
- *     return <div>{props.value}</div>;
- *   }
- *
- *   module.exports = FooView;
- *
- *
- *   // FooContainer.js
- *
- *   function getStores() {
- *     return [FooStore];
- *   }
- *
- *   function calculateState() {
- *     return {
- *       value: FooStore.getState();
- *     };
- *   }
- *
- *   module.exports = FluxContainer.createFunctional(
- *     FooView,
- *     getStores,
- *     calculateState,
- *   );
- *
- */
-function createFunctional(viewFn, _getStores, _calculateState, options) {
-  var FunctionalContainer = function (_Component) {
-    _inherits(FunctionalContainer, _Component);
-
-    function FunctionalContainer() {
-      _classCallCheck(this, FunctionalContainer);
-
-      _Component.apply(this, arguments);
-    }
-
-    // Update the name of the component before creating the container.
-
-    FunctionalContainer.getStores = function getStores(props, context) {
-      return _getStores(props, context);
-    };
-
-    FunctionalContainer.calculateState = function calculateState(prevState, props, context) {
-      return _calculateState(prevState, props, context);
-    };
-
-    FunctionalContainer.prototype.render = function render() {
-      return viewFn(this.state);
-    };
-
-    return FunctionalContainer;
-  }(Component);
-
-  var viewFnName = viewFn.displayName || viewFn.name || 'FunctionalContainer';
-  FunctionalContainer.displayName = viewFnName;
-  return create(FunctionalContainer, options);
-}
-
-module.exports = { create: create, createFunctional: createFunctional };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 89 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule FluxContainerSubscriptions
- * 
- */
-
-
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-var FluxStoreGroup = __webpack_require__(39);
-
-function shallowArrayEqual(a, b) {
-  if (a === b) {
-    return true;
-  }
-  if (a.length !== b.length) {
-    return false;
-  }
-  for (var i = 0; i < a.length; i++) {
-    if (a[i] !== b[i]) {
-      return false;
-    }
-  }
-  return true;
-}
-
-var FluxContainerSubscriptions = function () {
-  function FluxContainerSubscriptions() {
-    _classCallCheck(this, FluxContainerSubscriptions);
-
-    this._callbacks = [];
-  }
-
-  FluxContainerSubscriptions.prototype.setStores = function setStores(stores) {
-    var _this = this;
-
-    if (this._stores && shallowArrayEqual(this._stores, stores)) {
-      return;
-    }
-    this._stores = stores;
-    this._resetTokens();
-    this._resetStoreGroup();
-
-    var changed = false;
-    var changedStores = [];
-
-    if (process.env.NODE_ENV !== 'production') {
-      // Keep track of the stores that changed for debugging purposes only
-      this._tokens = stores.map(function (store) {
-        return store.addListener(function () {
-          changed = true;
-          changedStores.push(store);
-        });
-      });
-    } else {
-      (function () {
-        var setChanged = function () {
-          changed = true;
-        };
-        _this._tokens = stores.map(function (store) {
-          return store.addListener(setChanged);
-        });
-      })();
-    }
-
-    var callCallbacks = function () {
-      if (changed) {
-        _this._callbacks.forEach(function (fn) {
-          return fn();
-        });
-        changed = false;
-        if (process.env.NODE_ENV !== 'production') {
-          // Uncomment this to print the stores that changed.
-          // console.log(changedStores);
-          changedStores = [];
-        }
-      }
-    };
-    this._storeGroup = new FluxStoreGroup(stores, callCallbacks);
-  };
-
-  FluxContainerSubscriptions.prototype.addListener = function addListener(fn) {
-    this._callbacks.push(fn);
-  };
-
-  FluxContainerSubscriptions.prototype.reset = function reset() {
-    this._resetTokens();
-    this._resetStoreGroup();
-    this._resetCallbacks();
-    this._resetStores();
-  };
-
-  FluxContainerSubscriptions.prototype._resetTokens = function _resetTokens() {
-    if (this._tokens) {
-      this._tokens.forEach(function (token) {
-        return token.remove();
-      });
-      this._tokens = null;
-    }
-  };
-
-  FluxContainerSubscriptions.prototype._resetStoreGroup = function _resetStoreGroup() {
-    if (this._storeGroup) {
-      this._storeGroup.release();
-      this._storeGroup = null;
-    }
-  };
-
-  FluxContainerSubscriptions.prototype._resetStores = function _resetStores() {
-    this._stores = null;
-  };
-
-  FluxContainerSubscriptions.prototype._resetCallbacks = function _resetCallbacks() {
-    this._callbacks = [];
-  };
-
-  return FluxContainerSubscriptions;
-}();
-
-module.exports = FluxContainerSubscriptions;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 90 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule FluxMixinLegacy
- * 
- */
-
-
-
-var FluxStoreGroup = __webpack_require__(39);
-
-var invariant = __webpack_require__(2);
-
-/**
- * `FluxContainer` should be preferred over this mixin, but it requires using
- * react with classes. So this mixin is provided where it is not yet possible
- * to convert a container to be a class.
- *
- * This mixin should be used for React components that have state based purely
- * on stores. `this.props` will not be available inside of `calculateState()`.
- *
- * This mixin will only `setState` not replace it, so you should always return
- * every key in your state unless you know what you are doing. Consider this:
- *
- *   var Foo = React.createClass({
- *     mixins: [
- *       FluxMixinLegacy([FooStore])
- *     ],
- *
- *     statics: {
- *       calculateState(prevState) {
- *         if (!prevState) {
- *           return {
- *             foo: FooStore.getFoo(),
- *           };
- *         }
- *
- *         return {
- *           bar: FooStore.getBar(),
- *         };
- *       }
- *     },
- *   });
- *
- * On the second calculateState when prevState is not null, the state will be
- * updated to contain the previous foo AND the bar that was just returned. Only
- * returning bar will not delete foo.
- *
- */
-function FluxMixinLegacy(stores) {
-  var options = arguments.length <= 1 || arguments[1] === undefined ? { withProps: false } : arguments[1];
-
-  stores = stores.filter(function (store) {
-    return !!store;
-  });
-
-  return {
-    getInitialState: function () {
-      enforceInterface(this);
-      return options.withProps ? this.constructor.calculateState(null, this.props) : this.constructor.calculateState(null, undefined);
-    },
-
-    componentWillMount: function () {
-      var _this = this;
-
-      // This tracks when any store has changed and we may need to update.
-      var changed = false;
-      var setChanged = function () {
-        changed = true;
-      };
-
-      // This adds subscriptions to stores. When a store changes all we do is
-      // set changed to true.
-      this._fluxMixinSubscriptions = stores.map(function (store) {
-        return store.addListener(setChanged);
-      });
-
-      // This callback is called after the dispatch of the relevant stores. If
-      // any have reported a change we update the state, then reset changed.
-      var callback = function () {
-        if (changed) {
-          _this.setState(function (prevState) {
-            return options.withProps ? _this.constructor.calculateState(prevState, _this.props) : _this.constructor.calculateState(prevState, undefined);
-          });
-        }
-        changed = false;
-      };
-      this._fluxMixinStoreGroup = new FluxStoreGroup(stores, callback);
-    },
-
-    componentWillUnmount: function () {
-      this._fluxMixinStoreGroup.release();
-      for (var _iterator = this._fluxMixinSubscriptions, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-        var _ref;
-
-        if (_isArray) {
-          if (_i >= _iterator.length) break;
-          _ref = _iterator[_i++];
-        } else {
-          _i = _iterator.next();
-          if (_i.done) break;
-          _ref = _i.value;
-        }
-
-        var subscription = _ref;
-
-        subscription.remove();
-      }
-      this._fluxMixinSubscriptions = [];
-    }
-  };
-}
-
-function enforceInterface(o) {
-  !o.constructor.calculateState ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Components that use FluxMixinLegacy must implement ' + '`calculateState()` on the statics object') : invariant(false) : undefined;
-}
-
-module.exports = FluxMixinLegacy;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule FluxReduceStore
- * 
- */
-
-
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== 'function' && superClass !== null) {
-    throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);
-  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var FluxStore = __webpack_require__(40);
-
-var abstractMethod = __webpack_require__(96);
-var invariant = __webpack_require__(2);
-
-/**
- * This is the basic building block of a Flux application. All of your stores
- * should extend this class.
- *
- *   class CounterStore extends FluxReduceStore<number> {
- *     getInitialState(): number {
- *       return 1;
- *     }
- *
- *     reduce(state: number, action: Object): number {
- *       switch(action.type) {
- *         case: 'add':
- *           return state + action.value;
- *         case: 'double':
- *           return state * 2;
- *         default:
- *           return state;
- *       }
- *     }
- *   }
- */
-
-var FluxReduceStore = function (_FluxStore) {
-  _inherits(FluxReduceStore, _FluxStore);
-
-  function FluxReduceStore(dispatcher) {
-    _classCallCheck(this, FluxReduceStore);
-
-    _FluxStore.call(this, dispatcher);
-    this._state = this.getInitialState();
-  }
-
-  /**
-   * Getter that exposes the entire state of this store. If your state is not
-   * immutable you should override this and not expose _state directly.
-   */
-
-  FluxReduceStore.prototype.getState = function getState() {
-    return this._state;
-  };
-
-  /**
-   * Constructs the initial state for this store. This is called once during
-   * construction of the store.
-   */
-
-  FluxReduceStore.prototype.getInitialState = function getInitialState() {
-    return abstractMethod('FluxReduceStore', 'getInitialState');
-  };
-
-  /**
-   * Used to reduce a stream of actions coming from the dispatcher into a
-   * single state object.
-   */
-
-  FluxReduceStore.prototype.reduce = function reduce(state, action) {
-    return abstractMethod('FluxReduceStore', 'reduce');
-  };
-
-  /**
-   * Checks if two versions of state are the same. You do not need to override
-   * this if your state is immutable.
-   */
-
-  FluxReduceStore.prototype.areEqual = function areEqual(one, two) {
-    return one === two;
-  };
-
-  FluxReduceStore.prototype.__invokeOnDispatch = function __invokeOnDispatch(action) {
-    this.__changed = false;
-
-    // Reduce the stream of incoming actions to state, update when necessary.
-    var startingState = this._state;
-    var endingState = this.reduce(startingState, action);
-
-    // This means your ending state should never be undefined.
-    !(endingState !== undefined) ? process.env.NODE_ENV !== 'production' ? invariant(false, '%s returned undefined from reduce(...), did you forget to return ' + 'state in the default case? (use null if this was intentional)', this.constructor.name) : invariant(false) : undefined;
-
-    if (!this.areEqual(startingState, endingState)) {
-      this._state = endingState;
-
-      // `__emitChange()` sets `this.__changed` to true and then the actual
-      // change will be fired from the emitter at the end of the dispatch, this
-      // is required in order to support methods like `hasChanged()`
-      this.__emitChange();
-    }
-
-    if (this.__changed) {
-      this.__emitter.emit(this.__changeEvent);
-    }
-  };
-
-  return FluxReduceStore;
-}(FluxStore);
-
-module.exports = FluxReduceStore;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-var fbemitter = {
-  EventEmitter: __webpack_require__(93),
-  EmitterSubscription: __webpack_require__(41)
-};
-
-module.exports = fbemitter;
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule BaseEventEmitter
- * @typechecks
- */
-
-
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-var EmitterSubscription = __webpack_require__(41);
-var EventSubscriptionVendor = __webpack_require__(95);
-
-var emptyFunction = __webpack_require__(7);
-var invariant = __webpack_require__(2);
-
-/**
- * @class BaseEventEmitter
- * @description
- * An EventEmitter is responsible for managing a set of listeners and publishing
- * events to them when it is told that such events happened. In addition to the
- * data for the given event it also sends a event control object which allows
- * the listeners/handlers to prevent the default behavior of the given event.
- *
- * The emitter is designed to be generic enough to support all the different
- * contexts in which one might want to emit events. It is a simple multicast
- * mechanism on top of which extra functionality can be composed. For example, a
- * more advanced emitter may use an EventHolder and EventFactory.
- */
-
-var BaseEventEmitter = function () {
-  /**
-   * @constructor
-   */
-
-  function BaseEventEmitter() {
-    _classCallCheck(this, BaseEventEmitter);
-
-    this._subscriber = new EventSubscriptionVendor();
-    this._currentSubscription = null;
-  }
-
-  /**
-   * Adds a listener to be invoked when events of the specified type are
-   * emitted. An optional calling context may be provided. The data arguments
-   * emitted will be passed to the listener function.
-   *
-   * TODO: Annotate the listener arg's type. This is tricky because listeners
-   *       can be invoked with varargs.
-   *
-   * @param {string} eventType - Name of the event to listen to
-   * @param {function} listener - Function to invoke when the specified event is
-   *   emitted
-   * @param {*} context - Optional context object to use when invoking the
-   *   listener
-   */
-
-  BaseEventEmitter.prototype.addListener = function addListener(eventType, listener, context) {
-    return this._subscriber.addSubscription(eventType, new EmitterSubscription(this._subscriber, listener, context));
-  };
-
-  /**
-   * Similar to addListener, except that the listener is removed after it is
-   * invoked once.
-   *
-   * @param {string} eventType - Name of the event to listen to
-   * @param {function} listener - Function to invoke only once when the
-   *   specified event is emitted
-   * @param {*} context - Optional context object to use when invoking the
-   *   listener
-   */
-
-  BaseEventEmitter.prototype.once = function once(eventType, listener, context) {
-    var emitter = this;
-    return this.addListener(eventType, function () {
-      emitter.removeCurrentListener();
-      listener.apply(context, arguments);
-    });
-  };
-
-  /**
-   * Removes all of the registered listeners, including those registered as
-   * listener maps.
-   *
-   * @param {?string} eventType - Optional name of the event whose registered
-   *   listeners to remove
-   */
-
-  BaseEventEmitter.prototype.removeAllListeners = function removeAllListeners(eventType) {
-    this._subscriber.removeAllSubscriptions(eventType);
-  };
-
-  /**
-   * Provides an API that can be called during an eventing cycle to remove the
-   * last listener that was invoked. This allows a developer to provide an event
-   * object that can remove the listener (or listener map) during the
-   * invocation.
-   *
-   * If it is called when not inside of an emitting cycle it will throw.
-   *
-   * @throws {Error} When called not during an eventing cycle
-   *
-   * @example
-   *   var subscription = emitter.addListenerMap({
-   *     someEvent: function(data, event) {
-   *       console.log(data);
-   *       emitter.removeCurrentListener();
-   *     }
-   *   });
-   *
-   *   emitter.emit('someEvent', 'abc'); // logs 'abc'
-   *   emitter.emit('someEvent', 'def'); // does not log anything
-   */
-
-  BaseEventEmitter.prototype.removeCurrentListener = function removeCurrentListener() {
-    !!!this._currentSubscription ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Not in an emitting cycle; there is no current subscription') : invariant(false) : undefined;
-    this._subscriber.removeSubscription(this._currentSubscription);
-  };
-
-  /**
-   * Returns an array of listeners that are currently registered for the given
-   * event.
-   *
-   * @param {string} eventType - Name of the event to query
-   * @return {array}
-   */
-
-  BaseEventEmitter.prototype.listeners = function listeners(eventType) /* TODO: Array<EventSubscription> */{
-    var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
-    return subscriptions ? subscriptions.filter(emptyFunction.thatReturnsTrue).map(function (subscription) {
-      return subscription.listener;
-    }) : [];
-  };
-
-  /**
-   * Emits an event of the given type with the given data. All handlers of that
-   * particular type will be notified.
-   *
-   * @param {string} eventType - Name of the event to emit
-   * @param {*} Arbitrary arguments to be passed to each registered listener
-   *
-   * @example
-   *   emitter.addListener('someEvent', function(message) {
-   *     console.log(message);
-   *   });
-   *
-   *   emitter.emit('someEvent', 'abc'); // logs 'abc'
-   */
-
-  BaseEventEmitter.prototype.emit = function emit(eventType) {
-    var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
-    if (subscriptions) {
-      var keys = Object.keys(subscriptions);
-      for (var ii = 0; ii < keys.length; ii++) {
-        var key = keys[ii];
-        var subscription = subscriptions[key];
-        // The subscription may have been removed during this event loop.
-        if (subscription) {
-          this._currentSubscription = subscription;
-          this.__emitToSubscription.apply(this, [subscription].concat(Array.prototype.slice.call(arguments)));
-        }
-      }
-      this._currentSubscription = null;
-    }
-  };
-
-  /**
-   * Provides a hook to override how the emitter emits an event to a specific
-   * subscription. This allows you to set up logging and error boundaries
-   * specific to your environment.
-   *
-   * @param {EmitterSubscription} subscription
-   * @param {string} eventType
-   * @param {*} Arbitrary arguments to be passed to each registered listener
-   */
-
-  BaseEventEmitter.prototype.__emitToSubscription = function __emitToSubscription(subscription, eventType) {
-    var args = Array.prototype.slice.call(arguments, 2);
-    subscription.listener.apply(subscription.context, args);
-  };
-
-  return BaseEventEmitter;
-}();
-
-module.exports = BaseEventEmitter;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule EventSubscription
- * @typechecks
- */
-
-
-
-/**
- * EventSubscription represents a subscription to a particular event. It can
- * remove its own subscription.
- */
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-var EventSubscription = function () {
-
-  /**
-   * @param {EventSubscriptionVendor} subscriber the subscriber that controls
-   *   this subscription.
-   */
-
-  function EventSubscription(subscriber) {
-    _classCallCheck(this, EventSubscription);
-
-    this.subscriber = subscriber;
-  }
-
-  /**
-   * Removes this subscription from the subscriber that controls it.
-   */
-
-  EventSubscription.prototype.remove = function remove() {
-    if (this.subscriber) {
-      this.subscriber.removeSubscription(this);
-      this.subscriber = null;
-    }
-  };
-
-  return EventSubscription;
-}();
-
-module.exports = EventSubscription;
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- * 
- * @providesModule EventSubscriptionVendor
- * @typechecks
- */
-
-
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-var invariant = __webpack_require__(2);
-
-/**
- * EventSubscriptionVendor stores a set of EventSubscriptions that are
- * subscribed to a particular event type.
- */
-
-var EventSubscriptionVendor = function () {
-  function EventSubscriptionVendor() {
-    _classCallCheck(this, EventSubscriptionVendor);
-
-    this._subscriptionsForType = {};
-    this._currentSubscription = null;
-  }
-
-  /**
-   * Adds a subscription keyed by an event type.
-   *
-   * @param {string} eventType
-   * @param {EventSubscription} subscription
-   */
-
-  EventSubscriptionVendor.prototype.addSubscription = function addSubscription(eventType, subscription) {
-    !(subscription.subscriber === this) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'The subscriber of the subscription is incorrectly set.') : invariant(false) : undefined;
-    if (!this._subscriptionsForType[eventType]) {
-      this._subscriptionsForType[eventType] = [];
-    }
-    var key = this._subscriptionsForType[eventType].length;
-    this._subscriptionsForType[eventType].push(subscription);
-    subscription.eventType = eventType;
-    subscription.key = key;
-    return subscription;
-  };
-
-  /**
-   * Removes a bulk set of the subscriptions.
-   *
-   * @param {?string} eventType - Optional name of the event type whose
-   *   registered supscriptions to remove, if null remove all subscriptions.
-   */
-
-  EventSubscriptionVendor.prototype.removeAllSubscriptions = function removeAllSubscriptions(eventType) {
-    if (eventType === undefined) {
-      this._subscriptionsForType = {};
-    } else {
-      delete this._subscriptionsForType[eventType];
-    }
-  };
-
-  /**
-   * Removes a specific subscription. Instead of calling this function, call
-   * `subscription.remove()` directly.
-   *
-   * @param {object} subscription
-   */
-
-  EventSubscriptionVendor.prototype.removeSubscription = function removeSubscription(subscription) {
-    var eventType = subscription.eventType;
-    var key = subscription.key;
-
-    var subscriptionsForType = this._subscriptionsForType[eventType];
-    if (subscriptionsForType) {
-      delete subscriptionsForType[key];
-    }
-  };
-
-  /**
-   * Returns the array of subscriptions that are currently registered for the
-   * given event type.
-   *
-   * Note: This array can be potentially sparse as subscriptions are deleted
-   * from it when they are removed.
-   *
-   * TODO: This returns a nullable array. wat?
-   *
-   * @param {string} eventType
-   * @return {?array}
-   */
-
-  EventSubscriptionVendor.prototype.getSubscriptionsForType = function getSubscriptionsForType(eventType) {
-    return this._subscriptionsForType[eventType];
-  };
-
-  return EventSubscriptionVendor;
-}();
-
-module.exports = EventSubscriptionVendor;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule abstractMethod
- * 
- */
-
-
-
-var invariant = __webpack_require__(2);
-
-function abstractMethod(className, methodName) {
-   true ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Subclasses of %s must override %s() with their own implementation.', className, methodName) : invariant(false) : undefined;
-}
-
-module.exports = abstractMethod;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 97 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux_utils__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flux_utils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dispatcher__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_webutils__ = __webpack_require__(5);
-
-
-
-
-const pspid = `appStore`;
-
-class AppStore extends __WEBPACK_IMPORTED_MODULE_0_flux_utils__["ReduceStore"] {
-  getInitialState() {
-    return {};
-  }
-
-  reduce(state, action) {
-    __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Request: ${action.type}`);
-    switch (action.type) {
-      default:
-        return state;
-    }
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (new AppStore(__WEBPACK_IMPORTED_MODULE_1__dispatcher__["a" /* default */]));
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
-
-module.exports.Dispatcher = __webpack_require__(99);
-
-/***/ }),
-/* 99 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule Dispatcher
- * 
- * @preventMunge
- */
-
-
-
-exports.__esModule = true;
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError('Cannot call a class as a function');
-  }
-}
-
-var invariant = __webpack_require__(2);
-
-var _prefix = 'ID_';
-
-/**
- * Dispatcher is used to broadcast payloads to registered callbacks. This is
- * different from generic pub-sub systems in two ways:
- *
- *   1) Callbacks are not subscribed to particular events. Every payload is
- *      dispatched to every registered callback.
- *   2) Callbacks can be deferred in whole or part until other callbacks have
- *      been executed.
- *
- * For example, consider this hypothetical flight destination form, which
- * selects a default city when a country is selected:
- *
- *   var flightDispatcher = new Dispatcher();
- *
- *   // Keeps track of which country is selected
- *   var CountryStore = {country: null};
- *
- *   // Keeps track of which city is selected
- *   var CityStore = {city: null};
- *
- *   // Keeps track of the base flight price of the selected city
- *   var FlightPriceStore = {price: null}
- *
- * When a user changes the selected city, we dispatch the payload:
- *
- *   flightDispatcher.dispatch({
- *     actionType: 'city-update',
- *     selectedCity: 'paris'
- *   });
- *
- * This payload is digested by `CityStore`:
- *
- *   flightDispatcher.register(function(payload) {
- *     if (payload.actionType === 'city-update') {
- *       CityStore.city = payload.selectedCity;
- *     }
- *   });
- *
- * When the user selects a country, we dispatch the payload:
- *
- *   flightDispatcher.dispatch({
- *     actionType: 'country-update',
- *     selectedCountry: 'australia'
- *   });
- *
- * This payload is digested by both stores:
- *
- *   CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
- *     if (payload.actionType === 'country-update') {
- *       CountryStore.country = payload.selectedCountry;
- *     }
- *   });
- *
- * When the callback to update `CountryStore` is registered, we save a reference
- * to the returned token. Using this token with `waitFor()`, we can guarantee
- * that `CountryStore` is updated before the callback that updates `CityStore`
- * needs to query its data.
- *
- *   CityStore.dispatchToken = flightDispatcher.register(function(payload) {
- *     if (payload.actionType === 'country-update') {
- *       // `CountryStore.country` may not be updated.
- *       flightDispatcher.waitFor([CountryStore.dispatchToken]);
- *       // `CountryStore.country` is now guaranteed to be updated.
- *
- *       // Select the default city for the new country
- *       CityStore.city = getDefaultCityForCountry(CountryStore.country);
- *     }
- *   });
- *
- * The usage of `waitFor()` can be chained, for example:
- *
- *   FlightPriceStore.dispatchToken =
- *     flightDispatcher.register(function(payload) {
- *       switch (payload.actionType) {
- *         case 'country-update':
- *         case 'city-update':
- *           flightDispatcher.waitFor([CityStore.dispatchToken]);
- *           FlightPriceStore.price =
- *             getFlightPriceStore(CountryStore.country, CityStore.city);
- *           break;
- *     }
- *   });
- *
- * The `country-update` payload will be guaranteed to invoke the stores'
- * registered callbacks in order: `CountryStore`, `CityStore`, then
- * `FlightPriceStore`.
- */
-
-var Dispatcher = function () {
-  function Dispatcher() {
-    _classCallCheck(this, Dispatcher);
-
-    this._callbacks = {};
-    this._isDispatching = false;
-    this._isHandled = {};
-    this._isPending = {};
-    this._lastID = 1;
-  }
-
-  /**
-   * Registers a callback to be invoked with every dispatched payload. Returns
-   * a token that can be used with `waitFor()`.
-   */
-
-  Dispatcher.prototype.register = function register(callback) {
-    var id = _prefix + this._lastID++;
-    this._callbacks[id] = callback;
-    return id;
-  };
-
-  /**
-   * Removes a callback based on its token.
-   */
-
-  Dispatcher.prototype.unregister = function unregister(id) {
-    !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.unregister(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
-    delete this._callbacks[id];
-  };
-
-  /**
-   * Waits for the callbacks specified to be invoked before continuing execution
-   * of the current callback. This method should only be used by a callback in
-   * response to a dispatched payload.
-   */
-
-  Dispatcher.prototype.waitFor = function waitFor(ids) {
-    !this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Must be invoked while dispatching.') : invariant(false) : undefined;
-    for (var ii = 0; ii < ids.length; ii++) {
-      var id = ids[ii];
-      if (this._isPending[id]) {
-        !this._isHandled[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Circular dependency detected while ' + 'waiting for `%s`.', id) : invariant(false) : undefined;
-        continue;
-      }
-      !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
-      this._invokeCallback(id);
-    }
-  };
-
-  /**
-   * Dispatches a payload to all registered callbacks.
-   */
-
-  Dispatcher.prototype.dispatch = function dispatch(payload) {
-    !!this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.') : invariant(false) : undefined;
-    this._startDispatching(payload);
-    try {
-      for (var id in this._callbacks) {
-        if (this._isPending[id]) {
-          continue;
-        }
-        this._invokeCallback(id);
-      }
-    } finally {
-      this._stopDispatching();
-    }
-  };
-
-  /**
-   * Is this Dispatcher currently dispatching.
-   */
-
-  Dispatcher.prototype.isDispatching = function isDispatching() {
-    return this._isDispatching;
-  };
-
-  /**
-   * Call the callback stored with the given id. Also do some internal
-   * bookkeeping.
-   *
-   * @internal
-   */
-
-  Dispatcher.prototype._invokeCallback = function _invokeCallback(id) {
-    this._isPending[id] = true;
-    this._callbacks[id](this._pendingPayload);
-    this._isHandled[id] = true;
-  };
-
-  /**
-   * Set up bookkeeping needed when dispatching.
-   *
-   * @internal
-   */
-
-  Dispatcher.prototype._startDispatching = function _startDispatching(payload) {
-    for (var id in this._callbacks) {
-      this._isPending[id] = false;
-      this._isHandled[id] = false;
-    }
-    this._pendingPayload = payload;
-    this._isDispatching = true;
-  };
-
-  /**
-   * Clear bookkeeping used for dispatching.
-   *
-   * @internal
-   */
-
-  Dispatcher.prototype._stopDispatching = function _stopDispatching() {
-    delete this._pendingPayload;
-    this._isDispatching = false;
-  };
-
-  return Dispatcher;
-}();
-
-module.exports = Dispatcher;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 100 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
- * Copyright (c) 2011-2014 Felix Gnass
- * Licensed under the MIT license
- * http://spin.js.org/
- *
- * Example:
-    var opts = {
-      lines: 12             // The number of lines to draw
-    , length: 7             // The length of each line
-    , width: 5              // The line thickness
-    , radius: 10            // The radius of the inner circle
-    , scale: 1.0            // Scales overall size of the spinner
-    , corners: 1            // Roundness (0..1)
-    , color: '#000'         // #rgb or #rrggbb
-    , opacity: 1/4          // Opacity of the lines
-    , rotate: 0             // Rotation offset
-    , direction: 1          // 1: clockwise, -1: counterclockwise
-    , speed: 1              // Rounds per second
-    , trail: 100            // Afterglow percentage
-    , fps: 20               // Frames per second when using setTimeout()
-    , zIndex: 2e9           // Use a high z-index by default
-    , className: 'spinner'  // CSS class to assign to the element
-    , top: '50%'            // center vertically
-    , left: '50%'           // center horizontally
-    , shadow: false         // Whether to render a shadow
-    , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
-    , position: 'absolute'  // Element positioning
-    }
-    var target = document.getElementById('foo')
-    var spinner = new Spinner(opts).spin(target)
- */
-;(function (root, factory) {
-
-  /* CommonJS */
-  if (typeof module == 'object' && module.exports) module.exports = factory();
-
-  /* AMD module */
-  else if (true) !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
-				__WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-    /* Browser global */
-    else root.Spinner = factory();
-})(this, function () {
-  "use strict";
-
-  var prefixes = ['webkit', 'Moz', 'ms', 'O'] /* Vendor prefixes */
-  ,
-      animations = {} /* Animation rules keyed by their name */
-  ,
-      useCssAnimations /* Whether to use CSS animations or setTimeout */
-  ,
-      sheet; /* A stylesheet to hold the @keyframe or VML rules. */
-
-  /**
-   * Utility function to create elements. If no tag name is given,
-   * a DIV is created. Optionally properties can be passed.
-   */
-  function createEl(tag, prop) {
-    var el = document.createElement(tag || 'div'),
-        n;
-
-    for (n in prop) el[n] = prop[n];
-    return el;
-  }
-
-  /**
-   * Appends children and returns the parent.
-   */
-  function ins(parent /* child1, child2, ...*/) {
-    for (var i = 1, n = arguments.length; i < n; i++) {
-      parent.appendChild(arguments[i]);
-    }
-
-    return parent;
-  }
-
-  /**
-   * Creates an opacity keyframe animation rule and returns its name.
-   * Since most mobile Webkits have timing issues with animation-delay,
-   * we create separate rules for each line/segment.
-   */
-  function addAnimation(alpha, trail, i, lines) {
-    var name = ['opacity', trail, ~~(alpha * 100), i, lines].join('-'),
-        start = 0.01 + i / lines * 100,
-        z = Math.max(1 - (1 - alpha) / trail * (100 - start), alpha),
-        prefix = useCssAnimations.substring(0, useCssAnimations.indexOf('Animation')).toLowerCase(),
-        pre = prefix && '-' + prefix + '-' || '';
-
-    if (!animations[name]) {
-      sheet.insertRule('@' + pre + 'keyframes ' + name + '{' + '0%{opacity:' + z + '}' + start + '%{opacity:' + alpha + '}' + (start + 0.01) + '%{opacity:1}' + (start + trail) % 100 + '%{opacity:' + alpha + '}' + '100%{opacity:' + z + '}' + '}', sheet.cssRules.length);
-
-      animations[name] = 1;
-    }
-
-    return name;
-  }
-
-  /**
-   * Tries various vendor prefixes and returns the first supported property.
-   */
-  function vendor(el, prop) {
-    var s = el.style,
-        pp,
-        i;
-
-    prop = prop.charAt(0).toUpperCase() + prop.slice(1);
-    if (s[prop] !== undefined) return prop;
-    for (i = 0; i < prefixes.length; i++) {
-      pp = prefixes[i] + prop;
-      if (s[pp] !== undefined) return pp;
-    }
-  }
-
-  /**
-   * Sets multiple style properties at once.
-   */
-  function css(el, prop) {
-    for (var n in prop) {
-      el.style[vendor(el, n) || n] = prop[n];
-    }
-
-    return el;
-  }
-
-  /**
-   * Fills in default values.
-   */
-  function merge(obj) {
-    for (var i = 1; i < arguments.length; i++) {
-      var def = arguments[i];
-      for (var n in def) {
-        if (obj[n] === undefined) obj[n] = def[n];
-      }
-    }
-    return obj;
-  }
-
-  /**
-   * Returns the line color from the given string or array.
-   */
-  function getColor(color, idx) {
-    return typeof color == 'string' ? color : color[idx % color.length];
-  }
-
-  // Built-in defaults
-
-  var defaults = {
-    lines: 12 // The number of lines to draw
-    , length: 7 // The length of each line
-    , width: 5 // The line thickness
-    , radius: 10 // The radius of the inner circle
-    , scale: 1.0 // Scales overall size of the spinner
-    , corners: 1 // Roundness (0..1)
-    , color: '#000' // #rgb or #rrggbb
-    , opacity: 1 / 4 // Opacity of the lines
-    , rotate: 0 // Rotation offset
-    , direction: 1 // 1: clockwise, -1: counterclockwise
-    , speed: 1 // Rounds per second
-    , trail: 100 // Afterglow percentage
-    , fps: 20 // Frames per second when using setTimeout()
-    , zIndex: 2e9 // Use a high z-index by default
-    , className: 'spinner' // CSS class to assign to the element
-    , top: '50%' // center vertically
-    , left: '50%' // center horizontally
-    , shadow: false // Whether to render a shadow
-    , hwaccel: false // Whether to use hardware acceleration (might be buggy)
-    , position: 'absolute' // Element positioning
-
-
-    /** The constructor */
-  };function Spinner(o) {
-    this.opts = merge(o || {}, Spinner.defaults, defaults);
-  }
-
-  // Global defaults that override the built-ins:
-  Spinner.defaults = {};
-
-  merge(Spinner.prototype, {
-    /**
-     * Adds the spinner to the given target element. If this instance is already
-     * spinning, it is automatically removed from its previous target b calling
-     * stop() internally.
-     */
-    spin: function (target) {
-      this.stop();
-
-      var self = this,
-          o = self.opts,
-          el = self.el = createEl(null, { className: o.className });
-
-      css(el, {
-        position: o.position,
-        width: 0,
-        zIndex: o.zIndex,
-        left: o.left,
-        top: o.top
-      });
-
-      if (target) {
-        target.insertBefore(el, target.firstChild || null);
-      }
-
-      el.setAttribute('role', 'progressbar');
-      self.lines(el, self.opts);
-
-      if (!useCssAnimations) {
-        // No CSS animation support, use setTimeout() instead
-        var i = 0,
-            start = (o.lines - 1) * (1 - o.direction) / 2,
-            alpha,
-            fps = o.fps,
-            f = fps / o.speed,
-            ostep = (1 - o.opacity) / (f * o.trail / 100),
-            astep = f / o.lines;(function anim() {
-          i++;
-          for (var j = 0; j < o.lines; j++) {
-            alpha = Math.max(1 - (i + (o.lines - j) * astep) % f * ostep, o.opacity);
-
-            self.opacity(el, j * o.direction + start, alpha, o);
-          }
-          self.timeout = self.el && setTimeout(anim, ~~(1000 / fps));
-        })();
-      }
-      return self;
-    }
-
-    /**
-     * Stops and removes the Spinner.
-     */
-    , stop: function () {
-      var el = this.el;
-      if (el) {
-        clearTimeout(this.timeout);
-        if (el.parentNode) el.parentNode.removeChild(el);
-        this.el = undefined;
-      }
-      return this;
-    }
-
-    /**
-     * Internal method that draws the individual lines. Will be overwritten
-     * in VML fallback mode below.
-     */
-    , lines: function (el, o) {
-      var i = 0,
-          start = (o.lines - 1) * (1 - o.direction) / 2,
-          seg;
-
-      function fill(color, shadow) {
-        return css(createEl(), {
-          position: 'absolute',
-          width: o.scale * (o.length + o.width) + 'px',
-          height: o.scale * o.width + 'px',
-          background: color,
-          boxShadow: shadow,
-          transformOrigin: 'left',
-          transform: 'rotate(' + ~~(360 / o.lines * i + o.rotate) + 'deg) translate(' + o.scale * o.radius + 'px' + ',0)',
-          borderRadius: (o.corners * o.scale * o.width >> 1) + 'px'
-        });
-      }
-
-      for (; i < o.lines; i++) {
-        seg = css(createEl(), {
-          position: 'absolute',
-          top: 1 + ~(o.scale * o.width / 2) + 'px',
-          transform: o.hwaccel ? 'translate3d(0,0,0)' : '',
-          opacity: o.opacity,
-          animation: useCssAnimations && addAnimation(o.opacity, o.trail, start + i * o.direction, o.lines) + ' ' + 1 / o.speed + 's linear infinite'
-        });
-
-        if (o.shadow) ins(seg, css(fill('#000', '0 0 4px #000'), { top: '2px' }));
-        ins(el, ins(seg, fill(getColor(o.color, i), '0 0 1px rgba(0,0,0,.1)')));
-      }
-      return el;
-    }
-
-    /**
-     * Internal method that adjusts the opacity of a single line.
-     * Will be overwritten in VML fallback mode below.
-     */
-    , opacity: function (el, i, val) {
-      if (i < el.childNodes.length) el.childNodes[i].style.opacity = val;
-    }
-
-  });
-
-  function initVML() {
-
-    /* Utility function to create a VML tag */
-    function vml(tag, attr) {
-      return createEl('<' + tag + ' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">', attr);
-    }
-
-    // No CSS transforms but VML support, add a CSS rule for VML elements:
-    sheet.addRule('.spin-vml', 'behavior:url(#default#VML)');
-
-    Spinner.prototype.lines = function (el, o) {
-      var r = o.scale * (o.length + o.width),
-          s = o.scale * 2 * r;
-
-      function grp() {
-        return css(vml('group', {
-          coordsize: s + ' ' + s,
-          coordorigin: -r + ' ' + -r
-        }), { width: s, height: s });
-      }
-
-      var margin = -(o.width + o.length) * o.scale * 2 + 'px',
-          g = css(grp(), { position: 'absolute', top: margin, left: margin }),
-          i;
-
-      function seg(i, dx, filter) {
-        ins(g, ins(css(grp(), { rotation: 360 / o.lines * i + 'deg', left: ~~dx }), ins(css(vml('roundrect', { arcsize: o.corners }), { width: r,
-          height: o.scale * o.width,
-          left: o.scale * o.radius,
-          top: -o.scale * o.width >> 1,
-          filter: filter
-        }), vml('fill', { color: getColor(o.color, i), opacity: o.opacity }), vml('stroke', { opacity: 0 }) // transparent stroke to fix color bleeding upon opacity change
-        )));
-      }
-
-      if (o.shadow) for (i = 1; i <= o.lines; i++) {
-        seg(i, -2, 'progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)');
-      }
-
-      for (i = 1; i <= o.lines; i++) seg(i);
-      return ins(el, g);
-    };
-
-    Spinner.prototype.opacity = function (el, i, val, o) {
-      var c = el.firstChild;
-      o = o.shadow && o.lines || 0;
-      if (c && i + o < c.childNodes.length) {
-        c = c.childNodes[i + o];c = c && c.firstChild;c = c && c.firstChild;
-        if (c) c.opacity = val;
-      }
-    };
-  }
-
-  if (typeof document !== 'undefined') {
-    sheet = function () {
-      var el = createEl('style', { type: 'text/css' });
-      ins(document.getElementsByTagName('head')[0], el);
-      return el.sheet || el.styleSheet;
-    }();
-
-    var probe = css(createEl('group'), { behavior: 'url(#default#VML)' });
-
-    if (!vendor(probe, 'transform') && probe.adj) initVML();else useCssAnimations = vendor(probe, 'animation');
-  }
-
-  return Spinner;
-});
-
-/***/ }),
-/* 101 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-
-
-class GlobalHeader extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = GlobalHeader;
-
-
-/***/ }),
-/* 102 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flux_utils__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flux_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_flux_utils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__stores_noteStore__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions_NoteAction__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_NoteHeader_NoteHeader__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_NoteBody_NoteBody__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_NoteFooter_NoteFooter__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Tabs_Tabs__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_webutils__ = __webpack_require__(5);
-
-
-
-
-
-
-
-
-
-
-
-const pspid = `NoteControlerView`;
-
-class Note extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  static getStores() {
-    return [__WEBPACK_IMPORTED_MODULE_3__stores_noteStore__["a" /* default */]];
-  }
-
-  static calculateState() {
-    return __WEBPACK_IMPORTED_MODULE_3__stores_noteStore__["a" /* default */].getState();
-  }
-
-  componentDidMount() {
-    __WEBPACK_IMPORTED_MODULE_4__actions_NoteAction__["a" /* default */].increment(this.state.options, this.state.page);
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'window' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_NoteHeader_NoteHeader__["a" /* default */], {
-        page: this.state.page,
-        options: this.state.options }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_Tabs_Tabs__["a" /* default */], null),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_NoteBody_NoteBody__["a" /* default */], {
-        items: this.state.items,
-        options: this.state.options }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_NoteFooter_NoteFooter__["a" /* default */], null)
-    );
-  }
-}
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_1_flux_utils__["Container"].create(__WEBPACK_IMPORTED_MODULE_2__FluxContainerConverter___default.a.convert(Note)));
-
-/***/ }),
-/* 103 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux_utils__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux_utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flux_utils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dispatcher__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_webutils__ = __webpack_require__(5);
-
-
-
-
-const pspid = `noteStore`;
-
-class NoteStore extends __WEBPACK_IMPORTED_MODULE_0_flux_utils__["ReduceStore"] {
-  getInitialState() {
-    return {
-      page: 0,
-      items: null,
-      options: {
-        searchString: '',
-        highestPrice: '',
-        lowestPrice: '',
-        bids: false,
-        condition: 'all',
-        status: false,
-        AuctionID: [],
-        categoryPath: [],
-        seller: [] },
-      url: ''
-    };
-  }
-
-  reduce(state, action) {
-    __WEBPACK_IMPORTED_MODULE_2__utils_webutils__["b" /* log */].info(`${pspid}> Request: ${action.type}`);
-    switch (action.type) {
-      case 'item/fetch':
-        return Object.assign({}, state, { items: action.items, options: action.options,
-          page: action.page });
-      case 'item/fetch/closewatch':
-        return Object.assign({}, state, { items: action.items, page: action.page });
-      case 'item/fetch/openwatch':
-        return Object.assign({}, state, { items: action.items, page: action.page });
-      case 'item/create/watch':
-        return Object.assign({}, state, { url: action.url });
-      case 'item/delete/watch':
-        return Object.assign({}, state, { url: action.url });
-      default:
-        return state;
-    }
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (new NoteStore(__WEBPACK_IMPORTED_MODULE_1__dispatcher__["a" /* default */]));
-
-/***/ }),
-/* 104 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_webutils__ = __webpack_require__(5);
-
-
-__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].config('console', 'basic', 'ALL', 'note-renderer');
-__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].config('app');
-
-const pspid = `NoteAPIClient`;
-let items = [];
-
-const v1 = 'https://auctions.yahooapis.jp/AuctionWebService/V1/';
-const v2 = 'https://auctions.yahooapis.jp/AuctionWebService/V2/';
-const a2 = 'https://auth.login.yahoo.co.jp/yconnect/v2/';
-
-const appid = process.env.app_id;
-const redirect_uri = process.env.redirect_uri;
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  request(action, response) {
-    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].info(`${pspid}> Request: ${action}`);
-    switch (action) {
-      case 'json/search':
-        return new Promise(resolve => {
-          JSONP.request(v2 + action, response, ids => {
-            resolve(ids);
-          });
-        });
-      case 'json/auctionItem':
-        return new Promise(resolve => {
-          JSONP.request(v2 + action, response, Item => {
-            resolve({ AuctionID: response.auctionID, Item });
-          });
-        });
-      case 'BidHistory':
-        return new Promise(resolve => {
-          JSONP.request(v1 + action, response, Bids => {
-            resolve({ AuctionID: response.auctionID, Bids });
-          });
-        });
-      case '.well-known/openid-configuration':
-        return new Promise(resolve => {
-          JSONP.request(a2 + action, response, config => {
-            resolve(config);
-          });
-        });
-      case 'authorization':
-        return new Promise(resolve => {
-          JSONP.request(a2 + action, response, auth => {
-            resolve(auth);
-          });
-        });
-      case 'watchList':
-        return new Promise(resolve => {
-          JSONP.request(v1 + action, response, Url => {
-            resolve({ AuctionID: response.auctionID, Url });
-          });
-        });
-      case 'deleteWatchList':
-        return new Promise(resolve => {
-          JSONP.request(v1 + action, response, Url => {
-            resolve({ AuctionID: response.auctionID, Url });
-          });
-        });
-      case 'openWatchList':
-        return new Promise(resolve => {
-          JSONP.request(v2 + action, response, ids => {
-            resolve(ids);
-          });
-        });
-      case 'closeWatchList':
-        return new Promise(resolve => {
-          JSONP.request(v2 + action, response, ids => {
-            resolve(ids);
-          });
-        });
-      default:
-        return new Promise(resolve => {
-          __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].warn(`${pspid}> Unknown request !!`);
-          resolve(response);
-        });
-    }
-  },
-  fetchIds(options, page) {
-    return this.request('json/search', this.helperOptions({ appid, page, output: 'json' }, options));
-  },
-  helperOptions(o, p) {
-    const _o = o;
-    const _p = p ? p : {};
-    const _r = { new: 1, used: 2, other: 0 };
-    const options = {
-      appid: _o.appid,
-      query: '',
-      output: _o.output,
-      page: _o.page ? _o.page : 1,
-      type: 'all',
-      order: 'a',
-      store: 0,
-      gift_icon: 0,
-      adf: 1,
-      f: '0x2'
-    };
-
-    if (_p.searchString) {
-      options['query'] = _p.searchString;
-    }
-
-    if (_p.highestPrice) {
-      options['aucmaxprice'] = Number(_p.highestPrice);
-    }
-
-    if (_p.lowestPrice) {
-      options['aucminprice'] = Number(_p.lowestPrice);
-    }
-
-    if (_p.bids) {
-      options['sort'] = 'bids';
-    } else {
-      options['sort'] = 'score';
-      options['ranking'] = 'current';
-    }
-
-    if (_p.condition && _p.condition !== 'all') {
-      options['item_status'] = Number(_r[_p.condition]);
-    }
-
-    if (_p.seller && _p.seller.length) {
-      options['seller'] = _p.seller.join();
-    }
-
-    //log.trace(`${pspid}>`, 'fetchIds options:', options);
-    return options;
-  },
-  fetchItem(auctionID) {
-    return this.request('json/auctionItem', { auctionID, appid, output: 'json' });
-  },
-  fetchBids(auctionID) {
-    return this.request('BidHistory', { auctionID, appid, output: 'json' });
-  },
-  newIds(obj) {
-    const items = obj.ResultSet.Result.Item;
-    return Array.isArray(items) ? R.map(item => item.AuctionID, items) : [items.AuctionID];
-  },
-  newItems(is, bs) {
-    return R.map(i => {
-      const b = R.filter(o => o.AuctionID === i.AuctionID, bs);
-      return R.merge(i, b[0]);
-    }, is);
-  },
-  traceLog(obj) {
-    return __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].trace(`${pspid}>`, 'Trace log:', obj);
-  },
-  errorLog(err) {
-    return __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["b" /* log */].error(`${pspid}>`, 'Error occurred:', err);
-  },
-  isItem(o) {
-    return o.hasOwnProperty('Item');
-  },
-  isBids(o) {
-    return o.hasOwnProperty('Bids');
-  },
-  fetchItems(options, page) {
-    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
-    return this.fetchIds(options, page).then(this.newIds.bind(this))
-    //.then(R.tap(this.traceLog.bind(this)))
-    .then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(R.concat, R.map(this.fetchItem.bind(this)), R.map(this.fetchBids.bind(this)))).then(obj => Promise.all(obj)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(this.newItems.bind(this), R.filter(this.isItem.bind(this)), R.filter(this.isBids.bind(this)))).catch(this.errorLog.bind(this));
-  },
-  fetchConfig() {
-    return this.request('.well-known/openid-configuration');
-  },
-  fetchAuth() {
-    return this.request('authorization', { response_type: 'token',
-      client_id: appid,
-      redirect_uri,
-      scope: 'openid' });
-  },
-  fetchCloseWatchIds(start, access_token) {
-    return this.request('closeWatchList', { start, output: 'json', access_token });
-  },
-  fetchCloseWatch(start) {
-    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
-    const newIds = R.curry(this.fetchCloseWatchIds)(start);
-    return this.fetchConfig().then(R.tap(this.traceLog.bind(this))).then(this.fetchAuth).then(newIds).then(this.newIds.bind(this)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(R.concat, R.map(this.fetchItem.bind(this)), R.map(this.fetchBids.bind(this)))).then(obj => Promise.all(obj)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(this.newItems.bind(this), R.filter(this.isItem.bind(this)), R.filter(this.isBids.bind(this)))).catch(this.errorLog.bind(this));
-  },
-  fetchOpenWatchIds(start, access_token) {
-    return this.request('openWatchList', { start, output: 'json', access_token });
-  },
-  fetchOpenWatch(start) {
-    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
-    const newIds = R.curry(this.fetchOpenWatchIds)(start);
-    return this.fetchConfig().then(R.tap(this.traceLog.bind(this))).then(this.fetchAuth).then(newIds).then(this.newIds.bind(this)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(R.concat, R.map(this.fetchItem.bind(this)), R.map(this.fetchBids.bind(this)))).then(obj => Promise.all(obj)).then(__WEBPACK_IMPORTED_MODULE_0__utils_webutils__["a" /* M */].fork(this.newItems.bind(this), R.filter(this.isItem.bind(this)), R.filter(this.isBids.bind(this)))).then(R.tap(this.traceLog.bind(this))).catch(this.errorLog.bind(this));
-  },
-  createWatch(access_token, auctionID) {
-    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
-    return this.request('watchList', { auctionID, output: 'json', access_token });
-  },
-  deleteWatch(access_token, auctionID) {
-    __WEBPACK_IMPORTED_MODULE_0__utils_webutils__["c" /* spn */].spin();
-    return this.request('deleteWatchList', { auctionID, output: 'json', access_token });
-  }
-});
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
-
-/***/ }),
-/* 105 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions_NoteAction__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_webutils__ = __webpack_require__(5);
-
-
-
-
-
-const pspid = `NoteHeaderView`;
-
-class NoteHeader extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-  handleChangeHome() {
-    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].info(`${pspid}>`, 'Request: handleChangeHome');
-    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].trace(`${pspid}>`, this.props.options);
-    __WEBPACK_IMPORTED_MODULE_2__actions_NoteAction__["a" /* default */].increment(this.props.options, 0);
-  }
-
-  handleIncrement() {
-    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].info(`${pspid}>`, 'Request: handleIncrement');
-    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].trace(`${pspid}>`, this.props.options);
-    __WEBPACK_IMPORTED_MODULE_2__actions_NoteAction__["a" /* default */].increment(this.props.options, this.props.page);
-  }
-
-  handleDecrement() {
-    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].info(`${pspid}> Request: handleDecrement`);
-    __WEBPACK_IMPORTED_MODULE_3__utils_webutils__["b" /* log */].trace(`${pspid}>`, this.props.options);
-    __WEBPACK_IMPORTED_MODULE_2__actions_NoteAction__["a" /* default */].decrement(this.props.options, this.props.page);
-  }
-
-  render() {
-    const page = this.props.page;
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'header',
-      { className: 'toolbar toolbar-header' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h1',
-        { className: 'title' },
-        'WatchNote!'
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'toolbar-actions' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            className: 'btn btn-default',
-            onClick: this.handleChangeHome.bind(this) },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon icon-home icon-text' }),
-          page,
-          ' page'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'btn-group' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            {
-              className: 'btn btn-default',
-              onClick: this.handleDecrement.bind(this) },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon icon-left' })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'button',
-            {
-              className: 'btn btn-default',
-              onClick: this.handleIncrement.bind(this) },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon icon-right' })
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          {
-            className: 'btn btn-default btn-dropdown pull-right' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon icon-megaphone' })
-        )
-      )
-    );
-  }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = NoteHeader;
-
-
-/***/ }),
 /* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -17387,7 +17393,7 @@ class NoteBody extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_NoteAction__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_NoteAction__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Radio_Radio__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_webutils__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_stdutils__ = __webpack_require__(43);
@@ -18086,7 +18092,7 @@ class NoteFooter extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_webutils__ = __webpack_require__(5);
 
 

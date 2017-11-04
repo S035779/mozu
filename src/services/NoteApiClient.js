@@ -4,7 +4,6 @@ log.config('console', 'basic', 'ALL', 'note-renderer');
 spn.config('app');
 
 const pspid = `NoteAPIClient`;
-let items = [];
 
 const v1 = 'https://auctions.yahooapis.jp/AuctionWebService/V1/';
 const v2 = 'https://auctions.yahooapis.jp/AuctionWebService/V2/';
@@ -127,7 +126,7 @@ export default {
       options['seller']      = _p.seller.join();
     }
     
-    //log.trace(`${pspid}>`, 'fetchIds options:', options);
+    log.trace(`${pspid}>`, 'fetchIds options:', options);
     return options;
   },
   fetchItem(auctionID) {
@@ -162,18 +161,33 @@ export default {
   isBids(o) {
     return o.hasOwnProperty('Bids');
   },
+  forItem(objs) {
+    let newItem = new Array();
+    for(let idx=0; idx < objs.length; idx++) {
+      newItem.push(this.fetchItem(objs[idx]));
+    }
+    return newItem;
+  },
+  forBids(objs) {
+    let newBids = new Array();
+    for(let idx=0; idx < objs.length; idx++) {
+      newBids.push(this.fetchBids(objs[idx]));
+    }
+    return newBids;
+  },
   fetchItems(options, page) {
     spn.spin();
     return this.fetchIds(options, page)
       .then(this.newIds.bind(this))
-      //.then(R.tap(this.traceLog.bind(this)))
       .then(M.fork(R.concat
-        , R.map(this.fetchItem.bind(this))
-        , R.map(this.fetchBids.bind(this))))
-      .then(obj => Promise.all(obj))
-      .then(M.fork(this.newItems.bind(this)
-        , R.filter(this.isItem.bind(this))
-        , R.filter(this.isBids.bind(this))))
+        , this.forItem.bind(this)
+        , this.forBids.bind(this)
+      ))
+      .then(R.tap(this.traceLog.bind(this)))
+      //.then(obj => Promise.all(obj))
+      //.then(M.fork(this.newItems.bind(this)
+      //  , R.filter(this.isItem.bind(this))
+      //  , R.filter(this.isBids.bind(this))))
       .catch(this.errorLog.bind(this));
   },
   fetchConfig() {

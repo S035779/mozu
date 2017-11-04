@@ -1,5 +1,4 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
 import { Container } from 'flux/utils';
 import ContainerConverter from '../../FluxContainerConverter';
 import appStore from '../../stores/appStore';
@@ -19,9 +18,7 @@ class App extends React.Component {
   render() {
     return <div>
       <GlobalHeader />
-      <Switch>
-        <Route path="/" component={Note}/>
-      </Switch>
+      <Note />
     </div>;
   }
 }
