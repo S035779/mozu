@@ -17065,7 +17065,7 @@ const v1 = 'https://auctions.yahooapis.jp/AuctionWebService/V1/';
 const v2 = 'https://auctions.yahooapis.jp/AuctionWebService/V2/';
 const a2 = 'https://auth.login.yahoo.co.jp/yconnect/v2/';
 
-const appid = "dj00aiZpPTBoc0JrMFFVN2U5ViZzPWNvbnN1bWVyc2VjcmV0Jng9MTU-";
+const appid = process.env.app_id;
 const redirect_uri = process.env.redirect_uri;
 
 /* harmony default export */ __webpack_exports__["a"] = ({
