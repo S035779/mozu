@@ -1,18 +1,18 @@
 import React from 'react';
-import NoteSidebar from '../../components/NoteSidebar/NoteSidebar';
-import NoteTable from '../../components/NoteTable/NoteTable';
+import AvailableSidebar from '../../components/AvailableSidebar/AvailableSidebar';
+import AvailableTable from '../../components/AvailableTable/AvailableTable';
 import { log } from '../../../utils/webutils';
 
-const pspid = `NoteBodyView`;
+const pspid = `AvailableBodyView`;
 
-export default class NoteBody extends React.Component {
+export default class AvailableBody extends React.Component {
   render() {
     return <div className="pane-group">
-      <NoteSidebar
+      <AvailableSidebar
         page={this.props.page}
         items={this.props.items}
         options={this.props.options} />
-      <NoteTable
+      <AvailableTable
         items={this.props.items}
         options={this.props.options} />
     </div>;

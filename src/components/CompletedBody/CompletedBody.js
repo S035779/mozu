@@ -1,18 +1,18 @@
 import React from 'react';
-import NoteSidebar from '../../components/NoteSidebar/NoteSidebar';
-import NoteTable from '../../components/NoteTable/NoteTable';
+import CompletedSidebar from '../../components/CompletedSidebar/CompletedSidebar';
+import CompletedTable from '../../components/CompletedTable/CompletedTable';
 import { log } from '../../../utils/webutils';
 
-const pspid = `NoteBodyView`;
+const pspid = `CompletedBodyView`;
 
-export default class NoteBody extends React.Component {
+export default class CompletedBody extends React.Component {
   render() {
     return <div className="pane-group">
-      <NoteSidebar
+      <CompletedSidebar
         page={this.props.page}
         items={this.props.items}
         options={this.props.options} />
-      <NoteTable
+      <CompletedTable
         items={this.props.items}
         options={this.props.options} />
     </div>;

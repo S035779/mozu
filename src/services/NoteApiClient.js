@@ -14,7 +14,7 @@ const redirect_uri = process.env.redirect_uri;
 
 export default {
   request(action, response) {
-    log.info(`${pspid}> Request: ${action}`);
+    log.info(`${pspid}>`, 'Request:', `${action}`);
     switch(action) {
       case 'json/search':
         return new Promise(resolve => {
@@ -23,12 +23,14 @@ export default {
           });
         });
       case 'json/auctionItem':
+        //log.trace(`${pspid}>`, 'Get:', response);
         return new Promise(resolve => {
           JSONP.request(v2 + action, response, Item => {
             resolve({ AuctionID: response.auctionID, Item });
           });
         });
       case 'BidHistory':
+        //log.trace(`${pspid}>`, 'Get:', response);
         return new Promise(resolve => {
           JSONP.request(v1 + action, response, Bids => {
             resolve({ AuctionID: response.auctionID, Bids });
@@ -77,11 +79,142 @@ export default {
         });
     }
   },
-  fetchIds(options, page) {
+
+  getIds(options, page) {
     return this.request('json/search'
       , this.helperOptions({ appid, page, output: 'json' }
       , options));
   },
+
+  getItem(auctionID) {
+    return this.request('json/auctionItem'
+      , { auctionID, appid, output: 'json' });
+  },
+
+  getBids(auctionID) {
+    return this.request('BidHistory'
+      , { auctionID, appid, output: 'json' });
+  },
+
+  getConfig() {
+    return this.request('.well-known/openid-configuration');
+  },
+
+  getAuth() {
+    return this.request('authorization'
+      , { response_type: 'token'
+        , client_id: appid
+        , redirect_uri
+        , scope: 'openid' });
+  },
+
+  getCloseWatchIds(start, access_token) {
+    return this.request('closeWatchList'
+      , { start, output: 'json', access_token });
+  },
+
+  getOpenWatchIds(start, access_token) {
+    return this.request('openWatchList'
+      , { start, output: 'json', access_token });
+  },
+
+  postWatch(access_token, auctionID) {
+    spn.spin();
+    return this.request('watchList'
+      , { auctionID, output: 'json', access_token });
+  },
+
+  deleteWatch(access_token, auctionID) {
+    spn.spin();
+    return this.request('deleteWatchList'
+      , { auctionID, output: 'json', access_token });
+  },
+
+  fetchItems(options, page) {
+    spn.spin();
+    return this.getIds(options, page)
+      .then(R.compose(this.setIds.bind(this)
+        , this.resIds.bind(this)))
+      .then(M.fork(R.concat
+        , R.map(this.getItem.bind(this))
+        , R.map(this.getBids.bind(this))
+      ))
+      .then(obj => Promise.all(obj))
+      .then(M.fork(this.setItems.bind(this)
+        , R.filter(this.isItem.bind(this))
+        , R.filter(this.isBids.bind(this))
+      ))
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
+  },
+
+  fetchCloseWatch(start) {
+    spn.spin();
+    const setItems = R.curry(this.fetchCloseWatchIds)(start);
+    return this.fetchConfig()
+    /*
+      .then(this.fetchAuth)
+      .then(setItems)
+      .then(this.setItems.bind(this))
+      .then(M.fork(R.concat
+        , R.map(this.fetchItem.bind(this))
+        , R.map(this.fetchBids.bind(this))))
+      .then(obj => Promise.all(obj))
+      .then(M.fork(this.setItems.bind(this)
+        , R.filter(this.isItem.bind(this))
+        , R.filter(this.isBids.bind(this))))
+    */
+      .then(R.tap(this.traceLog.bind(this)))
+      //.catch(this.errorLog.bind(this));
+  },
+
+  fetchOpenWatch(start) {
+    spn.spin();
+    const setItems = R.curry(this.fetchOpenWatchIds)(start);
+    return this.fetchConfig()
+    /*
+      .then(this.fetchAuth)
+      .then(setItems)
+      .then(this.setItems.bind(this))
+      .then(M.fork(R.concat
+        , R.map(this.fetchItem.bind(this))
+        , R.map(this.fetchBids.bind(this))))
+      .then(obj => Promise.all(obj))
+      .then(M.fork(this.setItems.bind(this)
+        , R.filter(this.isItem.bind(this))
+        , R.filter(this.isBids.bind(this))))
+    */
+      .then(R.tap(this.traceLog.bind(this)))
+      //.catch(this.errorLog.bind(this));
+  },
+
+  resIds(obj) {
+    const res = obj.ResultSet;
+    return res.hasOwnProperty('Result')
+      ? res.Result : null;
+  },
+
+  setIds(obj) {
+    const ids = obj.Item;
+    return Array.isArray(ids)
+      ? R.map(id => id.AuctionID, ids) : [ids.AuctionID];
+  },
+
+  isItem(obj) {
+    return obj.hasOwnProperty('Item');
+  },
+
+  isBids(obj) {
+    return obj.hasOwnProperty('Bids');
+  },
+
+  setItems(is, bs) {
+    return R.map(i => {
+      const b = R.filter(o => o.AuctionID === i.AuctionID, bs);
+      return R.merge(i, b[0]);
+    }, is);
+  },
+
   helperOptions(o, p) {
     const _o = o;
     const _p = p ? p : {};
@@ -129,128 +262,10 @@ export default {
     log.trace(`${pspid}>`, 'fetchIds options:', options);
     return options;
   },
-  fetchItem(auctionID) {
-    return this.request('json/auctionItem'
-      , { auctionID, appid, output: 'json' });
-  },
-  fetchBids(auctionID) {
-    return this.request('BidHistory'
-      , { auctionID, appid, output: 'json' });
-  },
-  newIds(obj) {
-    const items = obj.ResultSet.Result.Item;
-    return Array.isArray(items)
-      ? R.map(item => item.AuctionID, items)
-      : [items.AuctionID];
-  },
-  newItems(is, bs) {
-    return R.map(i => {
-      const b = R.filter(o => o.AuctionID === i.AuctionID, bs);
-      return R.merge(i, b[0]);
-    }, is);
-  },
   traceLog(obj) {
     return log.trace(`${pspid}>`, 'Trace log:', obj);
   },
   errorLog(err) {
     return log.error(`${pspid}>`, 'Error occurred:', err);
-  },
-  isItem(o) {
-    return o.hasOwnProperty('Item');
-  },
-  isBids(o) {
-    return o.hasOwnProperty('Bids');
-  },
-  forItem(objs) {
-    let newItem = new Array();
-    for(let idx=0; idx < objs.length; idx++) {
-      newItem.push(this.fetchItem(objs[idx]));
-    }
-    return newItem;
-  },
-  forBids(objs) {
-    let newBids = new Array();
-    for(let idx=0; idx < objs.length; idx++) {
-      newBids.push(this.fetchBids(objs[idx]));
-    }
-    return newBids;
-  },
-  fetchItems(options, page) {
-    spn.spin();
-    return this.fetchIds(options, page)
-      .then(this.newIds.bind(this))
-      .then(M.fork(R.concat
-        , this.forItem.bind(this)
-        , this.forBids.bind(this)
-      ))
-      .then(R.tap(this.traceLog.bind(this)))
-      //.then(obj => Promise.all(obj))
-      //.then(M.fork(this.newItems.bind(this)
-      //  , R.filter(this.isItem.bind(this))
-      //  , R.filter(this.isBids.bind(this))))
-      .catch(this.errorLog.bind(this));
-  },
-  fetchConfig() {
-    return this.request('.well-known/openid-configuration');
-  },
-  fetchAuth() {
-    return this.request('authorization'
-      , { response_type: 'token'
-        , client_id: appid
-        , redirect_uri
-        , scope: 'openid' });
-  },
-  fetchCloseWatchIds(start, access_token) {
-    return this.request('closeWatchList'
-      , { start, output: 'json', access_token });
-  },
-  fetchCloseWatch(start) {
-    spn.spin();
-    const newIds = R.curry(this.fetchCloseWatchIds)(start);
-    return this.fetchConfig()
-      .then(R.tap(this.traceLog.bind(this)))
-      .then(this.fetchAuth)
-      .then(newIds)
-      .then(this.newIds.bind(this))
-      .then(M.fork(R.concat
-        , R.map(this.fetchItem.bind(this))
-        , R.map(this.fetchBids.bind(this))))
-      .then(obj => Promise.all(obj))
-      .then(M.fork(this.newItems.bind(this)
-        , R.filter(this.isItem.bind(this))
-        , R.filter(this.isBids.bind(this))))
-      .catch(this.errorLog.bind(this));
-  },
-  fetchOpenWatchIds(start, access_token) {
-    return this.request('openWatchList'
-      , { start, output: 'json', access_token });
-  },
-  fetchOpenWatch(start) {
-    spn.spin();
-    const newIds = R.curry(this.fetchOpenWatchIds)(start);
-    return this.fetchConfig()
-      .then(R.tap(this.traceLog.bind(this)))
-      .then(this.fetchAuth)
-      .then(newIds)
-      .then(this.newIds.bind(this))
-      .then(M.fork(R.concat
-        , R.map(this.fetchItem.bind(this))
-        , R.map(this.fetchBids.bind(this))))
-      .then(obj => Promise.all(obj))
-      .then(M.fork(this.newItems.bind(this)
-        , R.filter(this.isItem.bind(this))
-        , R.filter(this.isBids.bind(this))))
-      .then(R.tap(this.traceLog.bind(this)))
-      .catch(this.errorLog.bind(this));
-  },
-  createWatch(access_token, auctionID) {
-    spn.spin();
-    return this.request('watchList'
-      , { auctionID, output: 'json', access_token });
-  },
-  deleteWatch(access_token, auctionID) {
-    spn.spin();
-    return this.request('deleteWatchList'
-      , { auctionID, output: 'json', access_token });
   },
 }

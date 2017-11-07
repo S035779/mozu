@@ -1,12 +1,12 @@
 import React from 'react';
-import NoteAction from '../../actions/NoteAction';
+import AvailableAction from '../../actions/AvailableAction';
 import Radio from '../../components/Radio/Radio';
 import { log } from '../../../utils/webutils';
 import std from '../../../utils/stdutils';
 
-const pspid = `NoteSidebarView`;
+const pspid = `AvailableSidebarView`;
 
-export default class NoteSidebar extends React.Component {
+export default class AvailableSidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = Object.assign({}, props.options);
@@ -14,7 +14,7 @@ export default class NoteSidebar extends React.Component {
 
   handleChangeSearch(e) {
     log.info(`${pspid}> Request: handleChangeSearch`);
-    NoteAction.increment(this.state, 0);
+    AvailableAction.increment(this.state, 0);
     e.preventDefault();
   }
 

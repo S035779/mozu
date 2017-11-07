@@ -3,9 +3,9 @@ import Sparkline from '../../components/Sparkline/Sparkline';
 import std from '../../../utils/stdutils';
 import { log } from '../../../utils/webutils';
 
-const pspid = `NoteTableView`;
+const pspid = `CompletedTableView`;
 
-export default class NoteTable extends React.Component {
+export default class CompletedTable extends React.Component {
   renderStatus(status) {
     let styles;
     switch(status) {

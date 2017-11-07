@@ -6,12 +6,29 @@ const pspid = `appStore`;
 
 class AppStore extends ReduceStore {
   getInitialState() {
-    return {};
+    return {
+      selected: 0
+      , title: ''
+      , config: {
+        selected: 0
+        , title: ''
+        , findApi: ''
+        , itemApi: ''
+        , bidsApi: ''
+      }
+    };
   }
   
   reduce(state, action) {
     log.info(`${pspid}> Request: ${action.type}`);
     switch (action.type) {
+      case 'content/select':
+        return Object.assign({}, state
+          , { selected: action.selected, title: action.title });
+      case 'config/fetch/appid':
+        return Object.assign({}, state, {config: action.config});
+      case 'config/write/appid':
+        return Object.assign({}, state, {config: action.config});
       default:
         return state;
     }
