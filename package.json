@@ -1,19 +1,19 @@
 {
-  "name": "mozu",
+  "name": "WatchNote",
   "version": "1.0.0",
-  "description": "",
-  "main": "desktop.js",
+  "description": "Yahoo! Auction Search Tool.",
+  "main": "server.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack",
-    "devel": "./node_modules/.bin/webpack-dev-server",
-    "start": "electron ."
+    "build": "webpack --config webpack.config.js",
+    "devel": "webpack-dev-server",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/S035779/mozu.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mamoru Hashimoto",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/S035779/mozu/issues"
