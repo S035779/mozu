@@ -1,74 +1,86 @@
-import { M, log, spn } from '../../utils/webutils';
+import { M, log, spn, str, util } from '../../utils/webutils';
+import xhr from '../../utils/xhrutils';
+import std from '../../utils/stdutils';
 
 log.config('console', 'basic', 'ALL', 'note-renderer');
 spn.config('app');
 
 const pspid = `NoteAPIClient`;
 
-const v1 = 'https://auctions.yahooapis.jp/AuctionWebService/V1/';
-const v2 = 'https://auctions.yahooapis.jp/AuctionWebService/V2/';
-const a2 = 'https://auth.login.yahoo.co.jp/yconnect/v2/';
-
-const appid = process.env.app_id;
-const redirect_uri = process.env.redirect_uri;
+let Yaho = new Object();
 
 export default {
   request(action, response) {
     log.info(`${pspid}>`, 'Request:', `${action}`);
     switch(action) {
+      case 'config/fetch':
+        return new Promise(resolve => {
+          const memory = window.localStorage
+          || (window.UserDataStorage && new str.UserDataStorage())
+          || new str.CookieStorage();
+          Yaho = JSON.parse(memory.getItem("Yaho_config"));
+          resolve(Yaho);
+        });
+      case 'config/write':
+        return new Promise(resolve => {
+          const memory = window.localStorage
+          || (window.UserDataStorage && new str.UserDataStorage())
+          || new str.CookieStorage();
+          Yaho = response;
+          memory.setItem("Yaho_config", JSON.stringify(response));
+          resolve(Yaho);
+        });
       case 'json/search':
         return new Promise(resolve => {
-          JSONP.request(v2 + action, response, ids => {
+          JSONP.request(Yaho.findApi + action, response, ids => {
             resolve(ids);
           });
         });
       case 'json/auctionItem':
-        //log.trace(`${pspid}>`, 'Get:', response);
         return new Promise(resolve => {
-          JSONP.request(v2 + action, response, Item => {
+          JSONP.request(Yaho.itemApi + action, response, Item => {
             resolve({ AuctionID: response.auctionID, Item });
           });
         });
       case 'BidHistory':
-        //log.trace(`${pspid}>`, 'Get:', response);
         return new Promise(resolve => {
-          JSONP.request(v1 + action, response, Bids => {
+          JSONP.request(Yaho.bidsApi + action, response, Bids => {
             resolve({ AuctionID: response.auctionID, Bids });
           });
         });
       case '.well-known/openid-configuration':
         return new Promise(resolve => {
-          JSONP.request(a2 + action, response, config => {
+          JSONP.request(authAPi + action, response, config => {
             resolve(config);
           });
         });
       case 'authorization':
         return new Promise(resolve => {
-          JSONP.request(a2 + action, response, auth => {
+          JSONP.request(authApi + action, response, auth => {
             resolve(auth);
           });
         });
       case 'watchList':
         return new Promise(resolve => {
-          JSONP.request(v1 + action, response, Url => {
+          JSONP.request(Yaho.watchApi1 + action, response, Url => {
             resolve({ AuctionID: response.auctionID, Url });
           });
         });
       case 'deleteWatchList':
         return new Promise(resolve => {
-          JSONP.request(v1 + action, response, Url => {
+          JSONP.request(Taho.watchApi1 + action, response, Url => {
             resolve({ AuctionID: response.auctionID, Url });
           });
         });
       case 'openWatchList':
         return new Promise(resolve => {
-          JSONP.request(v2 + action, response, ids => {
+          JSONP.request(Yaho.watchApi2 + action, response, ids => {
             resolve(ids);
           });
         });
       case 'closeWatchList':
         return new Promise(resolve => {
-          JSONP.request(v2 + action, response, ids => {
+          JSONP.request(Yaho.watchApi2 + action, response, ids => {
             resolve(ids);
           });
         });
@@ -80,30 +92,30 @@ export default {
     }
   },
 
+  getConfig() {
+    return this.request('config/fetch');
+  },
+
   getIds(options, page) {
     return this.request('json/search'
-      , this.helperOptions({ appid, page, output: 'json' }
+      , this.helperOptions({ appid: Yaho.appid, page, output: 'json' }
       , options));
   },
 
   getItem(auctionID) {
     return this.request('json/auctionItem'
-      , { auctionID, appid, output: 'json' });
+      , { auctionID, appid: Yaho.appid, output: 'json' });
   },
 
   getBids(auctionID) {
     return this.request('BidHistory'
-      , { auctionID, appid, output: 'json' });
-  },
-
-  getConfig() {
-    return this.request('.well-known/openid-configuration');
+      , { auctionID, appid: Yaho.appid, output: 'json' });
   },
 
   getAuth() {
     return this.request('authorization'
       , { response_type: 'token'
-        , client_id: appid
+        , client_id: Yaho.appid
         , redirect_uri
         , scope: 'openid' });
   },
@@ -116,6 +128,10 @@ export default {
   getOpenWatchIds(start, access_token) {
     return this.request('openWatchList'
       , { start, output: 'json', access_token });
+  },
+
+  putConfig(options) {
+    return this.request('config/write', options);;
   },
 
   postWatch(access_token, auctionID) {

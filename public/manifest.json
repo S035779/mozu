@@ -1,20 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "Sample",
-  "description": "This is sample",
+  "name": "WatchNote!",
+  "description": "Yahoo! Auction Search Extension.",
   "version": "0.0.1",
-  "option_page":      "option.html",
-  "content_scripts": [{
-    "matches":      [ "https://www.google.co.jp/*" ],
-    "js":           [ "js/contentscripts.js" ]
-  }],
-  "browser_action": {
-    "default_icon":   "images/favicon.png",
-    "default_title":  "popup window",
-    "default_popup":  "popup.html"
+  "icons": {
+    "128": "assets/icon/star-icon.png"
   },
-  "background": {
-    "scripts":      [ "js/background.js" ], 
-    "persistent":     false
+  "browser_action": {
+    "default_icon":   "assets/icon/star-icon.png",
+    "default_title":  "WatchNote! v0.0.1",
+    "default_popup":  "popup.html"
   }
 }

@@ -1,8 +1,59 @@
+import xml from 'xml2js';
+import builder from 'xmlbuilder';
+import { parse } from 'iso8601-duration';
 import Spinner from '../utils/spin';
 
 let Logger = null;
 let Spiner = null;
 let target = null;
+
+export const util = {
+  getCSVHeader(obj) {
+    let arr = new Array();
+    for(let prop in obj) {
+      arr.push(prop);
+    }
+    return arr.join() + '\n';
+  },
+  setCSVHeader(objs) {
+    let arr = new Array();
+    for(let prop in objs[0]) {
+      arr.push(prop);
+    }
+    obj.unshift(arr);
+    return objs;
+  },
+  toCSV(obj) {
+    let arr = new Array();
+    for(let prop in obj) {
+      arr.push(obj[prop]);
+    }
+    return arr.join();
+  },
+  toXML(req, obj) {
+    let xml = new Object();
+    xml[req] = obj;
+    return builder.create(xml, { encoding: 'utf-8' }).end();
+  },
+  toJSON(str) {
+    return new Promise(resolve => {
+      xml.parseString(str, {
+        attrkey: 'root', charkey: 'sub'
+        , trim: true, explicitArray: false }
+      , (err, res) => {
+        if(err) log.error(err);
+        resolve(res)
+      });
+    });
+  },
+  toLeftDays(date) {
+    const obj = parse(date);
+    return (
+        `${obj.days} days` + ' / '
+      + `${obj.hours} hours` + ' / '
+      + `${obj.minutes} minutes`);
+  },
+};
 
 export const M = {
   fork(join, func1, func2) {

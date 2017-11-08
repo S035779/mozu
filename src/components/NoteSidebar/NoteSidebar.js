@@ -12,10 +12,25 @@ export default class NoteSidebar extends React.Component {
     this.state = Object.assign({}, props.options);
   }
 
+  handleChangeHome(e) {
+    log.info(`${pspid}> Request: handleChangeHome`);
+    NoteAction.increment(this.props.options, 0);
+  }
+
+  handleIncrement(e) {
+    log.info(`${pspid}> Request: handleIncrement`);
+    NoteAction.increment(this.props.options, this.props.page);
+  }
+
+  handleDecrement(e) {
+    log.info(`${pspid}> Request: handleDecrement`);
+    NoteAction.increment(this.props.options, this.props.page);
+  }
+
   handleChangeSearch(e) {
     log.info(`${pspid}> Request: handleChangeSearch`);
-    NoteAction.increment(this.state, 0);
     e.preventDefault();
+    NoteAction.increment(this.state, 0);
   }
 
   handleChangeReset() {
@@ -25,9 +40,7 @@ export default class NoteSidebar extends React.Component {
       , lowestPrice: ''
       , bids: false
       , condition: 'all'
-      , status: false
       , AuctionID: []
-      , categoryPath: []
       , seller: []
     });
   }
@@ -78,6 +91,7 @@ export default class NoteSidebar extends React.Component {
   }
 
   render() {
+    const page = this.props.page;
     const items = this.props.items ? this.props.items : null;
     const optPaths = this.renderOption(items, 'CategoryPath');
     const optSelrs = this.renderOption(items, 'Seller', 'Id');
@@ -105,14 +119,21 @@ export default class NoteSidebar extends React.Component {
         </button>
         </div>
       </span>
-      <h5 className="nav-group-title">Category</h5>
-      <span className="nav-group-item">
-        <select className="form-control"
-          multiple={true}
-          value={this.state.categoryPath}
-          onChange={
-            this.handleChangeSelect.bind(this, 'categoryPath')}
-        >{optPaths}</select>
+      <h5 className="nav-group-title">Functions</h5>
+      <span className="nav-group-item"
+        onClick={this.handleChangeHome.bind(this)}>
+        <span className="icon icon-home"></span>
+        Home ({page} page)
+      </span>
+      <span className="nav-group-item"
+        onClick={this.handleIncrement.bind(this)}>
+        <span className="icon icon-right-bold"></span>
+        Next
+      </span>
+      <span className="nav-group-item"
+        onClick={this.handleDecrement.bind(this)}>
+        <span className="icon icon-left-bold"></span>
+        Previous
       </span>
       <h5 className="nav-group-title">Seller</h5>
       <span className="nav-group-item">
@@ -174,17 +195,6 @@ export default class NoteSidebar extends React.Component {
           <option value="used">used</option>
           <option value="other">other</option>
         </Radio>
-      </span>
-      <h5 className="nav-group-title">Status</h5>
-      <span className="nav-group-item">
-        <div className="checkbox">
-        <label><input type="checkbox" 
-          value="status" 
-          checked={this.state.status}
-          onChange={
-            this.handleChangeCheckbox.bind(this, 'status')} />
-        open only.</label>
-        </div>
       </span>
     </nav>
     </div>;

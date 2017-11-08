@@ -15,11 +15,9 @@ class NoteStore extends ReduceStore {
         , lowestPrice: ''
         , bids: false
         , condition: 'all'
-        , status: false
         , AuctionID: []
-        , categoryPath: []
-        , seller: [] }
-      , url:     ''
+        , seller: []
+      }
     };
   }
   
@@ -30,16 +28,6 @@ class NoteStore extends ReduceStore {
         return Object.assign({}, state
           , { items: action.items, options: action.options
             , page: action.page });
-      case 'item/fetch/closewatch':
-        return Object.assign({}, state
-          , { items: action.items, page: action.page });
-      case 'item/fetch/openwatch':
-        return Object.assign({}, state
-          , { items: action.items, page: action.page });
-      case 'item/create/watch':
-        return Object.assign({}, state, { url: action.url });
-      case 'item/delete/watch':
-        return Object.assign({}, state, { url: action.url });
       default:
         return state;
     }

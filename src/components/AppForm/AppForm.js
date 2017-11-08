@@ -45,22 +45,40 @@ export default class AppForm extends React.Component {
           this.handleChangeText.bind(this, 'token')} />
       </div>
       <div className="form-group">
-      <label>Finding API URL</label>
+      <label>Find API URL</label>
       <input type="text"
         className="form-control"
         placeholder="URL"
-        value={this.state.findingApi}
+        value={this.state.findApi}
         onChange={
-          this.handleChangeText.bind(this, 'findingApi')} />
+          this.handleChangeText.bind(this, 'findApi')} />
       </div>
       <div className="form-group">
-      <label>Trading API URL</label>
+      <label>Item API URL</label>
       <input type="text"
         className="form-control"
         placeholder="URL"
-        value={this.state.tradingApi}
+        value={this.state.itemApi}
         onChange={
-          this.handleChangeText.bind(this, 'tradingApi')} />
+          this.handleChangeText.bind(this, 'itemApi')} />
+      </div>
+      <div className="form-group">
+      <label>Bids API URL</label>
+      <input type="text"
+        className="form-control"
+        placeholder="URL"
+        value={this.state.bidsApi}
+        onChange={
+          this.handleChangeText.bind(this, 'bidsApi')} />
+      </div>
+      <div className="form-group">
+      <label>Auth API URL</label>
+      <input type="text"
+        className="form-control"
+        placeholder="URL"
+        value={this.state.authApi}
+        onChange={
+          this.handleChangeText.bind(this, 'authApi')} />
       </div>
       <div className="form-actions">
       <button type="submit" 

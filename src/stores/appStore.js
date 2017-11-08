@@ -12,9 +12,12 @@ class AppStore extends ReduceStore {
       , config: {
         selected: 0
         , title: ''
+        , appid: ''
+        , token: ''
         , findApi: ''
         , itemApi: ''
         , bidsApi: ''
+        , authApi: ''
       }
     };
   }

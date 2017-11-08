@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    //AppAction.fetchConfig();
+    AppAction.fetchConfig();
   }
 
   render() {

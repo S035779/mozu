@@ -1,29 +1,31 @@
 const webpack = require('webpack');
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   context: path.resolve(__dirname, 'src'),
-  entry: [ './main.js', './main.css' ],
+  entry: {
+    app:      './main.js',
+    common:   [ 'react', 'react-dom', 'react-router-dom', './main.css']
+  },
+  target: 'web',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [{
       test: /\.js$/,
       loader: 'babel-loader',
       options: {
-        presets: ['react']
-      }
-    }, {
+        presets: [ 'react', [ 'env',{ modules: false } ] ]
+      }},
+    {
       test: /\.css$/,
       use: ExtractTextPlugin.extract({
-        use: [ 'css-loader','postcss-loader']
+        use: [ 'css-loader', 'postcss-loader' ]
       })
-    }]
-  },
+    }]},
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     host: '0.0.0.0',
@@ -31,11 +33,29 @@ const config = {
     watchContentBase: true,
     inline: true,
   },
+  performance: {
+    hints: "warning",
+    maxAssetSize: 800000,
+    maxEntrypointSize: 800000,
+    assetFilter: function(assetFilename) {
+      return assetFilename.endsWith('.css') 
+        || assetFilename.endsWith('.js');
+    }},
   devtool: 'source-map',
   plugins: [
-    new Dotenv(),
-    new ExtractTextPlugin('bundle.css'),
-    //new webpack.optimize.UglifyJsPlugin()
+    new ExtractTextPlugin({
+      filename: 'common.css'
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      warnings:  true
+      , sourceMap: true
+      , mangle:    true
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name:       'common'
+      , filename: 'common.js'
+      , minChunk: Infinity
+    })
   ]
 };
 
