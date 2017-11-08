@@ -23,42 +23,6 @@ export default {
       spn.stop();
     });
   },
-  incrementCloseWatch(page) {
-    page = ++page > 0 ? page : 1;
-    return NoteApiClient.fetchCloseWatch(page)
-    .then(items => {
-      dispatch({ type: 'item/fetch/closewatch', items, page });
-      log.info(`${pspid}> Response: item/fetch/closewatch`);
-      spn.stop();
-    });
-  },
-  decrementCloseWatch(page) {
-    page = --page > 0 ? page : 1;
-    return NoteApiClient.fetchCloseWatch(page)
-    .then(items => {
-      dispatch({ type: 'item/fetch/closewatch', items, page });
-      log.info(`${pspid}> Response: item/fetch/closewatch`);
-      spn.stop();
-    });
-  },
-  incrementOpenWatch(page) {
-    page = ++page > 0 ? page : 1;
-    return NoteApiClient.fetchOpenWatch(page)
-    .then(items => {
-      dispatch({ type: 'item/fetch/openwatch', items, page });
-      log.info(`${pspid}> Response: item/fetch/openwatch`);
-      spn.stop();
-    });
-  },
-  decrementOpenWatch(page) {
-    page = --page > 0 ? page : 1;
-    return NoteApiClient.fetchOpenWatch(page)
-    .then(items => {
-      dispatch({ type: 'item/fetch/openwatch', items, page });
-      log.info(`${pspid}> Response: item/fetch/openwatch`);
-      spn.stop();
-    });
-  },
   createWatch(auctionID) {
     return NoteApiClient.createWatch(auctionID)
     .then(url => {

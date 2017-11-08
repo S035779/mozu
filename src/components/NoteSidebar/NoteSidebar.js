@@ -14,23 +14,27 @@ export default class NoteSidebar extends React.Component {
 
   handleChangeHome(e) {
     log.info(`${pspid}> Request: handleChangeHome`);
-    NoteAction.increment(this.props.options, 0);
+    NoteAction
+      .increment(this.props.options, 0);
   }
 
   handleIncrement(e) {
     log.info(`${pspid}> Request: handleIncrement`);
-    NoteAction.increment(this.props.options, this.props.page);
+    NoteAction
+      .increment(this.props.options, this.props.page);
   }
 
   handleDecrement(e) {
     log.info(`${pspid}> Request: handleDecrement`);
-    NoteAction.increment(this.props.options, this.props.page);
+    NoteAction
+      .decrement(this.props.options, this.props.page);
   }
 
   handleChangeSearch(e) {
     log.info(`${pspid}> Request: handleChangeSearch`);
     e.preventDefault();
-    NoteAction.increment(this.state, 0);
+    NoteAction
+      .increment(this.state, 0);
   }
 
   handleChangeReset() {
@@ -93,7 +97,6 @@ export default class NoteSidebar extends React.Component {
   render() {
     const page = this.props.page;
     const items = this.props.items ? this.props.items : null;
-    const optPaths = this.renderOption(items, 'CategoryPath');
     const optSelrs = this.renderOption(items, 'Seller', 'Id');
     const optAuIDs = this.renderOption(items, 'AuctionID');
     return <div className="pane pane-sm sidebar">

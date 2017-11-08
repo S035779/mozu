@@ -4,7 +4,7 @@ import { log } from '../../utils/webutils';
 
 const pspid = `availableStore`;
 
-class NoteStore extends ReduceStore {
+class AvailableStore extends ReduceStore {
   getInitialState() {
     return {
       page:      0 
@@ -15,10 +15,9 @@ class NoteStore extends ReduceStore {
         , lowestPrice: ''
         , bids: false
         , condition: 'all'
-        , status: false
         , AuctionID: []
-        , categoryPath: []
-        , seller: [] }
+        , seller: []
+      }
       , url:     ''
     };
   }
@@ -26,13 +25,6 @@ class NoteStore extends ReduceStore {
   reduce(state, action) {
     log.info(`${pspid}> Request: ${action.type}`);
     switch (action.type) {
-      case 'item/fetch':
-        return Object.assign({}, state
-          , { items: action.items, options: action.options
-            , page: action.page });
-      case 'item/fetch/closewatch':
-        return Object.assign({}, state
-          , { items: action.items, page: action.page });
       case 'item/fetch/openwatch':
         return Object.assign({}, state
           , { items: action.items, page: action.page });
@@ -46,4 +38,4 @@ class NoteStore extends ReduceStore {
   }
 }
 
-export default new NoteStore(dispatcher);
+export default new AvailableStore(dispatcher);

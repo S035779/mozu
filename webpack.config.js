@@ -6,7 +6,14 @@ const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     app:      './main.js',
-    common:   [ 'react', 'react-dom', 'react-router-dom', './main.css']
+    common:   [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      'ramda',
+      'd3',
+      './main.css'
+    ]
   },
   target: 'web',
   output: {
@@ -35,8 +42,8 @@ const config = {
   },
   performance: {
     hints: "warning",
-    maxAssetSize: 800000,
-    maxEntrypointSize: 800000,
+    maxAssetSize: 1280000,
+    maxEntrypointSize: 1280000,
     assetFilter: function(assetFilename) {
       return assetFilename.endsWith('.css') 
         || assetFilename.endsWith('.js');

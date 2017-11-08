@@ -18,6 +18,7 @@ class NoteStore extends ReduceStore {
         , AuctionID: []
         , seller: []
       }
+      , url:     ''
     };
   }
   
@@ -28,6 +29,10 @@ class NoteStore extends ReduceStore {
         return Object.assign({}, state
           , { items: action.items, options: action.options
             , page: action.page });
+      case 'item/create/watch':
+        return Object.assign({}, state, { url: action.url });
+      case 'item/delete/watch':
+        return Object.assign({}, state, { url: action.url });
       default:
         return state;
     }

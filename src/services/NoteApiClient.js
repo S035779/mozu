@@ -1,3 +1,4 @@
+import * as R from 'ramda';
 import { M, log, spn, str, util } from '../../utils/webutils';
 import xhr from '../../utils/xhrutils';
 import std from '../../utils/stdutils';

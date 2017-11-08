@@ -84,13 +84,6 @@ export default class AvailableTable extends React.Component {
         if(options.condition !== 'all'
           && options.condition !== item.ItemStatus.Condition)
           return false;
-        if(options.status
-          && item.Status !== 'open')
-          return false;
-        if(!options.categoryPath.some(path => { 
-          return path === item.CategoryPath; })
-          && options.categoryPath.length !== 0 )
-          return false;
         if(!options.seller.some(selr => { 
           return selr === item.Seller.Id; })
           && options.seller.length !== 0 )
