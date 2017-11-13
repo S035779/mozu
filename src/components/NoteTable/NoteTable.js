@@ -1,4 +1,5 @@
 import React from 'react';
+import NoteAction from '../../actions/NoteAction.js';
 import Sparkline from '../../components/Sparkline/Sparkline';
 import std from '../../../utils/stdutils';
 import { log } from '../../../utils/webutils';
@@ -6,6 +7,37 @@ import { log } from '../../../utils/webutils';
 const pspid = `NoteTableView`;
 
 export default class NoteTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state=Object.assign({}, props.watch);
+  }
+
+  componentDidMount() {
+    NoteAction.fetchWatchIds();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState(nextProps.watch);
+  }
+
+  handleChangeImage(index) {
+    log.info(`${pspid}>`, 'handleChangeImage');
+    const newState = {};
+    if(this.state.hasOwnProperty(index) && this.state[index]) {
+      NoteAction.deleteWatch(index, this.state)
+      .then(() => {
+        newState[index] = false;
+        this.setState(newState);
+      });
+    } else {
+      NoteAction.createWatch(index, this.state)
+      .then(() => {
+        newState[index] = true;
+        this.setState(newState);
+      })
+    }
+  }
+
   renderStatus(status) {
     let styles;
     switch(status) {
@@ -51,11 +83,15 @@ export default class NoteTable extends React.Component {
     const Cht = this.renderBids(bids);
     const stt = this.renderStatus(0);
     const Ext = item.IsAutomaticExtension === 'true'
-                  ? this.renderExtension() : '';
+      ? this.renderExtension() : '';
     const Upd = std.getLocalTimeStamp(Date.now());
+    const selected = this.state.hasOwnProperty(Aid)
+      && this.state[Aid] ? 'watch' : '';
 
-    return <tbody key={Aid}><tr>
-      <td><img src={Img} width='128' height='128' /></td>
+    return <tr key={Aid}>
+      <td className={selected}
+        onClick={this.handleChangeImage.bind(this, Aid)}>
+        <img src={Img} width='128' height='128' /></td>
       <td><span>
         <a href={Url} target='_blank'>{Ttl}</a><br />
         </span>
@@ -71,7 +107,7 @@ export default class NoteTable extends React.Component {
       </td>
       <td><span>{Stt}</span><br /><span>{Ext}</span></td>
       <td><span>{stt}</span><br /><span>{Upd}</span></td>
-    </tr></tbody>;
+    </tr>;
   }
 
   filterItems(objs, options) {
@@ -112,7 +148,7 @@ export default class NoteTable extends React.Component {
       ? this.filterItems(this.props.items, options)
         .map(item => this.renderItem(item))
       : null;
-    return <div className="pane">
+    return <div id="items" className="pane">
       <table className="table-striped">
       <thead><tr>
       <th>Image</th>
@@ -122,7 +158,7 @@ export default class NoteTable extends React.Component {
       <th>Status</th>
       <th>Update</th>
       </tr></thead>
-      {items}
+      <tbody>{items}</tbody>
       </table>
     </div>;
   }

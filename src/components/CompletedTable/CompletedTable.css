@@ -1,5 +1,18 @@
-tbody th,
-tbody td {
-  padding: 0.75 em;
-  border-bottom: 1px solid #CCC;
+#items td.watch {
+  position: relative;
+  overflow: hidden;
+}
+#items td.watch:after {
+  position: absolute;
+  background: #26ACC0;
+  content: "Watch!!";
+  top: 5px;
+  right: -30px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #FFF;
+  width: 120px;
+  box-shadow: 0 1px 3px #999;
+  transform:rotate(30deg);
+  -webkit-transform:rotate(30deg);
 }

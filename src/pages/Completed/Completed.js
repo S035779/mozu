@@ -20,7 +20,7 @@ class Completed extends React.Component {
     return <CompletedBody
       page={this.state.page}
       items={this.state.items}
-      options={this.state.options} />;
+      watch={this.state.watch} />;
   }
 }
 export default Container.create(ContainerConverter.convert(Completed));

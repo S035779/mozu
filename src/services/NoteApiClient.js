@@ -7,81 +7,86 @@ log.config('console', 'basic', 'ALL', 'note-renderer');
 spn.config('app');
 
 const pspid = `NoteAPIClient`;
-
-let Yaho = new Object();
-
+let Yaho = {};
+/*
+Yaho = {
+  appid:        process.env.app_id
+  , bidsApi:    procsss.env.bids
+  , itemApi:    procsss.env.item
+  , findApi:    procsss.env.find
+  , watchApi1:  procsss.env.watch1
+  , watchApi2:  procsss.env.watch2
+};
+*/
 export default {
   request(action, response) {
     log.info(`${pspid}>`, 'Request:', `${action}`);
     switch(action) {
       case 'config/fetch':
         return new Promise(resolve => {
-          const memory = window.localStorage
-          || (window.UserDataStorage && new str.UserDataStorage())
+          const memory = window.localStorage ||
+            (window.UserDataStorage && new str.UserDataStorage())
           || new str.CookieStorage();
           Yaho = JSON.parse(memory.getItem("Yaho_config"));
+          Yaho['token'] = response;
           resolve(Yaho);
         });
       case 'config/write':
         return new Promise(resolve => {
-          const memory = window.localStorage
-          || (window.UserDataStorage && new str.UserDataStorage())
+          const memory = window.localStorage ||
+            (window.UserDataStorage && new str.UserDataStorage())
           || new str.CookieStorage();
           Yaho = response;
-          memory.setItem("Yaho_config", JSON.stringify(response));
+          memory.setItem("Yaho_config"
+            , JSON.stringify(response));
           resolve(Yaho);
         });
       case 'json/search':
         return new Promise(resolve => {
-          JSONP.request(Yaho.findApi + action, response, ids => {
+          JSONP.request(Yaho.findApi + action, response
+          , ids => {
             resolve(ids);
           });
         });
       case 'json/auctionItem':
         return new Promise(resolve => {
-          JSONP.request(Yaho.itemApi + action, response, Item => {
+          JSONP.request(Yaho.itemApi + action, response
+          , Item => {
             resolve({ AuctionID: response.auctionID, Item });
           });
         });
       case 'BidHistory':
         return new Promise(resolve => {
-          JSONP.request(Yaho.bidsApi + action, response, Bids => {
+          JSONP.request(Yaho.bidsApi + action, response
+          , Bids => {
             resolve({ AuctionID: response.auctionID, Bids });
-          });
-        });
-      case '.well-known/openid-configuration':
-        return new Promise(resolve => {
-          JSONP.request(authAPi + action, response, config => {
-            resolve(config);
-          });
-        });
-      case 'authorization':
-        return new Promise(resolve => {
-          JSONP.request(authApi + action, response, auth => {
-            resolve(auth);
           });
         });
       case 'watchList':
         return new Promise(resolve => {
-          JSONP.request(Yaho.watchApi1 + action, response, Url => {
+          JSONP.request(Yaho.watchApi1 + action, response
+          , Url => {
             resolve({ AuctionID: response.auctionID, Url });
           });
         });
       case 'deleteWatchList':
         return new Promise(resolve => {
-          JSONP.request(Taho.watchApi1 + action, response, Url => {
+          JSONP.request(Yaho.watchApi1 + action, response
+          , Url => {
             resolve({ AuctionID: response.auctionID, Url });
           });
         });
       case 'openWatchList':
         return new Promise(resolve => {
-          JSONP.request(Yaho.watchApi2 + action, response, ids => {
+          JSONP.request(Yaho.watchApi2 + action, response
+          , ids => {
             resolve(ids);
           });
         });
       case 'closeWatchList':
         return new Promise(resolve => {
-          JSONP.request(Yaho.watchApi2 + action, response, ids => {
+          JSONP.request(Yaho.watchApi2 + action, response
+          , ids => {
             resolve(ids);
           });
         });
@@ -93,13 +98,14 @@ export default {
     }
   },
 
-  getConfig() {
-    return this.request('config/fetch');
+  getConfig(token) {
+    return this.request('config/fetch', token);
   },
 
   getIds(options, page) {
     return this.request('json/search'
-      , this.helperOptions({ appid: Yaho.appid, page, output: 'json' }
+      , this.helperOptions({ appid: Yaho.appid, page
+        , output: 'json' }
       , options));
   },
 
@@ -111,14 +117,6 @@ export default {
   getBids(auctionID) {
     return this.request('BidHistory'
       , { auctionID, appid: Yaho.appid, output: 'json' });
-  },
-
-  getAuth() {
-    return this.request('authorization'
-      , { response_type: 'token'
-        , client_id: Yaho.appid
-        , redirect_uri
-        , scope: 'openid' });
   },
 
   getCloseWatchIds(start, access_token) {
@@ -135,13 +133,13 @@ export default {
     return this.request('config/write', options);;
   },
 
-  postWatch(access_token, auctionID) {
+  postCreateWatch(access_token, auctionID) {
     spn.spin();
     return this.request('watchList'
       , { auctionID, output: 'json', access_token });
   },
 
-  deleteWatch(access_token, auctionID) {
+  postDeleteWatch(access_token, auctionID) {
     spn.spin();
     return this.request('deleteWatchList'
       , { auctionID, output: 'json', access_token });
@@ -167,42 +165,86 @@ export default {
 
   fetchCloseWatch(start) {
     spn.spin();
-    const setItems = R.curry(this.fetchCloseWatchIds)(start);
-    return this.fetchConfig()
-    /*
-      .then(this.fetchAuth)
-      .then(setItems)
-      .then(this.setItems.bind(this))
+    return this.getCloseWatchIds(start, Yaho.token)
+      .then(R.compose(this.setWatchIds.bind(this)
+        , this.resIds.bind(this)))
       .then(M.fork(R.concat
-        , R.map(this.fetchItem.bind(this))
-        , R.map(this.fetchBids.bind(this))))
+        , R.map(this.getItem.bind(this))
+        , R.map(this.getBids.bind(this))
+      ))
       .then(obj => Promise.all(obj))
       .then(M.fork(this.setItems.bind(this)
         , R.filter(this.isItem.bind(this))
-        , R.filter(this.isBids.bind(this))))
-    */
-      .then(R.tap(this.traceLog.bind(this)))
-      //.catch(this.errorLog.bind(this));
+        , R.filter(this.isBids.bind(this))
+      ))
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
   },
 
   fetchOpenWatch(start) {
     spn.spin();
-    const setItems = R.curry(this.fetchOpenWatchIds)(start);
-    return this.fetchConfig()
-    /*
-      .then(this.fetchAuth)
-      .then(setItems)
-      .then(this.setItems.bind(this))
+    return this.getOpenWatchIds(start, Yaho.token)
+      .then(R.compose(this.setWatchIds.bind(this)
+        , this.resIds.bind(this)))
       .then(M.fork(R.concat
-        , R.map(this.fetchItem.bind(this))
-        , R.map(this.fetchBids.bind(this))))
+        , R.map(this.getItem.bind(this))
+        , R.map(this.getBids.bind(this))
+      ))
       .then(obj => Promise.all(obj))
       .then(M.fork(this.setItems.bind(this)
         , R.filter(this.isItem.bind(this))
-        , R.filter(this.isBids.bind(this))))
-    */
-      .then(R.tap(this.traceLog.bind(this)))
-      //.catch(this.errorLog.bind(this));
+        , R.filter(this.isBids.bind(this))
+      ))
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
+  },
+
+  fetchWatchIds() {
+    spn.spin();
+    return this.getOpenWatchIds(1, Yaho.token)
+      .then(this.resAttr)
+      .then(this.forWatchIds.bind(this))
+      .then(R.map(this.resIds.bind(this)))
+      .then(R.map(this.setWatchIds.bind(this)))
+      .then(R.flatten)
+      .then(obj => {
+        const newObj = {};
+        R.forEach(id => newObj[id]=true, obj);
+        return newObj;
+      })
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
+  },
+
+  createWatch(auctionID) {
+    return this.postCreateWatch(Yaho.token, auctionID)
+      .then(this.setUrl)
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
+  },
+
+  deleteWatch(auctionID) {
+    return this.postDeleteWatch(Yaho.token, auctionID)
+      .then(this.setUrl)
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
+  },
+
+  forWatchIds(obj) {
+    const { totalResultsAvailable, totalResultsReturned } = obj;
+    const pages
+      = Math.ceil(totalResultsAvailable / totalResultsReturned); 
+    const promise = [];
+    for(let i=0; i<pages; i++) {
+      promise.push(this.getOpenWatchIds(i+1, Yaho.token))
+    }
+    return Promise.all(promise);
+  },
+
+  resAttr(obj) {
+    const res = obj.ResultSet;
+    return res.hasOwnProperty('@attributes')
+      ? res['@attributes'] : null;
   },
 
   resIds(obj) {
@@ -211,10 +253,28 @@ export default {
       ? res.Result : null;
   },
 
+  resUrl(obj) {
+    const res = obj.Url.ResultSet;
+    return res.hasOwnProperty('Result')
+      ? res.Result.watchListUrl : null;
+  },
+
+  setWatchIds(obj) {
+    return Array.isArray(obj)
+      ? R.map(id => id.AuctionID, obj) : [obj.AuctionID];
+  },
+
+  setItems(is, bs) {
+    return R.map(i => {
+      const b = R.filter(o => o.AuctionID === i.AuctionID, bs);
+      return R.merge(i, b[0]);
+    }, is);
+  },
+
   setIds(obj) {
-    const ids = obj.Item;
-    return Array.isArray(ids)
-      ? R.map(id => id.AuctionID, ids) : [ids.AuctionID];
+    return Array.isArray(obj.Item)
+      ? R.map(id => id.AuctionID, obj.Item)
+      : [obj.Item.AuctionID];
   },
 
   isItem(obj) {
@@ -223,13 +283,6 @@ export default {
 
   isBids(obj) {
     return obj.hasOwnProperty('Bids');
-  },
-
-  setItems(is, bs) {
-    return R.map(i => {
-      const b = R.filter(o => o.AuctionID === i.AuctionID, bs);
-      return R.merge(i, b[0]);
-    }, is);
   },
 
   helperOptions(o, p) {

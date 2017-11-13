@@ -6,11 +6,11 @@ const pspid = `AppAction`;
 
 export default {
   selectedContent(selected, title) {
-    log.info(`${pspid}>`, 'Response: content/select');
-    dispatch({ type: 'content/select', selected, title });
+    log.info(`${pspid}>`, 'Response: content/select/app');
+    dispatch({ type: 'content/select/app', selected, title });
   },
-  fetchConfig() {
-    return NoteApiClient.getConfig()
+  fetchConfig(token) {
+    return NoteApiClient.getConfig(token)
     .then(config => {
       dispatch({ type: 'config/fetch/appid', config });
       log.info(`${pspid}>`, 'Response: config/fetch/appid');

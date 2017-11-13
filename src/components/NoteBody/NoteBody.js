@@ -14,6 +14,7 @@ export default class NoteBody extends React.Component {
         options={this.props.options} />
       <NoteTable
         items={this.props.items}
+        watch={this.props.watch}
         options={this.props.options} />
     </div>;
   }

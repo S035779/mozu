@@ -9,8 +9,8 @@ export default {
     page = ++page > 0 ? page : 1;
     return NoteApiClient.fetchOpenWatch(page)
     .then(items => {
-      dispatch({ type: 'item/fetch/openwatch', items, page });
-      log.info(`${pspid}> Response: item/fetch/openwatch`);
+      dispatch({type: 'item/fetch/open', items, page});
+      log.info(`${pspid}> Response: item/fetch/open`);
       spn.stop();
     });
   },
@@ -18,24 +18,32 @@ export default {
     page = --page > 0 ? page : 1;
     return NoteApiClient.fetchOpenWatch(page)
     .then(items => {
-      dispatch({ type: 'item/fetch/openwatch', items, page });
-      log.info(`${pspid}> Response: item/fetch/openwatch`);
+      dispatch({type: 'item/fetch/open', items, page});
+      log.info(`${pspid}> Response: item/fetch/open`);
       spn.stop();
     });
   },
-  createWatch(auctionID) {
+  fetchWatchIds() {
+    return NoteApiClient.fetchWatchIds()
+    .then(watch => {
+      dispatch({type: 'id/fetch/watch/open', watch});
+      log.info(`${pspid}> Response: id/fetch/watch/open`);
+      spn.stop();
+    });
+  },
+  createWatch(auctionID, watch) {
     return NoteApiClient.createWatch(auctionID)
     .then(url => {
-      dispatch({ type: 'item/create/watch', url });
-      log.info(`${pspid}> Response: item/create/watch`);
+      dispatch({type: 'item/create/watch/open', watch, url});
+      log.info(`${pspid}> Response: item/create/watch/open`);
       spn.stop();
     });
   },
-  deleteWatch(auctionID) {
+  deleteWatch(auctionID, watch) {
     return NoteApiClient.deleteWatch(auctionID)
     .then(url => {
-      dispatch({ type: 'item/delete/watch', url });
-      log.info(`${pspid}> Response: item/delete/watch`);
+      dispatch({type: 'item/delete/watch/open', watch, url});
+      log.info(`${pspid}> Response: item/delete/watch/open`);
       spn.stop();
     });
   },

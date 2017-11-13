@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
@@ -34,11 +35,12 @@ const config = {
       })
     }]},
   devServer: {
+    historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
     host: '0.0.0.0',
     port: 8080,
-    watchContentBase: true,
     inline: true,
+    watchContentBase: true,
   },
   performance: {
     hints: "warning",
@@ -50,6 +52,7 @@ const config = {
     }},
   devtool: 'source-map',
   plugins: [
+    new Dotenv(),
     new ExtractTextPlugin({
       filename: 'common.css'
     }),

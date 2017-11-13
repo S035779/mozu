@@ -3,12 +3,47 @@
   "name": "WatchNote!",
   "description": "Yahoo! Auction Search Extension.",
   "version": "0.0.1",
-  "icons": {
-    "128": "icon/star-icon.png"
-  },
+  "options_page": "option.html", 
   "browser_action": {
-    "default_icon":   "icon/star-icon.png",
-    "default_title":  "WatchNote! v0.0.1",
-    "default_popup":  "popup.html"
-  }
+    "default_icon": "images/star-icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "optional_permissions": ["tabs"],
+  "background": {
+    "scripts": [
+      "js/lib/zepto.min.js",
+      "js/background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/lib/zepto.min.js",
+        "js/contentscripts.js",
+        "js/delwatch.js",
+        "js/account-switcher.js"
+      ],
+      "matches": [
+      "https://login.yahoo.co.jp/*",
+      "https://auctions.yahoo.co.jp/*",
+      "http://category.auctions.yahoo.co.jp/*",
+      "http://auctions.search.yahoo.co.jp/*",
+      "http://openwatchlist.auctions.yahoo.co.jp/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "images/star-icon.png",
+    "48": "images/star-icon.png",
+    "128": "images/star-icon.png"
+  },
+  "web_accessible_resources": [
+    "csv/NG.csv"
+  ]
 }

@@ -20,6 +20,7 @@ class Note extends React.Component {
     return <NoteBody
       page={this.state.page}
       items={this.state.items}
+      watch={this.state.watch}
       options={this.state.options} />;
   }
 }

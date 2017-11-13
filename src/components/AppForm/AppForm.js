@@ -12,8 +12,8 @@ export default class AppForm extends React.Component {
 
   handleChangeSave(e) {
     log.info(`${pspid}>`, 'Request: handleChangeSave');
-    log.trace(`${pspid}>`, this.props.config);
     e.preventDefault();
+    log.trace(`${pspid}>`, this.state);
     AppAction.writeConfig(this.state);
   }
 
@@ -70,6 +70,24 @@ export default class AppForm extends React.Component {
         value={this.state.bidsApi}
         onChange={
           this.handleChangeText.bind(this, 'bidsApi')} />
+      </div>
+      <div className="form-group">
+      <label>Watch API v1 URL</label>
+      <input type="text"
+        className="form-control"
+        placeholder="URL"
+        value={this.state.watchApi1}
+        onChange={
+          this.handleChangeText.bind(this, 'watchApi1')} />
+      </div>
+      <div className="form-group">
+      <label>Watch API v2 URL</label>
+      <input type="text"
+        className="form-control"
+        placeholder="URL"
+        value={this.state.watchApi2}
+        onChange={
+          this.handleChangeText.bind(this, 'watchApi2')} />
       </div>
       <div className="form-group">
       <label>Auth API URL</label>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="utf-8">
+   <title>Yahoo!オークションID切替</title>
+   <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+   <link href="css/popup.css" type="text/css" rel="stylesheet">
+   <script type="text/javascript" src="js/lib/zepto.min.js"></script>
+   <script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body style="width:340px;">
+
+  <div id="warn">
+    <div class="card-header">Yahoo!アカウントが登録されていません</div>
+    <div class="card-body text-secondary">
+    <a href="option.html" target="_blank" >オプション画面</a>でアカウントを登録してください。
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="setting"></div>
+    <div class="my_close"></div>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="muted">Yahoo!オークションID切り替え<a href="option.html" target="_blank" style="float: right;">設定</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <form class="form-inline" style="margin-bottom: 0px;">
+            <input type="text" class="input-medium" placeholder="ID" id="id1">
+            <input type="password" class="input-small input-password" placeholder="Password" id="pass1">
+            <button type="submit" class="btn" id="button1"><i class="icon-ok"></i> ログイン</button>
+          </form>
+       </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</body>
+</html>

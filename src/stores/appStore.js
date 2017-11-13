@@ -17,6 +17,8 @@ class AppStore extends ReduceStore {
         , findApi: ''
         , itemApi: ''
         , bidsApi: ''
+        , watchApi1: ''
+        , watchApi2: ''
         , authApi: ''
       }
     };
@@ -25,7 +27,7 @@ class AppStore extends ReduceStore {
   reduce(state, action) {
     log.info(`${pspid}> Request: ${action.type}`);
     switch (action.type) {
-      case 'content/select':
+      case 'content/select/app':
         return Object.assign({}, state
           , { selected: action.selected, title: action.title });
       case 'config/fetch/appid':

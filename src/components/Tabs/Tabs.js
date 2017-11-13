@@ -1,31 +1,38 @@
 import React from 'react';
-import AppAction from '../../actions/AppAction';
 import { log } from '../../../utils/webutils';
 
 const pspid = `TabsView`;
 
 export default class Tabs extends React.Component {
   componentDidMount() {
-    AppAction.selectedContent(0, this.props.children[0].props.label);
+    const children = this.props.children;
+    const title = React.Children.count(children) > 1
+      ? children[0].props.label
+      : children.props.label;
+    this.props.onChangeTab(0, title);
   }
 
-  handleClickTab(index, title, event) {
+  handleChangeTab(index, title, event) {
     event.preventDefault();
-    AppAction.selectedContent(index, title);
+    this.props.onChangeTab(index, title);
   }
 
   renderTitles(child, index) {
-    const selected = this.props.selected == index ? 'active' : '';
+    const selected = this.props.selected == index
+      ? 'active' : '';
     const classNames = ['tab-item'];
     classNames.push(selected);
-    return <div key={index}
-      className={classNames.join(' ')}
-      onClick={this.handleClickTab.bind(this, index, child.props.label)}
-    >{child.props.label}</div>;
+    return <div key={index} className={classNames.join(' ')}
+      onClick={
+        this.handleChangeTab.bind(this, index, child.props.label)
+      }>{child.props.label}</div>;
   }
 
   render() {
-    const titles = this.props.children.map(this.renderTitles.bind(this));
+    const children = this.props.children;
+    const titles = React.Children.count(children) > 1
+      ? children.map(this.renderTitles.bind(this))
+      : this.renderTitles(children, 0);
     return <div className="tab-group">{titles}</div>;
   }
 }

@@ -1,0 +1,12 @@
+.account-name {
+  width: 225px;
+  background: none;
+  margin: 0;
+}
+
+table {
+  margin: 0;
+  margin-bottom: 0 !important;
+}
+
+a { outline: none; }

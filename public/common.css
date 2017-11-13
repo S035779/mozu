@@ -2,10 +2,64 @@ body {
   margin: 0;
   padding: 0;
 }
-tbody th,
-tbody td {
-  padding: 0.75 em;
-  border-bottom: 1px solid #CCC;
+#items td.watch {
+  position: relative;
+  overflow: hidden;
+}
+#items td.watch:after {
+  position: absolute;
+  background: #26ACC0;
+  content: "Watch!!";
+  top: 5px;
+  right: -30px;
+  padding: 5px 10px;
+  text-align: center;
+  color: #FFF;
+  width: 120px;
+  box-shadow: 0 1px 3px #999;
+  transform:rotate(30deg);
+  -webkit-transform:rotate(30deg);
+}
+#contents {
+  clear: both;
+  width: 780px;
+  margin: 0 auto;
+}
+#contents.sign-up-page {
+  width: 40em;
+}
+#page-title {
+  margin-top: 1.25em;
+  margin-bottom: 0.125em;
+  color: #1e6f9a
+}
+#user-sign-up {
+  margin: 2em auto;
+  padding-top: 0.5em;
+  background-color: #F2F2F2;
+}
+#signup-agreement {
+  margin: 0;
+  padding: 2em 1.5em, 0.5em;
+  border: none;
+  border-bottom: 0.5em solid #FFF;
+}
+#signup-agreement {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  text-align: center;
+}
+.required-mark {
+  position: relative;
+  top: -0.2em;
+  left: 0;
+  line-height: 1;
+  padding: 0.25em 0.375em;
+  border-radius: 2px;
+  color: #FFF;
+  font-weight: normal;
+  font-size: 62.5%;
+  background-color: #C00;
 }
 
 /*# sourceMappingURL=common.css.map*/

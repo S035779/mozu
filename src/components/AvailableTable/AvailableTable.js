@@ -1,4 +1,5 @@
 import React from 'react';
+import AvailableAction from '../../actions/AvailableAction';
 import Sparkline from '../../components/Sparkline/Sparkline';
 import std from '../../../utils/stdutils';
 import { log } from '../../../utils/webutils';
@@ -6,6 +7,38 @@ import { log } from '../../../utils/webutils';
 const pspid = `AvailableTableView`;
 
 export default class AvailableTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state=Object.assign({}, props.watch);
+  }
+
+  componentDidMount() {
+    AvailableAction.fetchWatchIds();
+    AvailableAction.incrementOpenWatch(0);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState(nextProps.watch);
+  }
+
+  handleChangeImage(index) {
+    log.info(`${pspid}>`, 'handleChangeImage');
+    const newState = {};
+    if(this.state.hasOwnProperty(index) && this.state[index]) {
+      AvailableAction.deleteWatch(index, this.state)
+      .then(() => {
+        newState[index] = false;
+        this.setState(newState);
+      });
+    } else {
+      AvailableAction.createWatch(index, this.state)
+      .then(() => {
+        newState[index] = true;
+        this.setState(newState);
+      })
+    }
+  }
+
   renderStatus(status) {
     let styles;
     switch(status) {
@@ -51,11 +84,15 @@ export default class AvailableTable extends React.Component {
     const Cht = this.renderBids(bids);
     const stt = this.renderStatus(0);
     const Ext = item.IsAutomaticExtension === 'true'
-                  ? this.renderExtension() : '';
+      ? this.renderExtension() : '';
     const Upd = std.getLocalTimeStamp(Date.now());
+    const selected = this.state.hasOwnProperty(Aid)
+      && this.state[Aid] ? 'watch' : '';
 
-    return <tbody key={Aid}><tr>
-      <td><img src={Img} width='128' height='128' /></td>
+    return <tr key={Aid}>
+      <td className={selected}
+        onClick={this.handleChangeImage.bind(this, Aid)}>
+        <img src={Img} width='128' height='128' /></td>
       <td><span>
         <a href={Url} target='_blank'>{Ttl}</a><br />
         </span>
@@ -71,48 +108,14 @@ export default class AvailableTable extends React.Component {
       </td>
       <td><span>{Stt}</span><br /><span>{Ext}</span></td>
       <td><span>{stt}</span><br /><span>{Upd}</span></td>
-    </tr></tbody>;
-  }
-
-  filterItems(objs, options) {
-    return objs.filter(obj => { 
-      const item = obj.Item.ResultSet.Result;
-      if(options != null) {
-        if(options.bids 
-          && Number(item.Bids) === 0) 
-          return false;
-        if(options.condition !== 'all'
-          && options.condition !== item.ItemStatus.Condition)
-          return false;
-        if(!options.seller.some(selr => { 
-          return selr === item.Seller.Id; })
-          && options.seller.length !== 0 )
-          return false;
-        if(!options.AuctionID.some(auid => { 
-          return auid === item.AuctionID; })
-          && options.AuctionID.length !== 0 )
-          return false;
-        if(!isFinite(options.lowestPrice) 
-          || !isFinite(options.highestPrice))
-          return false;
-        if(Number(options.lowestPrice) > item.Price 
-          && options.lowestPrice !== '')
-          return false;
-        if(Number(options.highestPrice) < item.Price 
-          && options.highestPrice !== '')
-          return false;
-      }
-      return true;
-    });
+    </tr>;
   }
 
   render() {
-    const options = this.props.options;
-    const items = this.props.items
-      ? this.filterItems(this.props.items, options)
-        .map(item => this.renderItem(item))
+    const items = this.props.items 
+      ? this.props.items.map(item => this.renderItem(item))
       : null;
-    return <div className="pane">
+    return <div id="items" className="pane">
       <table className="table-striped">
       <thead><tr>
       <th>Image</th>
@@ -122,7 +125,7 @@ export default class AvailableTable extends React.Component {
       <th>Status</th>
       <th>Update</th>
       </tr></thead>
-      {items}
+      <tbody>{items}</tbody>
       </table>
     </div>;
   }

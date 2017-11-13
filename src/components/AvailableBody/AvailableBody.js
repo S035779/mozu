@@ -10,11 +10,10 @@ export default class AvailableBody extends React.Component {
     return <div className="pane-group">
       <AvailableSidebar
         page={this.props.page}
-        items={this.props.items}
-        options={this.props.options} />
+        items={this.props.items} />
       <AvailableTable
         items={this.props.items}
-        options={this.props.options} />
+        watch={this.props.watch} />
     </div>;
   }
 };

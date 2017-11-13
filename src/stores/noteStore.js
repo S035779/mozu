@@ -7,16 +7,17 @@ const pspid = `noteStore`;
 class NoteStore extends ReduceStore {
   getInitialState() {
     return {
-      page:      0 
-      , items:   null
+      page:             0 
+      , items:          null
+      , watch:          {}
       , options: {
-        searchString: ''
+        searchString:   ''
         , highestPrice: ''
-        , lowestPrice: ''
-        , bids: false
-        , condition: 'all'
-        , AuctionID: []
-        , seller: []
+        , lowestPrice:  ''
+        , bids:         false
+        , condition:    'all'
+        , AuctionID:    []
+        , seller:       []
       }
       , url:     ''
     };
@@ -25,14 +26,26 @@ class NoteStore extends ReduceStore {
   reduce(state, action) {
     log.info(`${pspid}> Request: ${action.type}`);
     switch (action.type) {
-      case 'item/fetch':
-        return Object.assign({}, state
-          , { items: action.items, options: action.options
-            , page: action.page });
-      case 'item/create/watch':
-        return Object.assign({}, state, { url: action.url });
-      case 'item/delete/watch':
-        return Object.assign({}, state, { url: action.url });
+      case 'item/fetch/note':
+        return Object.assign({}, state, {
+          items:      action.items
+          , options:  action.options
+          , page:     action.page
+        });
+      case 'id/fetch/watch/note':
+        return Object.assign({}, state, {
+          watch: action.watch
+        });
+      case 'item/create/watch/note':
+        return Object.assign({}, state, {
+          watch: action.watch
+          , url: action.url
+        });
+      case 'item/delete/watch/note':
+        return Object.assign({}, state, {
+          watch: action.watch
+          , url: action.url
+        });
       default:
         return state;
     }

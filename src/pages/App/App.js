@@ -12,6 +12,9 @@ import Contents from '../../components/Contents/Contents';
 import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
 import { log } from '../../../utils/webutils';
+import std from '../../../utils/stdutils';
+
+const pspid = 'AppControlView';
 
 class App extends React.Component {
   static getStores() {
@@ -23,13 +26,31 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    AppAction.fetchConfig();
+    const { history } = this.props;
+    const hash = this.props.location.hash.split('#');
+    const obj = std.decodeFormData(hash[1]);
+    log.trace(`${pspid}>`, 'Token:', obj.access_token);
+    if(obj && obj.hasOwnProperty('access_token')) {
+      AppAction.fetchConfig(obj.access_token);
+    } else {
+      history.push('/login');
+    }
+  }
+
+  handleChangeLogin() {
+    const { history } = this.props;
+      history.push('/login');
+  }
+
+  handleChangeTab(index, title) {
+    AppAction.selectedContent(index, title);
   }
 
   render() {
     return <div className="window">
     <GlobalHeader title={this.state.title} />
-    <Tabs selected={this.state.selected}>
+    <Tabs selected={this.state.selected}
+      onChangeTab={this.handleChangeTab.bind(this)}>
       <span label="Search of items"></span>
       <span label="Available watch items"></span>
       <span label="Completed watch items"></span>
@@ -41,7 +62,8 @@ class App extends React.Component {
       <Completed />
       <AppBody config={this.state.config}/>
     </Contents>
-    <GlobalFooter />
+    <GlobalFooter
+      onChangeLogin={this.handleChangeLogin.bind(this)} />
     </div>;
   }
 }

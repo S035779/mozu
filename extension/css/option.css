@@ -1,0 +1,164 @@
+.container {
+  width: 720px;
+  padding: 4px 10px 14px 10px;
+  border-top: 4px solid #2c7cf6;
+  border-bottom: 1px solid #fff;
+  background: #f7f7f7;
+  margin-top: 20px;
+}
+.add-account-form {
+  padding: 1.5rem;
+  border-width: .2rem;
+  margin: 1rem -15px;
+  border: solid #f7f7f9;
+}
+.add-account-form input {
+  margin-right: 10px;
+}
+body {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color: #666;
+}
+table {
+	/*width: 626px;*/
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid #E5EFFE;
+	border-radius: 10px;
+	background-color: #F7F7F7;
+	font-size: 12px;
+}
+h1, h2, h3 {
+	margin-top: 16px;
+	margin-bottom: 16px;
+	font-size: 24px;
+  text-align: center;
+  color: #333;
+}	
+input {
+	margin: 0;
+	padding: 0;
+}
+tr {
+	line-height: 4em;
+}
+th {
+	color: #333;
+  Vertical-align:top;
+	text-align: right;
+	padding: 10px 5px 5px 10px;
+}
+td {
+	//color: #0099cc;
+	text-align: left;
+	padding: 10px 20px 5px 10px;
+}
+a, a:link, a:active, a:visited {
+	color: #CC0000;
+	text-decoration: underline;
+}
+a:hover {
+	color: #CC0000;
+	text-decoration: none;
+}
+input {
+	//font-size: 12px;
+}
+.button {
+	background-color: #0099cc;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#weather_location{
+	font-weight: bold;
+	font-size: 1.5em;
+}
+	
+.firstpulldown,.secondpulldown{
+	float: left;
+	margin: 0px 1em 0px 0px;
+	padding: 0px;
+}
+
+ul.jquery-ui-sortable {
+	line-height: 1em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-height: 1.5em;
+    /*border:2px solid red;*/
+}
+ul.jquery-ui-sortable li {
+	line-height: 1em;
+    margin: 3px 3px 3px 3px;
+    padding: 0.3em;
+    padding-left: 1em;
+    font-size: 12px;
+    /*font-weight: bold;*/
+    cursor: move;
+}
+
+
+div.left {
+  /*width: 45%;*/
+  width: 160px;
+  padding: 0 1em 0 0;
+  float:left;
+}
+
+div.div020-hpl {
+  margin: 1em 0;
+  border: solid 1px #FF6464;
+  font-size: 12px;
+}
+
+div.div020-hpl h3 {
+  line-height: 1em;
+  margin: 0 0 0 0;
+  background: #FF6464;
+  padding: 5px 15px;
+  color: #FFF;
+  font-size: 12px;
+}
+
+div.right {
+  /*width: 45%;*/
+  width: 160px;
+  float:left;
+}
+
+
+div.no-dsp {
+  margin: 1em 0;
+  border: solid 1px #b7bfcb;
+  font-size: 12px;
+}
+
+div.no-dsp h3 {
+  line-height: 1em;
+  margin: 0 0 0 0;
+  background: #b7bfcb;
+  padding: 5px 15px;
+  color: #FFF;
+  font-size: 12px;
+}
+
+
+
+div.left {
+  clear:both;
+}
+
+#id_setting input {
+  margin-right: 5px;
+}
+#id_setting .form-inline {
+  margin-bottom: 5px;
+}
+
+.optionColumn {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+}

@@ -10,11 +10,10 @@ export default class CompletedBody extends React.Component {
     return <div className="pane-group">
       <CompletedSidebar
         page={this.props.page}
-        items={this.props.items}
-        options={this.props.options} />
+        items={this.props.items} />
       <CompletedTable
         items={this.props.items}
-        options={this.props.options} />
+        watch={this.props.watch} />
     </div>;
   }
 };

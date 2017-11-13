@@ -292,7 +292,7 @@ module.exports.invoke = invoke;
  * pairs from an HTML form, 
  * using application/x-www-form-urlencoded format
  */
-exports.encodeFormData = function(data) {
+var encodeFormData = function(data) {
   if (!data) return "";
   var pairs = [];
   for(var name in data) {
@@ -304,14 +304,15 @@ exports.encodeFormData = function(data) {
     pairs.push(name + "=" + value);
   }
   return pairs.join('&');
-}
+};
+module.exports.encodeFormData = encodeFormData;
 
 /**
  * Decode an HTML form as if they were name/value pairs from 
  * the properties of an object, 
  * using application/x-www-form-urlencoded format↲
  */
-exports.decodeFormData = function(text, sep, eq, isDecode) {
+var decodeFormData = function(text, sep, eq, isDecode) {
   text = text || location.search.substr(1);
   sep = sep || '&';
   eq = eq || '=';
@@ -323,12 +324,13 @@ exports.decodeFormData = function(text, sep, eq, isDecode) {
     return obj;
   }, {});
 };
+module.exports.decodeFormData = decodeFormData;
 
 /**
  * Generated a randam characters, using 'Math.random()' method.
  * $length: number of characters to be generated.
  */
-exports.makeRandStr = function(length) {
+var makeRandStr = function(length) {
   var chars =
 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJLKMNOPQRSTUVWXYZ0123456789';
   var str = '';
@@ -337,12 +339,13 @@ exports.makeRandStr = function(length) {
   }
   return str;
 }
+module.exports.makeRandStr = makeRandStr;
 
 /**
  * Generated a randam characters, using 'Math.random()' method.
  * $length: number of characters to be generated.
  */
-exports.makeRandInt = function(length) {
+var makeRandInt = function(length) {
   var chars = '123456789';
   var str = '';
   for (var i = 0; i < length; ++i) {
@@ -350,4 +353,4 @@ exports.makeRandInt = function(length) {
   }
   return parseInt(str, 10);
 }
-
+module.exports.makeRandInt = makeRandInt;
