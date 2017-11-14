@@ -27,22 +27,49 @@ export default class AppForm extends React.Component {
     return <div className="pane">
     <form className="padded-less">
       <div className="form-group">
-      <label>Application Key ID</label>
+      <label>Application ID</label>
       <input type="text"
         className="form-control"
-        placeholder="Key ID"
+        placeholder="Application ID"
         value={this.state.appid}
         onChange={
           this.handleChangeText.bind(this, 'appid')} />
       </div>
       <div className="form-group">
-      <label>User Token</label>
+      <label>Access Token</label>
       <textarea
         className="form-control"
         placeholder="Token"
-        value={this.state.token}
+        value={this.state.access_token}
         onChange={
-          this.handleChangeText.bind(this, 'token')} />
+          this.handleChangeText.bind(this, 'access_token')} />
+      </div>
+      <div className="form-group">
+      <label>ID Token</label>
+      <textarea
+        className="form-control"
+        placeholder="Token"
+        value={this.state.id_token}
+        onChange={
+          this.handleChangeText.bind(this, 'id_token')} />
+      </div>
+      <div className="form-group">
+      <label>Refresh Token / Code</label>
+      <input type="text"
+        className="form-control"
+        placeholder="Token"
+        value={this.state.refresh_token}
+        onChange={
+          this.handleChangeText.bind(this, 'refresh_token')} />
+      </div>
+      <div className="form-group">
+      <label>Expires Time</label>
+      <input type="text"
+        className="form-control"
+        placeholder="second"
+        value={this.state.expires_in}
+        onChange={
+          this.handleChangeText.bind(this, 'expires_in')} />
       </div>
       <div className="form-group">
       <label>Find API URL</label>

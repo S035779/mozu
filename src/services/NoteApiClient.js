@@ -28,7 +28,10 @@ export default {
             (window.UserDataStorage && new str.UserDataStorage())
           || new str.CookieStorage();
           Yaho = JSON.parse(memory.getItem("Yaho_config"));
-          Yaho['token'] = response;
+          Yaho['access_token'] = response.access_token;
+          Yaho['id_token'] = response.id_token;
+          Yaho['refresh_token'] = response.code;
+          Yaho['expires_in'] = response.expires_in
           resolve(Yaho);
         });
       case 'config/write':
@@ -37,8 +40,7 @@ export default {
             (window.UserDataStorage && new str.UserDataStorage())
           || new str.CookieStorage();
           Yaho = response;
-          memory.setItem("Yaho_config"
-            , JSON.stringify(response));
+          memory.setItem("Yaho_config", JSON.stringify(response));
           resolve(Yaho);
         });
       case 'json/search':
@@ -98,8 +100,8 @@ export default {
     }
   },
 
-  getConfig(token) {
-    return this.request('config/fetch', token);
+  getConfig(access_token) {
+    return this.request('config/fetch', access_token);
   },
 
   getIds(options, page) {
@@ -165,7 +167,7 @@ export default {
 
   fetchCloseWatch(start) {
     spn.spin();
-    return this.getCloseWatchIds(start, Yaho.token)
+    return this.getCloseWatchIds(start, Yaho.access_token)
       .then(R.compose(this.setWatchIds.bind(this)
         , this.resIds.bind(this)))
       .then(M.fork(R.concat
@@ -183,7 +185,7 @@ export default {
 
   fetchOpenWatch(start) {
     spn.spin();
-    return this.getOpenWatchIds(start, Yaho.token)
+    return this.getOpenWatchIds(start, Yaho.access_token)
       .then(R.compose(this.setWatchIds.bind(this)
         , this.resIds.bind(this)))
       .then(M.fork(R.concat
@@ -201,7 +203,7 @@ export default {
 
   fetchWatchIds() {
     spn.spin();
-    return this.getOpenWatchIds(1, Yaho.token)
+    return this.getOpenWatchIds(1, Yaho.access_token)
       .then(this.resAttr)
       .then(this.forWatchIds.bind(this))
       .then(R.map(this.resIds.bind(this)))
@@ -217,14 +219,14 @@ export default {
   },
 
   createWatch(auctionID) {
-    return this.postCreateWatch(Yaho.token, auctionID)
+    return this.postCreateWatch(Yaho.access_token, auctionID)
       .then(this.setUrl)
       //.then(R.tap(this.traceLog.bind(this)))
       .catch(this.errorLog.bind(this));
   },
 
   deleteWatch(auctionID) {
-    return this.postDeleteWatch(Yaho.token, auctionID)
+    return this.postDeleteWatch(Yaho.access_token, auctionID)
       .then(this.setUrl)
       //.then(R.tap(this.traceLog.bind(this)))
       .catch(this.errorLog.bind(this));
@@ -236,7 +238,7 @@ export default {
       = Math.ceil(totalResultsAvailable / totalResultsReturned); 
     const promise = [];
     for(let i=0; i<pages; i++) {
-      promise.push(this.getOpenWatchIds(i+1, Yaho.token))
+      promise.push(this.getOpenWatchIds(i+1, Yaho.access_token))
     }
     return Promise.all(promise);
   },

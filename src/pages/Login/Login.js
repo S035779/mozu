@@ -1,3 +1,4 @@
+import querystring from 'querystring';
 import React from 'react';
 import { Container } from 'flux/utils';
 import ContainerConverter from '../../FluxContainerConverter';
@@ -10,29 +11,26 @@ import GlobalHeader from '../../components/GlobalHeader/GlobalHeader';
 import GlobalFooter from '../../components/GlobalFooter/GlobalFooter';
 import { log } from '../../../utils/webutils';
 import std from '../../../utils/stdutils';
-
 const authApi = process.env.auth;
 const AppID = process.env.app_id;
 const AppURL = process.env.app_url;
+
+const pspid = 'LoginControleView';
 
 const fakeAuth = {
   isAuthenticated: false,
   authenticate(callback) {
     this.isAuthenticated = true;
     const options = new Object();
-    options['response_type'] = 'code';
+    options['response_type'] = 'code token id_token';
     options['client_id'] = AppID;
-    options['redirect_uri'] = AppURL;
-    options['bail'] = 1;
-    options['scope'] = 'openid';
+    options['redirect_uri'] = AppURL; options['scope'] = 'openid';
     options['state'] = std.makeRandStr(8);
     options['nonce'] = std.makeRandStr(8);
-    options['display'] = 'page';
-    options['prompt'] = 'none';
-    options['max_age'] = 3600;
-    const uri = authApi + '?' + std.encodeFormData(options);
+    const uri = authApi + 'authorization' +
+      '?' + querystring.stringify(options);
     window.location.assign(uri);
-    callback('Login!!');
+    callback(uri);
   },
   signout(callback) {
     this.isAuthenticated = false;

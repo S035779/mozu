@@ -13,7 +13,10 @@ class AppStore extends ReduceStore {
         selected: 0
         , title: ''
         , appid: ''
-        , token: ''
+        , access_token: ''
+        , id_token: ''
+        , refresh_token: ''
+        , expires_in: ''
         , findApi: ''
         , itemApi: ''
         , bidsApi: ''
