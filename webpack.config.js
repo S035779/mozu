@@ -24,23 +24,25 @@ const config = {
   module: {
     rules: [{
       test: /\.js$/,
-      loader: 'babel-loader',
-      options: {
-        presets: [ 'react', [ 'env',{ modules: false } ] ]
-      }},
+      loader: 'babel-loader'
+    },
     {
       test: /\.css$/,
       use: ExtractTextPlugin.extract({
         use: [ 'css-loader', 'postcss-loader' ]
       })
-    }]},
+    }]
+  },
   devServer: {
-    historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
+    inline: true,
     host: '0.0.0.0',
     port: 8080,
-    inline: true,
+    historyApiFallback: true,
     watchContentBase: true,
+    proxy: {
+      '*': 'http://127.0.0.1:8081'
+    },
   },
   performance: {
     hints: "warning",
@@ -50,7 +52,6 @@ const config = {
       return assetFilename.endsWith('.css') 
         || assetFilename.endsWith('.js');
     }},
-  devtool: 'source-map',
   plugins: [
     new Dotenv(),
     new ExtractTextPlugin({
@@ -66,7 +67,8 @@ const config = {
       , filename: 'common.js'
       , minChunk: Infinity
     })
-  ]
+  ],
+  devtool: 'source-map',
 };
 
 module.exports = config;
