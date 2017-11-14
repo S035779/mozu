@@ -20,13 +20,13 @@ const fakeAuth = {
   authenticate(callback) {
     this.isAuthenticated = true;
     const options = new Object();
-    options['response_type'] = 'token';
+    options['response_type'] = 'code';
     options['client_id'] = AppID;
     options['redirect_uri'] = AppURL;
     options['bail'] = 1;
     options['scope'] = 'openid';
     options['state'] = std.makeRandStr(8);
-    //options['nonce'] = std.makeRandStr(8);
+    options['nonce'] = std.makeRandStr(8);
     options['display'] = 'page';
     options['prompt'] = 'none';
     options['max_age'] = 3600;
@@ -59,8 +59,9 @@ class Login extends React.Component {
   }
 
   handleChangeConfirm(obj) {
-    if(obj.agree) fakeAuth.authenticate(state =>
-      log.info(``, 'Auth:', state));
+    if(obj.agree) fakeAuth.authenticate(state => {
+      log.info(`${pspid}>`, 'Auth:', state)
+    });
   }
 
   render() {

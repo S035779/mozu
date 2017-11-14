@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>yconnect!</title>
+  </head>
+  <body>
+<span class="yconnectLogin"></span>
+<script type="text/javascript">
+window.yconnectInit = function() {
+  YAHOO.JP.yconnect.Authorization.init({
+    button: {
+      format: "image",
+      type: "a",
+      textType:"a",
+      width: 196,
+      height: 38,
+      className: "yconnectLogin"
+    },
+    authorization: {
+      clientId: "dj00aiZpPVBTNWhlcGVhV3RFZyZzPWNvbnN1bWVyc2VjcmV0Jng9ODQ-",
+      redirectUri: "http://tk2-402-42441.vs.sakura.ne.jp",
+      scope: "openid",
+      windowWidth: "500",
+      windowHeight: "400",
+      responseType: "code",
+      state: "abcdefxxghijklmn",
+      nonce: "12345xxx67890"
+    },
+    onSuccess: function(res) {
+    },
+    onError: function(res) {
+    },
+    onCancel: function(res) {
+    }
+  });
+};
+(function(){
+ var fs = document.getElementsByTagName("script")[0], s = document.createElement("script");
+ s.setAttribute("src", "https://s.yimg.jp/images/login/yconnect/auth/2.0.1/auth-min.js");
+ fs.parentNode.insertBefore(s, fs);
+ })();
+</script>
+  </body>
+</html>

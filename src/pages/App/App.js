@@ -27,13 +27,13 @@ class App extends React.Component {
 
   componentWillMount() {
     const { history } = this.props;
-    const hash = this.props.location.hash.split('#');
-    const obj = std.decodeFormData(hash[1]);
-    log.trace(`${pspid}>`, 'Token:', obj.access_token);
-    if(obj && obj.hasOwnProperty('access_token')) {
-      AppAction.fetchConfig(obj.access_token);
+    const search = this.props.location.search.split('?');
+    const obj = std.decodeFormData(search[1]);
+    log.trace(`${pspid}>`, 'code:', obj.code);
+    if(obj && obj.hasOwnProperty('code')) {
+      AppAction.fetchConfig(obj.code);
     } else {
-      history.push('/login');
+      //history.push('/login');
     }
   }
 
