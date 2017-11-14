@@ -3167,7 +3167,7 @@ lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
-log4js@^2.3.12:
+log4js@2.3.12:
   version "2.3.12"
   resolved "https://registry.yarnpkg.com/log4js/-/log4js-2.3.12.tgz#bc039b27a54e851629d8813c5da6531bca538866"
   dependencies:
