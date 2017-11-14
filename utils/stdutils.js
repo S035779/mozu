@@ -27,7 +27,7 @@ module.exports.extend = extend;
  * @returns {object}
  */
 var merge = function(o, p) {
-  for(prop in p) {            // For all props in p.
+  for(var prop in p) {            // For all props in p.
     if (o.hasOwnProperty[prop]) continue;
                               // Except those already in o.
     o[prop] = p[prop];        // Add the property to o.

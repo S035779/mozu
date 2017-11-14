@@ -13,21 +13,65 @@ router.use((res, req, cbk) => {
   cbk();
 });
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Successfully Posted a test message.' });
+router.route('/support')
+/*
+ * $ curl -H "Accept: application/json" \
+ *        -H "Content-type: application/json" \
+ *        -X GET \
+ *        -d '{"appid":"watch_note!"}' \
+ *        http://localhost:8080/api/support
+ */
+.get((req, res) => {
+  const client = { id: req.body.appid };
+  dbs.fetchAuthSupport(client, (err, obj) => {
+    if(err) res.json(err)
+    res.json(obj);
+  });
 });
 
-router.route('/tokens')
+router.route('/jwks')
+/*
+ * $ curl -H "Accept: application/json" \
+ *        -H "Content-type: application/json" \
+ *        -X GET \
+ *        -d '{"appid":"watch_note!"}' \
+ *        http://localhost:8080/api/jwks
+ */
+.get((req, res) => {
+  const client = { id: req.body.appid };
+  dbs.fetchAuthJwks(client, (err, objs) => {
+    if(err) res.json(err)
+    res.json(objs);
+  });
+});
+
+router.route('/public-keys/:keyid')
+/*
+ * $ curl -H "Accept: application/json" \
+ *        -H "Content-type: application/json" \
+ *        -X GET \
+ *        -d '{"appid":"watch_note!"}' \
+ *        http://localhost:8080/api/public-keys/[keyid]
+ */
+.get((req, res) => {
+  const client = { id: req.body.appid, keyid: req.params.keyid };
+  dbs.fetchAuthPublicKeys(client, (err, obj) => {
+    if(err) res.json(err)
+    res.json(obj);
+  });
+});
+
+router.route('/token')
 /*
  * $ curl -H "Accept: application/json" \
  *        -H "Content-type: application/json" \
  *        -X POST \
  *        -d '{"appid":"watch_note!"}' \
- *        http://localhost:8080/api/tokens
+ *        http://localhost:8080/api/token
  */
 .post((req, res) => {
   const client = { id: req.body.appid };
-  dbs.createToken(client, (err, obj) => {
+  dbs.createAuthToken(client, (err, obj) => {
     if(err) res.json(err)
     res.json(obj);
   });
@@ -37,23 +81,23 @@ router.route('/tokens')
  *        -H "Content-type: application/json" \
  *        -X GET \
  *        -d '{"appid":"watch_note!"}' \
- *        http://localhost:8080/api/tokens
+ *        http://localhost:8080/api/token
  */
 .get((req, res) => {
   const client = { id: req.body.appid };
-  dbs.fetchTokens(client, (err, objs) => {
+  dbs.fetchAuthTokens(client, (err, objs) => {
     if(err) res.json(err)
     res.json(objs);
   });
 });
 
-router.route('/tokens/:code')
+router.route('/token/:code')
 /*
  * $ curl -H "Accept: application/json" \
  *        -H "Content-type: application/json" \
  *        -X GET \
  *        -d '{"appid":"watch_note!"}' \
- *        http://localhost:8080/api/tokens/[code]
+ *        http://localhost:8080/api/token/[code]
  */
 .get((req, res) => {
   const client = { id: req.body.appid, code: req.params.code };
@@ -67,7 +111,7 @@ router.route('/tokens/:code')
  *        -H "Content-type: application/json" \
  *        -X PUT \
  *        -d '{"appid":"watch_note!"}' \
- *        http://localhost:8080/api/tokens/[code]
+ *        http://localhost:8080/api/token/[code]
  */
 .put((req, res) => {
   const client = { id: req.body.appid ,code: req.params.code };
@@ -81,7 +125,7 @@ router.route('/tokens/:code')
  *        -H "Content-type: application/json" \
  *        -X DELETE \
  *        -d '{"appid":"watch_note!"}' \
- *        http://localhost:8080/api/tokens/[code]
+ *        http://localhost:8080/api/token/[code]
  */
 .delete((req, res) => {
   const client = { id: req.body.appid, code: req.params.code  };
