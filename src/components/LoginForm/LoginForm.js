@@ -36,21 +36,27 @@ export default class LoginForm extends React.Component {
         You must log in to view the page at {from.pathname}.</p>
         <div id="user-sign-up">
         <div id="signup-agreement">
-          <label><span className="required-mark">required</span> Agree to our terms of us and privacy policy. <input type="checkbox" name="agreement" id="agreement" onClick={this.handleChangeCheckbox.bind(this, 'agree')} />
+          <label><span className="required-mark">required</span> Agree to our terms of us and privacy policy. <input type="checkbox"
+            name="agreement" id="agreement"
+            value="agree"
+            checked={this.state.agree}
+            onClick={this.handleChangeCheckbox.bind(this, 'agree')} />
           </label>
         </div>
         </div>
       </div>
-      <form className="padded-less">
+      <div className="padded-less">
         <div className="form-actions">
-        <button type="submit" className="btn btn-form btn-default btn-large"
+        <button type="submit"
+          className="btn btn-form btn-default btn-large"
           onClick={this.handleChangeReset.bind(this)}
         >Reset</button>
-        <button type="submit" className="btn btn-form btn-positive pull-right btn-large"
+        <button type="submit"
+          className="btn btn-form btn-positive pull-right btn-large"
           onClick={this.handleChangeConfirm.bind(this)}
         >Confirme</button>
         </div>
-      </form>
+      </div>
     </div>;
   }
 }

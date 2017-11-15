@@ -13,7 +13,7 @@ export default class GlobalFooter extends React.Component {
       <div className="toolbar-actions">
       <button className="btn btn-primary pull-right"
         onClick={this.handleChangeLogin.bind(this)}
-      >Agreement</button>
+      >Login</button>
       </div>
     </footer>;
   }
