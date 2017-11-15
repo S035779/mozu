@@ -1,3 +1,4 @@
+import querystring from 'querystring';
 import * as R from 'ramda';
 import { M, log, spn, str, util } from '../../utils/webutils';
 import xhr from '../../utils/xhrutils';
@@ -7,34 +8,41 @@ log.config('console', 'basic', 'ALL', 'note-renderer');
 spn.config('app');
 
 const pspid = `NoteAPIClient`;
-let Yaho = {};
-/*
-Yaho = {
-  appid:        process.env.app_id
-  , bidsApi:    procsss.env.bids
-  , itemApi:    procsss.env.item
-  , findApi:    procsss.env.find
-  , watchApi1:  procsss.env.watch1
-  , watchApi2:  procsss.env.watch2
+
+let Yaho = {
+  appid:        process.env.appid
+  , appUrl:     process.env.appurl
+  , authApi:    process.env.auth
+  , findApi:    process.env.find
+  , itemApi:    process.env.item
+  , bidsApi:    process.env.bids
+  , watchApi1:  process.env.wch1
+  , watchApi2:  process.env.wch2
 };
-*/
+
 export default {
   request(action, response) {
     log.info(`${pspid}>`, 'Request:', `${action}`);
     switch(action) {
-      case 'config/fetch':
+      case 'tokens':
+        return new Promise(resolve => {
+          resolve(response)
+        });
+      case 'config':
+        return new Promise(resolve => {
+          Yaho = Object.assign({}, Yaho, response);
+          resolve(Yaho);
+        });
+      case 'config/fetch/storage':
         return new Promise(resolve => {
           const memory = window.localStorage ||
             (window.UserDataStorage && new str.UserDataStorage())
           || new str.CookieStorage();
-          Yaho = JSON.parse(memory.getItem("Yaho_config"));
-          Yaho['access_token'] = response.access_token;
-          Yaho['id_token'] = response.id_token;
-          Yaho['refresh_token'] = response.code;
-          Yaho['expires_in'] = response.expires_in
+          const config = JSON.parse(memory.getItem("Yaho_config"));
+          Yaho = Object.assign({}, config, response);
           resolve(Yaho);
         });
-      case 'config/write':
+      case 'config/write/storage':
         return new Promise(resolve => {
           const memory = window.localStorage ||
             (window.UserDataStorage && new str.UserDataStorage())
@@ -100,8 +108,14 @@ export default {
     }
   },
 
-  getConfig(access_token) {
-    return this.request('config/fetch', access_token);
+  getAuth() {
+    return this.request('tokens'
+      , {appid: Yaho.appid, code: Yaho.code});
+  },
+
+  getConfig(tokens) {
+    //return this.request('config/fetch/storage', tokens);
+    return this.request('config', tokens);
   },
 
   getIds(options, page) {
@@ -145,6 +159,36 @@ export default {
     spn.spin();
     return this.request('deleteWatchList'
       , { auctionID, output: 'json', access_token });
+  },
+
+  authenticate() {
+    return this.getAuth()
+      .then(obj => {
+        log.trace(`${pspid}>`, 'Auth:', obj);
+        const options = new Object();
+        options['response_type'] = 'code token id_token';
+        options['client_id'] = Yaho.appid;
+        options['redirect_uri'] = Yaho.appUrl;
+        options['scope'] = 'openid';
+        options['state'] = std.makeRandStr(8);
+        options['nonce'] = std.makeRandStr(8);
+        return Yaho.authApi + 'authorization' +
+        '?' + querystring.stringify(options);
+    });
+  },
+
+  signout() {
+  },
+  
+  fetchConfig(tokens) {
+    const obj = {
+      access_token:     tokens.access_token
+      , id_token:       tokens.id_token
+      , code:           tokens.code
+      , refresh_token:  ''
+      , expires_in:     tokens.expires_in
+    };
+    return this.getConfig(obj);
   },
 
   fetchItems(options, page) {

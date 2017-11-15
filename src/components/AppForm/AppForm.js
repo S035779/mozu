@@ -54,7 +54,16 @@ export default class AppForm extends React.Component {
           this.handleChangeText.bind(this, 'id_token')} />
       </div>
       <div className="form-group">
-      <label>Refresh Token / Code</label>
+      <label>Code</label>
+      <input type="text"
+        className="form-control"
+        placeholder="Code"
+        value={this.state.code}
+        onChange={
+          this.handleChangeText.bind(this, 'code')} />
+      </div>
+      <div className="form-group">
+      <label>Refresh Token</label>
       <input type="text"
         className="form-control"
         placeholder="Token"
@@ -70,6 +79,24 @@ export default class AppForm extends React.Component {
         value={this.state.expires_in}
         onChange={
           this.handleChangeText.bind(this, 'expires_in')} />
+      </div>
+      <div className="form-group">
+      <label>State</label>
+      <input type="text"
+        className="form-control"
+        placeholder="Code"
+        value={this.state.state}
+        onChange={
+          this.handleChangeText.bind(this, 'state')} />
+      </div>
+      <div className="form-group">
+      <label>Token type</label>
+      <input type="text"
+        className="form-control"
+        placeholder="Type"
+        value={this.state.token_type}
+        onChange={
+          this.handleChangeText.bind(this, 'token_type')} />
       </div>
       <div className="form-group">
       <label>Find API URL</label>

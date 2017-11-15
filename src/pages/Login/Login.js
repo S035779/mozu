@@ -1,4 +1,3 @@
-import querystring from 'querystring';
 import React from 'react';
 import { Container } from 'flux/utils';
 import ContainerConverter from '../../FluxContainerConverter';
@@ -16,27 +15,6 @@ const AppID = process.env.app_id;
 const AppURL = process.env.app_url;
 
 const pspid = 'LoginControleView';
-
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(callback) {
-    this.isAuthenticated = true;
-    const options = new Object();
-    options['response_type'] = 'code token id_token';
-    options['client_id'] = AppID;
-    options['redirect_uri'] = AppURL; options['scope'] = 'openid';
-    options['state'] = std.makeRandStr(8);
-    options['nonce'] = std.makeRandStr(8);
-    const uri = authApi + 'authorization' +
-      '?' + querystring.stringify(options);
-    window.location.assign(uri);
-    callback(uri);
-  },
-  signout(callback) {
-    this.isAuthenticated = false;
-    callback('Logout!');
-  }
-};
 
 class Login extends React.Component {
   static getStores() {
@@ -57,9 +35,13 @@ class Login extends React.Component {
   }
 
   handleChangeConfirm(obj) {
-    if(obj.agree) fakeAuth.authenticate(state => {
-      log.info(`${pspid}>`, 'Auth:', state)
-    });
+    log.info(`${pspid}`, 'handleChangeConfirm');
+    if(obj.agree) {
+      LoginAction.authenticate().then(() => {
+        log.trace(`${pspid}`, 'URL:', this.state.redirect_uri);
+        window.location.assign(this.state.redirect_uri);
+      });
+    }
   }
 
   render() {
