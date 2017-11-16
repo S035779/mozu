@@ -6,7 +6,8 @@
     "build": "webpack",
     "dev-server": "webpack-dev-server",
     "ssr-server": "node --require ./src/hook/babel-register.js src/server.js",
-    "start": "npm-run-all --parallel dev-server ssr-server"
+    "start": "npm-run-all --parallel dev-server ssr-server",
+    "pack": "zip -r dist/watchnote-extension-v1.0.0.zip extension"
   },
   "license": "ISC",
   "devDependencies": {

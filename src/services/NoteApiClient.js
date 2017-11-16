@@ -26,7 +26,10 @@ export default {
     switch(action) {
       case 'tokens':
         return new Promise(resolve => {
-          resolve(response)
+          const uri = appUrl + '/' + action + '/' + response.code
+          xhr.postJSON(uri, { appid: response.appid }, tokens => {
+            resolve(tokens)
+          });
         });
       case 'config':
         return new Promise(resolve => {
@@ -108,9 +111,9 @@ export default {
     }
   },
 
-  getAuth() {
+  getAuth(refresh_token) {
     return this.request('tokens'
-      , {appid: Yaho.appid, code: Yaho.code});
+      , {appid: Yaho.appid, code: refresh_token});
   },
 
   getConfig(tokens) {
@@ -180,6 +183,10 @@ export default {
   signout() {
   },
   
+  fetchAuth() {
+    return this.getAuth()
+  },
+
   fetchConfig(tokens) {
     const obj = {
       access_token:     tokens.access_token

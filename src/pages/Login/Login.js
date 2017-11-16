@@ -25,6 +25,11 @@ class Login extends React.Component {
     return loginStore.getState();
   }
 
+  handleChangeLogout() {
+    const { history } = this.props;
+    history.push('/login');
+  }
+
   handleChangeLogin() {
     const { history } = this.props;
     history.push('/login');
@@ -54,11 +59,11 @@ class Login extends React.Component {
         <span label="Welcome"></span>
       </Tabs>
       <Contents selected={this.state.selected}>
-        <LoginBody from={from} onChangeConfirm={
-          this.handleChangeConfirm.bind(this)
-        }/>
+        <LoginBody from={from}
+          onChangeConfirm={this.handleChangeConfirm.bind(this)}/>
       </Contents>
       <GlobalFooter
+        onChangeLogout={this.handleChangeLogout.bind(this)}
         onChangeLogin={this.handleChangeLogin.bind(this)}/>
       </div>;
   }

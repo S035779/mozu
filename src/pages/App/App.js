@@ -26,20 +26,23 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    const { history } = this.props;
     const hash = this.props.location.hash.split('#');
     const obj = std.decodeFormData(hash[1]);
     log.trace(`${pspid}>`, 'Tokens:', obj);
     if(obj && obj.hasOwnProperty('access_token')) {
       AppAction.fetchConfig(obj);
     } else {
+      const { history } = this.props;
       history.push('/login');
     }
   }
 
+  handleChangeLogout() {
+    AppAction.fetchAuth();
+  }
+
   handleChangeLogin() {
-    const { history } = this.props;
-      history.push('/login');
+    AppAction.fetchAuth();
   }
 
   handleChangeTab(index, title) {
@@ -63,6 +66,7 @@ class App extends React.Component {
       <AppBody config={this.state.config}/>
     </Contents>
     <GlobalFooter
+      onChangeLogout={this.handleChangeLogout.bind(this)}
       onChangeLogin={this.handleChangeLogin.bind(this)} />
     </div>;
   }
