@@ -24,34 +24,30 @@ export default {
   request(action, response) {
     log.info(`${pspid}>`, 'Request:', `${action}`);
     switch(action) {
-      case 'tokens':
+      case 'create/token':
         return new Promise(resolve => {
-          const uri = appUrl + '/' + action + '/' + response.code
-          xhr.postJSON(uri, { appid: response.appid }, tokens => {
-            resolve(tokens)
+          const uri = appUrl + '/api/token';
+          xhr.postJSON(uri, response, token => {
+            resolve(token)
+          });
+        });
+      case 'update/token':
+        return new Promise(resolve => {
+          const uri = appUrl + '/api/token';
+          xhr.putJSON(uri, response, token => {
+            resolve(token)
           });
         });
       case 'config':
         return new Promise(resolve => {
-          Yaho = Object.assign({}, Yaho, response);
-          resolve(Yaho);
-        });
-      case 'config/fetch/storage':
-        return new Promise(resolve => {
-          const memory = window.localStorage ||
-            (window.UserDataStorage && new str.UserDataStorage())
-          || new str.CookieStorage();
-          const config = JSON.parse(memory.getItem("Yaho_config"));
-          Yaho = Object.assign({}, config, response);
-          resolve(Yaho);
-        });
-      case 'config/write/storage':
-        return new Promise(resolve => {
-          const memory = window.localStorage ||
-            (window.UserDataStorage && new str.UserDataStorage())
-          || new str.CookieStorage();
-          Yaho = response;
-          memory.setItem("Yaho_config", JSON.stringify(response));
+          const newToken = {
+            access_token:     response.access_token
+            , id_token:       response.id_token
+            , code:           response.code
+            , refresh_token:  ''
+            , expires_in:     response.expires_in
+          };
+          Yaho = Object.assign({}, Yaho, newToken);
           resolve(Yaho);
         });
       case 'json/search':
@@ -105,20 +101,31 @@ export default {
         });
       default:
         return new Promise(resolve => {
-          log.warn(`${pspid}> Unknown request !!`);
           resolve(response);
         });
     }
   },
 
-  getAuth(refresh_token) {
-    return this.request('tokens'
+  postSignIn() {
+    return this.request('application/signin');
+  },
+
+  postSignOut() {
+    return this.request('application/signoout');
+  },
+
+  postCreateToken(refresh_token) {
+    return this.request('create/token'
       , {appid: Yaho.appid, code: refresh_token});
   },
 
-  getConfig(tokens) {
-    //return this.request('config/fetch/storage', tokens);
-    return this.request('config', tokens);
+  postUpdateToken(refresh_token) {
+    return this.request('update/token'
+      , {appid: Yaho.appid, code: refresh_token});
+  },
+
+  getConfig(token) {
+    return this.request('config', token);
   },
 
   getIds(options, page) {
@@ -148,10 +155,6 @@ export default {
       , { start, output: 'json', access_token });
   },
 
-  putConfig(options) {
-    return this.request('config/write', options);;
-  },
-
   postCreateWatch(access_token, auctionID) {
     spn.spin();
     return this.request('watchList'
@@ -164,38 +167,30 @@ export default {
       , { auctionID, output: 'json', access_token });
   },
 
-  authenticate() {
-    return this.getAuth()
-      .then(obj => {
-        log.trace(`${pspid}>`, 'Auth:', obj);
-        const options = new Object();
-        options['response_type'] = 'code token id_token';
-        options['client_id'] = Yaho.appid;
-        options['redirect_uri'] = Yaho.appUrl;
-        options['scope'] = 'openid';
-        options['state'] = std.makeRandStr(8);
-        options['nonce'] = std.makeRandStr(8);
-        return Yaho.authApi + 'authorization' +
-        '?' + querystring.stringify(options);
+  signin() {
+    return this.postSignIn()
+    .then(()=> {
+      const options = new Object();
+      options['response_type'] = 'code token id_token';
+      options['client_id'] = Yaho.appid;
+      options['redirect_uri'] = Yaho.appUrl;
+      options['scope'] = 'openid';
+      options['state'] = std.makeRandStr(8);
+      options['nonce'] = std.makeRandStr(8);
+      window.location.assign(Yaho.authApi + 'authorization' + '?'
+        + querystring.stringify(options));
     });
   },
 
   signout() {
-  },
-  
-  fetchAuth() {
-    return this.getAuth()
+    return this.postSignOut();
   },
 
-  fetchConfig(tokens) {
-    const obj = {
-      access_token:     tokens.access_token
-      , id_token:       tokens.id_token
-      , code:           tokens.code
-      , refresh_token:  ''
-      , expires_in:     tokens.expires_in
-    };
-    return this.getConfig(obj);
+  fetchConfig(token) {
+    return this.getConfig(token)
+      .then(R.tap(this.traceLog.bind(this)))
+      //.then(obj => this.postCreateToken(obj.code));
+      //.catch(this.errorLog.bind(this));
   },
 
   fetchItems(options, page) {

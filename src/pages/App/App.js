@@ -25,7 +25,7 @@ class App extends React.Component {
     return appStore.getState();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const hash = this.props.location.hash.split('#');
     const obj = std.decodeFormData(hash[1]);
     log.trace(`${pspid}>`, 'Tokens:', obj);
@@ -37,12 +37,9 @@ class App extends React.Component {
     }
   }
 
-  handleChangeLogout() {
-    AppAction.fetchAuth();
-  }
-
   handleChangeLogin() {
-    AppAction.fetchAuth();
+    const { history } = this.props;
+    history.push('/login');
   }
 
   handleChangeTab(index, title) {
@@ -66,7 +63,6 @@ class App extends React.Component {
       <AppBody config={this.state.config}/>
     </Contents>
     <GlobalFooter
-      onChangeLogout={this.handleChangeLogout.bind(this)}
       onChangeLogin={this.handleChangeLogin.bind(this)} />
     </div>;
   }

@@ -9,20 +9,18 @@ export default {
     log.info(`${pspid}>`, 'Response: content/select/login');
     dispatch({ type: 'content/select/login', selected, title });
   },
-  authenticate() {
-    return NoteApiClient.authenticate()
-    .then(redirect_uri => {
-      log.info(`${pspid}>`, 'Response: application/authenticate');
-      dispatch({ type: 'application/authenticate'
-        , isAuthenticated: true, redirect_uri });
+  signin() {
+    return NoteApiClient.signin()
+    .then(() => {
+      log.info(`${pspid}>`, 'Response: application/signin');
+      dispatch({ type: 'application/signin', isAuthenticated: true });
     });
   },
   signout() {
-    NoteApiClient.signout()
+    return NoteApiClient.signout()
     .then(() => {
       log.info(`${pspid}>`, 'Response: application/signout');
-      dispatch({ type: 'application/signout'
-        , isAuthenticated: false });
+      dispatch({ type: 'application/signout', isAuthenticated: false });
     });
   },
 }

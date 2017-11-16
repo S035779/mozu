@@ -119,37 +119,37 @@ module.exports.refreshAuthToken = refreshAuthToken;
  *
  * @returns {undefined}
  */
-const deleteToken = (client, callback) => {
+const deleteAuthToken = (client, callback) => {
   if(client.id !== AppID) callback({error: 'Unknown AppID!!'}); 
   const isSuccess = delToken(client)
   if(!isSuccess) callback({error: 'Delete Token Error!!'});
   callback();
 };
-module.exports.deleteToken = deleteToken;
+module.exports.deleteAuthToken = deleteAuthToken;
 
 /**
  * 
  *
  * @returns {undefined}
  */
-const fetchToken = (client, callback) => {
+const fetchAuthToken = (client, callback) => {
   if(client.id !== AppID) callback({error: 'Unknown AppID!!'}); 
   const token = hasToken(client);
   if(!token) callback({error: 'Token not found!!'});
   callback(null, token)
 };
-module.exports.fetchToken = fetchToken;
+module.exports.fetchAuthToken = fetchAuthToken;
 
 /**
  * 
  *
  * @returns {undefined}
  */
-const fetchTokens = (client, callback) => {
+const fetchAuthTokens = (client, callback) => {
   if(client.id !== AppID) callback({error: 'Unknown AppID!!'}); 
   callback(null, allToken())
 };
-module.exports.fetchTokens = fetchTokens;
+module.exports.fetchAuthTokens = fetchAuthTokens;
 
 /**
  * 
