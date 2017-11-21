@@ -11,6 +11,7 @@ export default class NoteBody extends React.Component {
       <NoteSidebar
         page={this.props.page}
         items={this.props.items}
+        categorys={this.props.categorys}
         options={this.props.options} />
       <NoteTable
         items={this.props.items}

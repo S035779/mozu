@@ -36,17 +36,12 @@ class Login extends React.Component {
 
   handleChangeConfirm(obj) {
     log.info(`${pspid}`, 'handleChangeConfirm');
-    if(obj.agree) {
-      LoginAction.authenticate().then(() => {
-        log.trace(`${pspid}`, 'URL:', this.state.redirect_uri);
-        window.location.assign(this.state.redirect_uri);
-      });
-    }
+    if(obj.agree) LoginAction.signin();
+    else LoginAction.signout();
   }
 
   render() {
-    const { from } = this.props.location.state ||
-      { from: { pathname: '/' } };
+    const { from } = this.props.location.state || {from: {pathname: '/'}};
     return <div className="window">
       <GlobalHeader title={this.state.title} />
       <Tabs selected={this.state.selected}
@@ -54,9 +49,8 @@ class Login extends React.Component {
         <span label="Welcome"></span>
       </Tabs>
       <Contents selected={this.state.selected}>
-        <LoginBody from={from} onChangeConfirm={
-          this.handleChangeConfirm.bind(this)
-        }/>
+        <LoginBody from={from}
+          onChangeConfirm={this.handleChangeConfirm.bind(this)}/>
       </Contents>
       <GlobalFooter
         onChangeLogin={this.handleChangeLogin.bind(this)}/>

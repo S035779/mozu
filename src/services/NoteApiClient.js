@@ -24,32 +24,39 @@ export default {
   request(action, response) {
     log.info(`${pspid}>`, 'Request:', `${action}`);
     switch(action) {
-      case 'tokens':
+      case 'create/token':
         return new Promise(resolve => {
-          resolve(response)
+          const uri = '/api/token';
+          xhr.postJSON(uri, response, token => {
+            resolve(token)
+          });
+        });
+      case 'update/token':
+        return new Promise(resolve => {
+          const uri = '/api/token';
+          xhr.putJSON(uri, response, token => {
+            resolve(token)
+          });
         });
       case 'config':
         return new Promise(resolve => {
-          Yaho = Object.assign({}, Yaho, response);
+          Yaho = Object.assign({}, Yaho, {
+            code: response.code
+            , refresh_token: response.refresh_token
+            , access_token: response.access_token
+            , id_token: response.id_token
+            , expires_in: response.expires_in
+            , state: response.state
+            , token_type: response.token_type
+          });
           resolve(Yaho);
         });
-      case 'config/fetch/storage':
+      case 'json/categoryTree':
         return new Promise(resolve => {
-          const memory = window.localStorage ||
-            (window.UserDataStorage && new str.UserDataStorage())
-          || new str.CookieStorage();
-          const config = JSON.parse(memory.getItem("Yaho_config"));
-          Yaho = Object.assign({}, config, response);
-          resolve(Yaho);
-        });
-      case 'config/write/storage':
-        return new Promise(resolve => {
-          const memory = window.localStorage ||
-            (window.UserDataStorage && new str.UserDataStorage())
-          || new str.CookieStorage();
-          Yaho = response;
-          memory.setItem("Yaho_config", JSON.stringify(response));
-          resolve(Yaho);
+          JSONP.request(Yaho.findApi + action, response
+          , Categorys => {
+            resolve(Categorys);
+          });
         });
       case 'json/search':
         return new Promise(resolve => {
@@ -102,20 +109,36 @@ export default {
         });
       default:
         return new Promise(resolve => {
-          log.warn(`${pspid}> Unknown request !!`);
           resolve(response);
         });
     }
   },
 
-  getAuth() {
-    return this.request('tokens'
-      , {appid: Yaho.appid, code: Yaho.code});
+  postSignIn() {
+    return this.request('application/signin');
   },
 
-  getConfig(tokens) {
-    //return this.request('config/fetch/storage', tokens);
-    return this.request('config', tokens);
+  postSignOut() {
+    return this.request('application/signoout');
+  },
+
+  postCreateToken(refresh_token) {
+    return this.request('create/token'
+      , {appid: Yaho.appid, code: refresh_token});
+  },
+
+  postUpdateToken(refresh_token) {
+    return this.request('update/token'
+      , {appid: Yaho.appid, code: refresh_token});
+  },
+
+  getConfig(token) {
+    return this.request('config', token);
+  },
+
+  getCategorys(category) {
+    return this.request('json/categoryTree'
+      , { category, appid: Yaho.appid, output: 'json' });
   },
 
   getIds(options, page) {
@@ -145,10 +168,6 @@ export default {
       , { start, output: 'json', access_token });
   },
 
-  putConfig(options) {
-    return this.request('config/write', options);;
-  },
-
   postCreateWatch(access_token, auctionID) {
     spn.spin();
     return this.request('watchList'
@@ -161,34 +180,39 @@ export default {
       , { auctionID, output: 'json', access_token });
   },
 
-  authenticate() {
-    return this.getAuth()
-      .then(obj => {
-        log.trace(`${pspid}>`, 'Auth:', obj);
-        const options = new Object();
-        options['response_type'] = 'code token id_token';
-        options['client_id'] = Yaho.appid;
-        options['redirect_uri'] = Yaho.appUrl;
-        options['scope'] = 'openid';
-        options['state'] = std.makeRandStr(8);
-        options['nonce'] = std.makeRandStr(8);
-        return Yaho.authApi + 'authorization' +
-        '?' + querystring.stringify(options);
+  signin() {
+    return this.postSignIn()
+    .then(()=> {
+      const options = new Object();
+      options['response_type'] = 'code token id_token';
+      options['client_id'] = Yaho.appid;
+      options['redirect_uri'] = Yaho.appUrl;
+      options['scope'] = 'openid';
+      options['state'] = std.makeRandStr(8);
+      options['nonce'] = std.makeRandStr(8);
+      window.location.assign(Yaho.authApi + 'authorization' + '?'
+        + querystring.stringify(options));
     });
   },
 
   signout() {
+    return this.postSignOut();
   },
-  
-  fetchConfig(tokens) {
-    const obj = {
-      access_token:     tokens.access_token
-      , id_token:       tokens.id_token
-      , code:           tokens.code
-      , refresh_token:  ''
-      , expires_in:     tokens.expires_in
-    };
-    return this.getConfig(obj);
+
+  fetchConfig(token) {
+    return this.getConfig(token)
+      //.then(obj => this.postCreateToken(obj.code))
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
+  },
+
+  fetchCategorys(category) {
+    spn.spin();
+    return this.getCategorys(category)
+      .then(R.compose(this.setCategorys.bind(this)
+        , this.resCategorys.bind(this)))
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
   },
 
   fetchItems(options, page) {
@@ -293,6 +317,12 @@ export default {
       ? res['@attributes'] : null;
   },
 
+  resCategorys(obj) {
+    const res = obj.ResultSet;
+    return res.hasOwnProperty('Result')
+      ? res.Result : null;
+  },
+
   resIds(obj) {
     const res = obj.ResultSet;
     return res.hasOwnProperty('Result')
@@ -315,6 +345,16 @@ export default {
       const b = R.filter(o => o.AuctionID === i.AuctionID, bs);
       return R.merge(i, b[0]);
     }, is);
+  },
+
+  setCategorys(obj) {
+    const array = Array.isArray(obj.ChildCategory)
+      ? R.map(o => ({ id: o.CategoryId, name: o.CategoryName })
+        , obj.ChildCategory)
+      : [{ id: obj.ChildCategory.CategoryId
+        , name: obj.ChildCategory.CategoryName}];
+    array.unshift({id: '0', name: '' });
+    return array;
   },
 
   setIds(obj) {
@@ -350,6 +390,10 @@ export default {
 
     if(_p.searchString) {
       options['query']      = _p.searchString;
+    }
+    
+    if(_p.category) {
+      options['category']      = _p.category;
     }
     
     if(_p.highestPrice) {

@@ -84,10 +84,13 @@ module.exports.YHPublicKeys = YHPublicKeys;
  * @param options {object}
  * @param callback {function}
  */
-const YHAccessToken = (options, callback) => {
+const YHAccessToken = (options, request, callback) => {
   const uri = yconnect_v2 + 'token'
-     + '?' + std.encodeFormData(options);
-  htp.post2(uri, {}, {}, (status, header, body) => {
+    + '?' + std.encodeFormData(options);
+  const Authorization = 'Basic ' + std.atob(request['client_id']
+    + ':' + request['client_secret']);
+  log.trace(uri);
+  htp.post2(uri, { Authorization }, {}, (status, header, body) => {
     const head = { request: uri, status, header };
     const res = JSON.parse(body);
     const obj = std.merge(head, { body: res });

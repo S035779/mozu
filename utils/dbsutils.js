@@ -3,8 +3,8 @@ import std from './stdutils';
 import app from './apputils';
 import {logs as log} from './logutils';
 
-const AppUrl = process.env.app_url;
-const AppID = process.env.app_id;
+const AppUrl = process.env.appurl;
+const AppID = process.env.appid;
 const Secret = process.env.secret;
 
 log.config('console', 'color', 'note-app', 'ALL');
@@ -61,12 +61,13 @@ module.exports.fetchAuthPublicKeys = fetchAuthPublicKeys;
 const createAuthToken = (client, callback) => {
   if(client.id !== AppID) callback({error: 'Unknown AppID!!'}); 
   let options = new Object();
+  let request = new Object();
   options['grant_type'] = 'authorization_code';
-  options['client_id'] = AppID;
-  options['client_secret'] = Secret;
   options['redirect_uri'] = AppUrl;
   options['code'] = client.code;
-  app.YHAccessToken(options, (err, set) => {
+  request['client_id'] = AppID;
+  request['client_secret'] = Secret;
+  app.YHAccessToken(options, request, (err, set) => {
     if (err) callback(err);
     log.trace('Result:', set);
     const newToken = {
@@ -92,11 +93,12 @@ module.exports.createAuthToken = createAuthToken;
 const refreshAuthToken = (client, callback) => {
   if(client.id !== AppID) callback({error: 'Unknown AppID!!'}); 
   let options = new Object();
+  let request = new Object();
   options['grant_type'] = 'refresh_token';
-  options['client_id'] = AppID;
-  options['client_secret'] = Secret;
   options['refresh_token'] = client.code;
-  app.YHAccessToken(options, (err, set) => {
+  request['client_id'] = AppID;
+  request['client_secret'] = Secret;
+  app.YHAccessToken(options, request, (err, set) => {
     if (err) callback(err);
     log.trace('Result:', set);
     const newToken = {
@@ -119,37 +121,37 @@ module.exports.refreshAuthToken = refreshAuthToken;
  *
  * @returns {undefined}
  */
-const deleteToken = (client, callback) => {
+const deleteAuthToken = (client, callback) => {
   if(client.id !== AppID) callback({error: 'Unknown AppID!!'}); 
   const isSuccess = delToken(client)
   if(!isSuccess) callback({error: 'Delete Token Error!!'});
   callback();
 };
-module.exports.deleteToken = deleteToken;
+module.exports.deleteAuthToken = deleteAuthToken;
 
 /**
  * 
  *
  * @returns {undefined}
  */
-const fetchToken = (client, callback) => {
+const fetchAuthToken = (client, callback) => {
   if(client.id !== AppID) callback({error: 'Unknown AppID!!'}); 
   const token = hasToken(client);
   if(!token) callback({error: 'Token not found!!'});
   callback(null, token)
 };
-module.exports.fetchToken = fetchToken;
+module.exports.fetchAuthToken = fetchAuthToken;
 
 /**
  * 
  *
  * @returns {undefined}
  */
-const fetchTokens = (client, callback) => {
+const fetchAuthTokens = (client, callback) => {
   if(client.id !== AppID) callback({error: 'Unknown AppID!!'}); 
   callback(null, allToken())
 };
-module.exports.fetchTokens = fetchTokens;
+module.exports.fetchAuthTokens = fetchAuthTokens;
 
 /**
  * 

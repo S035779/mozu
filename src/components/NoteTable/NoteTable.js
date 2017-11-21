@@ -77,7 +77,8 @@ export default class NoteTable extends React.Component {
     const Ttl = item.Title;
     const Bid = item.Bids;
     const Prc = parseInt(item.Price, 10).toLocaleString();
-    const Cdn = item.ItemStatus.Condition;
+    const Cdn = item.hasOwnProperty('ItemStatus')
+      ? item.ItemStatus.Condition : '';
     const Cgp = item.CategoryPath;
     const Stt = item.Status;
     const Cht = this.renderBids(bids);

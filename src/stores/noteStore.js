@@ -9,6 +9,7 @@ class NoteStore extends ReduceStore {
     return {
       page:             0 
       , items:          null
+      , categorys:      []
       , watch:          {}
       , options: {
         searchString:   ''
@@ -18,6 +19,7 @@ class NoteStore extends ReduceStore {
         , condition:    'all'
         , AuctionID:    []
         , seller:       []
+        , category:     ''
       }
       , url:     ''
     };
@@ -31,6 +33,10 @@ class NoteStore extends ReduceStore {
           items:      action.items
           , options:  action.options
           , page:     action.page
+        });
+      case 'category/fetch/note':
+        return Object.assign({}, state, {
+          categorys:      action.categorys
         });
       case 'id/fetch/watch/note':
         return Object.assign({}, state, {

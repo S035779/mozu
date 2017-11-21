@@ -15,7 +15,6 @@ class LoginStore extends ReduceStore {
         , agree: false
       }
       , isAuthenticated: false
-      , redirect_uri: ''
     };
   }
   
@@ -25,12 +24,11 @@ class LoginStore extends ReduceStore {
       case 'content/select/login':
         return Object.assign({}, state
           , { selected: action.selected, title: action.title });
-      case 'application/authenticate':
+      case 'application/signin':
         return Object.assign({}, state
-          , { isAuthenticated: action.isAuthenticated, 
-            redirect_uri: action.redirect_uri });
+          , { isAuthenticated: action.isAuthenticated });
       case 'application/signout':
-        return Object.assgin({}, state
+        return Object.assign({}, state
           , { isAuthenticated: action.isAuthenticated });
       default:
         return state;
