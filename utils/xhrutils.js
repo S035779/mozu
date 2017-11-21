@@ -132,3 +132,22 @@ var postJSON = function(url, data, callback) {
   request.send(JSON.stringify(data));
 };
 module.exports.postJSON = postJSON;
+
+/**
+ * postJSON
+ *
+ * @param url {string}
+ * @param data {object}
+ * @param callback {function}
+ */
+var putJSON = function(url, data, callback) {
+  var request = new XMLHttpRequest();
+  request.open("PUT", url);
+  request.onreadystatechange = function() {
+    if (request.readyState === 4 && callback)
+        callback(request);
+  };
+  request.setRequestHeader("Content-Type", "application/json");
+  request.send(JSON.stringify(data));
+};
+module.exports.putJSON = putJSON;

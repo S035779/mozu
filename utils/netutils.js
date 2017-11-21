@@ -209,9 +209,6 @@ var post2 = function(url, headers, data, callback) {
   headers['Content-Type'] =  type;
   headers['Content-Length'] =  Buffer.byteLength(data);
 
-  log.trace('Headers:', headers)
-  log.trace('Data:', data)
-
   var client = require('https');
   var req = client.request({
     hostname: hostname,

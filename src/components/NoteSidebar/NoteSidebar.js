@@ -12,6 +12,10 @@ export default class NoteSidebar extends React.Component {
     this.state = Object.assign({}, props.options);
   }
 
+  componentDidMount() {
+    NoteAction.fetchCategorys(0);
+  }
+
   handleChangeHome(e) {
     log.info(`${pspid}> Request: handleChangeHome`);
     NoteAction
@@ -46,6 +50,7 @@ export default class NoteSidebar extends React.Component {
       , condition: 'all'
       , AuctionID: []
       , seller: []
+      , category: ''
     });
   }
 
@@ -94,13 +99,37 @@ export default class NoteSidebar extends React.Component {
     })
   }
 
+  renderCategory(array, prop) {
+    return array.length ? array.map((opt,idx) => (<option
+      key={"choice-" + idx} value={opt.id} >{opt.name}
+    </option>)) : '';
+  }
+
   render() {
     const page = this.props.page;
     const items = this.props.items ? this.props.items : null;
+    const categorys = this.props.categorys ? this.props.categorys : null;
     const optSelrs = this.renderOption(items, 'Seller', 'Id');
     const optAuIDs = this.renderOption(items, 'AuctionID');
+    const optCtgys = this.renderCategory(categorys, 'name');
     return <div className="pane pane-sm sidebar">
     <nav className="nav-group">
+      <h5 className="nav-group-title">Functions</h5>
+      <span className="nav-group-item"
+        onClick={this.handleChangeHome.bind(this)}>
+        <span className="icon icon-home"></span>
+        Home ({page} page)
+      </span>
+      <span className="nav-group-item"
+        onClick={this.handleIncrement.bind(this)}>
+        <span className="icon icon-right-bold"></span>
+        Next
+      </span>
+      <span className="nav-group-item"
+        onClick={this.handleDecrement.bind(this)}>
+        <span className="icon icon-left-bold"></span>
+        Previous
+      </span>
       <h5 className="nav-group-title">Title</h5>
       <span className="nav-group-item">
         <div className="form-group">
@@ -122,21 +151,13 @@ export default class NoteSidebar extends React.Component {
         </button>
         </div>
       </span>
-      <h5 className="nav-group-title">Functions</h5>
-      <span className="nav-group-item"
-        onClick={this.handleChangeHome.bind(this)}>
-        <span className="icon icon-home"></span>
-        Home ({page} page)
-      </span>
-      <span className="nav-group-item"
-        onClick={this.handleIncrement.bind(this)}>
-        <span className="icon icon-right-bold"></span>
-        Next
-      </span>
-      <span className="nav-group-item"
-        onClick={this.handleDecrement.bind(this)}>
-        <span className="icon icon-left-bold"></span>
-        Previous
+      <h5 className="nav-group-title">Category</h5>
+      <span className="nav-group-item">
+        <select className="form-control"
+          multiple={false}
+          value={this.state.category}
+          onChange={this.handleChangeSelect.bind(this, 'category')}
+        >{optCtgys}</select>
       </span>
       <h5 className="nav-group-title">Seller</h5>
       <span className="nav-group-item">

@@ -354,3 +354,15 @@ var makeRandInt = function(length) {
   return parseInt(str, 10);
 }
 module.exports.makeRandInt = makeRandInt;
+
+var btoa = function(string) {
+  var b = new Buffer(string, 'base64')
+  return b.toString();
+};
+module.exports.btoa = btoa;
+
+var atob = function(string) {
+  var b = new Buffer(string);
+  return b.toString('base64');
+};
+module.exports.atob = atob;

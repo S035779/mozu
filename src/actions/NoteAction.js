@@ -23,6 +23,14 @@ export default {
       spn.stop();
     });
   },
+  fetchCategorys(category) {
+    return NoteApiClient.fetchCategorys(category)
+    .then(categorys => {
+      dispatch({type: 'category/fetch/note', categorys});
+      log.info(`${pspid}> Response: category/fetch/note`);
+      spn.stop();
+    });
+  },
   fetchWatchIds() {
     return NoteApiClient.fetchWatchIds()
     .then(watch => {

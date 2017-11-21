@@ -28,8 +28,7 @@ class App extends React.Component {
   componentDidMount() {
     const hash = this.props.location.hash.split('#');
     const obj = std.decodeFormData(hash[1]);
-    log.trace(`${pspid}>`, 'Tokens:', obj);
-    if(obj && obj.hasOwnProperty('access_token')) {
+    if(obj && obj.hasOwnProperty('code')) {
       AppAction.fetchConfig(obj);
     } else {
       const { history } = this.props;
@@ -54,13 +53,17 @@ class App extends React.Component {
       <span label="Search of items"></span>
       <span label="Available watch items"></span>
       <span label="Completed watch items"></span>
+      {/*
       <span label="Preference"></span>
+      */}
     </Tabs>
     <Contents selected={this.state.selected}>
       <Note />
       <Available />
       <Completed />
+      {/*
       <AppBody config={this.state.config}/>
+      */}
     </Contents>
     <GlobalFooter
       onChangeLogin={this.handleChangeLogin.bind(this)} />

@@ -26,29 +26,37 @@ export default {
     switch(action) {
       case 'create/token':
         return new Promise(resolve => {
-          const uri = appUrl + '/api/token';
+          const uri = '/api/token';
           xhr.postJSON(uri, response, token => {
             resolve(token)
           });
         });
       case 'update/token':
         return new Promise(resolve => {
-          const uri = appUrl + '/api/token';
+          const uri = '/api/token';
           xhr.putJSON(uri, response, token => {
             resolve(token)
           });
         });
       case 'config':
         return new Promise(resolve => {
-          const newToken = {
-            access_token:     response.access_token
-            , id_token:       response.id_token
-            , code:           response.code
-            , refresh_token:  ''
-            , expires_in:     response.expires_in
-          };
-          Yaho = Object.assign({}, Yaho, newToken);
+          Yaho = Object.assign({}, Yaho, {
+            code: response.code
+            , refresh_token: response.refresh_token
+            , access_token: response.access_token
+            , id_token: response.id_token
+            , expires_in: response.expires_in
+            , state: response.state
+            , token_type: response.token_type
+          });
           resolve(Yaho);
+        });
+      case 'json/categoryTree':
+        return new Promise(resolve => {
+          JSONP.request(Yaho.findApi + action, response
+          , Categorys => {
+            resolve(Categorys);
+          });
         });
       case 'json/search':
         return new Promise(resolve => {
@@ -128,6 +136,11 @@ export default {
     return this.request('config', token);
   },
 
+  getCategorys(category) {
+    return this.request('json/categoryTree'
+      , { category, appid: Yaho.appid, output: 'json' });
+  },
+
   getIds(options, page) {
     return this.request('json/search'
       , this.helperOptions({ appid: Yaho.appid, page
@@ -188,9 +201,18 @@ export default {
 
   fetchConfig(token) {
     return this.getConfig(token)
-      .then(R.tap(this.traceLog.bind(this)))
-      //.then(obj => this.postCreateToken(obj.code));
-      //.catch(this.errorLog.bind(this));
+      //.then(obj => this.postCreateToken(obj.code))
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
+  },
+
+  fetchCategorys(category) {
+    spn.spin();
+    return this.getCategorys(category)
+      .then(R.compose(this.setCategorys.bind(this)
+        , this.resCategorys.bind(this)))
+      //.then(R.tap(this.traceLog.bind(this)))
+      .catch(this.errorLog.bind(this));
   },
 
   fetchItems(options, page) {
@@ -295,6 +317,12 @@ export default {
       ? res['@attributes'] : null;
   },
 
+  resCategorys(obj) {
+    const res = obj.ResultSet;
+    return res.hasOwnProperty('Result')
+      ? res.Result : null;
+  },
+
   resIds(obj) {
     const res = obj.ResultSet;
     return res.hasOwnProperty('Result')
@@ -317,6 +345,16 @@ export default {
       const b = R.filter(o => o.AuctionID === i.AuctionID, bs);
       return R.merge(i, b[0]);
     }, is);
+  },
+
+  setCategorys(obj) {
+    const array = Array.isArray(obj.ChildCategory)
+      ? R.map(o => ({ id: o.CategoryId, name: o.CategoryName })
+        , obj.ChildCategory)
+      : [{ id: obj.ChildCategory.CategoryId
+        , name: obj.ChildCategory.CategoryName}];
+    array.unshift({id: '0', name: '' });
+    return array;
   },
 
   setIds(obj) {
@@ -352,6 +390,10 @@ export default {
 
     if(_p.searchString) {
       options['query']      = _p.searchString;
+    }
+    
+    if(_p.category) {
+      options['category']      = _p.category;
     }
     
     if(_p.highestPrice) {

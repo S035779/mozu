@@ -10,7 +10,7 @@ export default {
     dispatch({ type: 'content/select/app', selected, title });
   },
   fetchConfig(obj) {
-    return NoteApiClient.getConfig(obj)
+    return NoteApiClient.fetchConfig(obj)
     .then(config => {
       dispatch({ type: 'config/fetch/appid', config });
       log.info(`${pspid}>`, 'Response: config/fetch/appid');
