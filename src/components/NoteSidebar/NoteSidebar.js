@@ -13,32 +13,29 @@ export default class NoteSidebar extends React.Component {
   }
 
   componentDidMount() {
-    NoteAction.fetchCategorys(0);
+    NoteAction.fetchCategorys(this.state.category);
   }
 
   handleChangeHome(e) {
     log.info(`${pspid}> Request: handleChangeHome`);
-    NoteAction
-      .increment(this.props.options, 0);
+    NoteAction.increment(this.props.options, 0);
   }
 
   handleIncrement(e) {
     log.info(`${pspid}> Request: handleIncrement`);
-    NoteAction
-      .increment(this.props.options, this.props.page);
+    NoteAction.increment(this.props.options, this.props.page);
   }
 
   handleDecrement(e) {
     log.info(`${pspid}> Request: handleDecrement`);
-    NoteAction
-      .decrement(this.props.options, this.props.page);
+    NoteAction.decrement(this.props.options, this.props.page);
   }
 
   handleChangeSearch(e) {
     log.info(`${pspid}> Request: handleChangeSearch`);
     e.preventDefault();
-    NoteAction
-      .increment(this.state, 0);
+    NoteAction.increment(this.state, 0);
+    NoteAction.fetchCategorys(this.state.category);
   }
 
   handleChangeReset() {
@@ -50,7 +47,7 @@ export default class NoteSidebar extends React.Component {
       , condition: 'all'
       , AuctionID: []
       , seller: []
-      , category: ''
+      , category: []
     });
   }
 

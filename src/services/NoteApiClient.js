@@ -348,13 +348,15 @@ export default {
   },
 
   setCategorys(obj) {
-    const array = Array.isArray(obj.ChildCategory)
-      ? R.map(o => ({ id: o.CategoryId, name: o.CategoryName })
-        , obj.ChildCategory)
-      : [{ id: obj.ChildCategory.CategoryId
-        , name: obj.ChildCategory.CategoryName}];
-    array.unshift({id: '0', name: '' });
-    return array;
+    const parent = [{ id: obj.CategoryId, name: obj.CategoryName }];
+    const children = obj.hasOwnProperty('ChildCategory') 
+      ? Array.isArray(obj.ChildCategory)
+        ? R.map(o => ({ id: o.CategoryId, name: o.CategoryName })
+          , obj.ChildCategory)
+        : [{ id: obj.ChildCategory.CategoryId
+          , name: obj.ChildCategory.CategoryName}]
+      : [];
+    return R.concat(parent, children);
   },
 
   setIds(obj) {
